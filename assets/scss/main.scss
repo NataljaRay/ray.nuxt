@@ -1,6 +1,8 @@
 //@use 'helpers' as *;
-
+//@use "@/assets/scss/helpers/index" as *;
 @use "globals";
+@use "components/header";
+@use "components/burger-button";
 //@import "components/header";
 //@import "components/button";
 //@import "components/burger-button";
