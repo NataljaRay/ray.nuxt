@@ -1,9 +1,12 @@
-@import "fonts";
+//@use "@/assets/scss/helpers/index" as *;
+@use "helpers/index" as *;
 
-@import "helpers/constants";
-@import "helpers/functions";
-@import "helpers/media";
-@import "helpers/mixins";
+@use "fonts";
+
+//@import "helpers/constants";
+//@import "helpers/functions";
+//@import "helpers/media";
+//@import "helpers/mixins";
 
 
 html {

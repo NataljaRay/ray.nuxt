@@ -1,10 +1,20 @@
 //@use 'helpers' as *;
 
-@import "globals";
-@import "components/header";
-@import "components/button";
-@import "components/burger-button";
-@import "components/icon";
+@use "globals";
+//@import "components/header";
+//@import "components/button";
+//@import "components/burger-button";
+//@import "components/icon";
+
+//@use 'globals.scss';
+
+/* assets/scss/main.scss */
+//@use './globals';
+//@use './fonts';
+//@use './components/header';
+//@use './components/footer';
+/* и т.д. */
+
 
 .logo {
   font-family: 'Riverstyle', sans-serif;
