@@ -12,5 +12,5 @@
 
 <style scoped>
   .site-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 16px;border-bottom:1px solid rgba(0,0,0,.1)}
-  .logo{font-weight:700;text-decoration:none}
+  /*.logo{font-weight:700;text-decoration:none}*/
 </style>

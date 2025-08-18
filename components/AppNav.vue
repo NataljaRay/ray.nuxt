@@ -27,7 +27,8 @@
   .nav-toggle{display:none}
   .nav-list{display:flex;gap:16px;list-style:none;margin:0;padding:0}
   /*.is-active{ text-decoration: underline; }*/
-  .is-exact-active, .is-active { font-weight:700 }
+  /*.is-exact-active, .is-active { font-weight:700 }*/
+  .is-exact-active, .is-active { color: var(--color-red) }
   @media (max-width:640px){
     .nav-toggle{display:inline-flex}
     .nav-list{display:none;flex-direction:column;gap:8px}

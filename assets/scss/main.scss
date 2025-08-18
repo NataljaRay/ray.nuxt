@@ -1,0 +1,11 @@
+//@use "helpers";
+//@use "globals";
+
+@use "globals";
+
+.logo {
+  font-family: 'Riverstyle', sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--color-red);
+}

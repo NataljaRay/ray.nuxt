@@ -2,7 +2,7 @@
 // nuxt.config.ts
 export default defineNuxtConfig({
   app: { baseURL: '/ray.nuxt/' },
-  css: ['~/assets/scss/globals.scss'], // глобальные стили для всех страниц
+  css: ['~/assets/scss/main.scss'], // глобальные стили для всех страниц
   vite: {
     css: {
       preprocessorOptions: {
