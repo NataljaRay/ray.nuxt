@@ -9,8 +9,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "deploy": "npx gh-pages -d .output/public",
-    "pages:build": "NUXT_APP_BASE_URL='/<repo>/' nuxt build --preset github_pages",
-    "pages:deploy": "gh-pages -d .output/public",
+    "pages:build": "cross-env NUXT_APP_BASE_URL=/ray.nuxt/ nuxt build --preset github_pages",
+    "pages:deploy": "gh-pages -d .output/public --dotfiles --nojekyll",
     "pages:publish": "npm run pages:build && npm run pages:deploy"
   },
   "dependencies": {
@@ -19,6 +19,7 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "cross-env": "^10.0.0",
     "gh-pages": "^6.3.0",
     "sass-embedded": "^1.90.0"
   }

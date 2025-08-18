@@ -4,14 +4,24 @@
   </section>
 </template>
 
-<script>
-    export default {
-        name: 'HomePage',
-        head () {
-            return {
-                title: 'Главная — Ray',
-                meta: [{ hid: 'description', name: 'description', content: 'Описание главной' }]
-            }
+<script setup>
+    definePageMeta({
+        seo: {
+            title: 'Natalja Ray',
+            description: 'Личный сайт Natalja Ray',
+            image: '/og-main.jpg' // из public/
+            // noindex: true
         }
-    }
+    });
 </script>
+<!--<script>-->
+<!--    export default {-->
+<!--        name: 'HomePage',-->
+<!--        head () {-->
+<!--            return {-->
+<!--                title: 'Главная — Ray',-->
+<!--                meta: [{ hid: 'description', name: 'description', content: 'Описание главной' }]-->
+<!--            }-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->

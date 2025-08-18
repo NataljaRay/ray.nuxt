@@ -1,7 +1,10 @@
-@forward "fonts";
-//@forward "helpers";
+@import "fonts";
 
-@use 'helpers' as *;
+@import "helpers/constants";
+@import "helpers/functions";
+@import "helpers/media";
+@import "helpers/mixins";
+
 
 html {
   //scrollbar-gutter: auto; //??

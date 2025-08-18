@@ -1,7 +1,10 @@
-//@use "helpers";
-//@use "globals";
+//@use 'helpers' as *;
 
-@use "globals";
+@import "globals";
+@import "components/header";
+@import "components/button";
+@import "components/burger-button";
+@import "components/icon";
 
 .logo {
   font-family: 'Riverstyle', sans-serif;
