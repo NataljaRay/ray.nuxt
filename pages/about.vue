@@ -13,7 +13,7 @@
     definePageMeta({
         seo: {
             title: 'Natalja Ray | Обо мне',
-            description: 'Короткое описание «Обо мне».',
+            description: 'Музыка как голос. Книга как исповедь',
             image: '/og-about.jpg' // из public/
             // noindex: true
         }

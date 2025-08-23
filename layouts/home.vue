@@ -2,25 +2,17 @@
   <div class="app-wrapper">
     <a class="skip-link" href="#main">Пропустить к содержимому/ ЯКОРЬ?</a>
     <AppHeader/>
-    <AppBreadcrumbs/>
+    <hero/>
     <main id="main" class="content container"><slot /></main>
     <AppFooter/>
-
-<!--    <footer class="site-footer">© {{ year }}</footer>-->
   </div>
 </template>
 
-<!--<script>-->
-<!--    import AppHeader from '@/components/AppHeader.vue'-->
-<!--    export default { components: { AppHeader } }-->
-<!--</script>-->
 <script setup>
     import { computed } from 'vue'
     import AppHeader from '~/components/AppHeader.vue'
     import AppFooter from '~/components/AppFooter.vue'
-    import AppBreadcrumbs from "../components/AppBreadcrumbs.vue";
-
-    // const year = useState('year', () => new Date().getFullYear());
+    import Hero from "../components/sections/Hero.vue";
 
     const route = useRoute()
     const { public: { siteUrl } } = useRuntimeConfig()

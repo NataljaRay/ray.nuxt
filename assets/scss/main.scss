@@ -4,6 +4,8 @@
 @use "components/burger-button";
 @use "components/header";
 @use "components/footer";
+@use "components/breadcrumbs";
+@use "components/hero";
 
 .app-wrapper {
   display: flex;

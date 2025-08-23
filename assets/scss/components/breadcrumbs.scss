@@ -1,0 +1,17 @@
+@use "@/assets/scss/helpers/index" as *;
+
+.breadcrumbs {
+  background-color: var(--color-red);
+
+  &__inner {
+    color: var(--color-white-true);
+    min-height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    color: var(--color-white-true);
+  }
+}
