@@ -1,9 +1,11 @@
 <template>
-  <div>
+  <div class="app-wrapper">
     <a class="skip-link" href="#main">Пропустить к содержимому/ ЯКОРЬ?</a>
     <AppHeader/>
     <main id="main"><slot /></main>
-    <footer class="site-footer">© {{ year }}</footer>
+    <AppFooter/>
+
+<!--    <footer class="site-footer">© {{ year }}</footer>-->
   </div>
 </template>
 
@@ -14,8 +16,9 @@
 <script setup>
     import { computed } from 'vue'
     import AppHeader from '~/components/AppHeader.vue'
+    import AppFooter from '~/components/AppFooter.vue'
 
-    const year = useState('year', () => new Date().getFullYear());
+    // const year = useState('year', () => new Date().getFullYear());
 
     const route = useRoute()
     const { public: { siteUrl } } = useRuntimeConfig()

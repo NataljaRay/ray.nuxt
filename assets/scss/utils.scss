@@ -1,3 +1,6 @@
+@use "@/assets/scss/helpers/mixins" as *;
+@use "@/assets/scss/helpers/media" as *;
+
 .container {
   width: 100%;
   max-width: calc(var(--container-width) + var( --cotainer-padding-x) * 2);

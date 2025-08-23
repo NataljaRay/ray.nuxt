@@ -1,7 +1,7 @@
-//@use "burger-button";
 @use "@/assets/scss/helpers/index" as *;
 
 .header {
+  //max-width: calc(var(--container-width) + var( --cotainer-padding-x) * 2);
   position: sticky;
   z-index: 100;
   top: 0;

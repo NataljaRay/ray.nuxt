@@ -27,7 +27,7 @@ export default defineNuxtConfig({
         scss: {
           // переменные/миксины во всех <style lang="scss">
           additionalData: '@use "@/assets/scss/helpers/index" as *;'
-          // additionalData: '@use "@/assets/scss/variables.scss" as *;'
+          // additionalData: '@use "@/assets/scss/variables-old.scss" as *;'
           // additionalData: '@use "@/assets/scss/variables" as *;\n' +
           //     '@use "@/assets/scss/helpers/index" as *;'
         }

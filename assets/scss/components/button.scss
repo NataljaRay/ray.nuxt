@@ -41,11 +41,14 @@
 
   &--transparent {
     background-color: transparent;
-    fill: var(--color-red);
+    color: var(--color-red);
+    //fill: var(--color-red);
 
     @include hover {
       background-color: transparent;
-      fill: var(--color-dark-red);
+      color: var(--color-dark-red);
+      //svg {color: var(--color-dark-red);}
+      //fill: var(--color-dark-red);
     }
 
     &:has(.button__icon:only-child) {
@@ -59,10 +62,12 @@
   }
 
   &--transparent-white {
-    fill: var(--color-white-true);
+    color: var(--color-white-true);
+    //fill: var(--color-white-true);
 
     @include hover {
-      fill: var(--color-rose);
+      color: var(--color-rose);
+      //fill: var(--color-rose);
     }
   }
 
