@@ -2,11 +2,9 @@
   <div class="app-wrapper">
     <a class="skip-link" href="#main">Пропустить к содержимому/ ЯКОРЬ?</a>
     <AppHeader/>
-    <AppBreadcrumbs/>
+    <AppBreadcrumbs :seo="route.meta?.seo"/>
     <main id="main" class="content container"><slot /></main>
     <AppFooter/>
-
-<!--    <footer class="site-footer">© {{ year }}</footer>-->
   </div>
 </template>
 

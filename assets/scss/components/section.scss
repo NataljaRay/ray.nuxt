@@ -1,0 +1,111 @@
+@use "@/assets/scss/helpers/index" as *;
+
+.section {
+  //min-height: 981px;
+
+  &__inner {
+    //display: flex;
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    //grid-template-columns: repeat(12, 1fr);
+    gap: 36px;
+  }
+  &__col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  &__title {margin-bottom: 28px;}
+  &__text {
+    @include fluid-text(24, 16);
+    margin-bottom: 52px;
+  }
+  &__button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+  &__button {}
+
+  &--dark {
+    background-color: var(--color-black);
+    .section__title {
+      color: var(--color-brown-light-alt);
+
+    }
+    .section__text {
+      color: var(--color-white);
+    }
+  }
+}
+
+.section--1 {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+.section--1__image-wrapper {
+  position: relative;
+  z-index: 0;
+  //overflow: hidden;
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: url("/public/images/shadow_1.png") 50%/cover no-repeat;
+    @include abs-center;
+    z-index: -1;
+
+    animation: move-x 1s linear;
+    animation-timeline: scroll(root block);
+  }
+}
+@keyframes move-x {
+  from { transform: translateX(-50px); }
+  to { transform: translateX(50px); }
+}
+@keyframes move-y {
+  //from { transform: translateX(50px); }
+  //to { transform: translateX(-50px); }
+  //from { transform: translateY(-10px); }
+  //to { transform: translateY(80px); }
+
+  //from { transform: translateY(-80px); }
+  //to { transform: translateY(120px); }
+
+  from { transform: translateY(-7.4vh); }
+  to { transform: translateY(11.11vh); }
+}
+
+.section--2 {
+  padding: 205px 0;
+}
+.section--2__image-wrapper {
+  position: relative;
+  z-index: 0;
+  //overflow: hidden;
+  &:before {
+    content: '';
+    //width: 100%;
+    width: 130%;
+    height: 100%;
+    background: url("/public/images/shadow_2.png") bottom/100% no-repeat;
+    //background: url("/public/images/shadow_2.png") no-repeat;
+    //background-size: 100%;
+    //background-position-x: 100%;
+    //background-position-y: bottom;
+
+    @include abs-center;
+    //translate: -50% -44%;
+    translate: -50% -40%;
+    z-index: -1;
+
+    animation: move-y .2s linear;
+    animation-timeline: scroll(root block);
+  }
+}
+
+.section--3 {
+  padding: 213px 0;
+}

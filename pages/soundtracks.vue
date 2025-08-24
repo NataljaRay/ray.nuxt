@@ -4,14 +4,14 @@
   </section>
 </template>
 
-<script>
-    export default {
-        name: 'SoundtracksPage',
-        head () {
-            return {
-                title: 'Саундтреки — Ray',
-                meta: [{ hid: 'description', name: 'description', content: 'Описание Саундтреки' }]
-            }
+<script setup>
+    definePageMeta({
+        seo: {
+            title: 'Natalja Ray | Саундтреки',
+            description: 'Саундтреки',
+            // description: 'Саундтреки к книге «В свете софитов»',
+            image: '/og-about.jpg' // из public/
+            // noindex: true
         }
-    }
+    });
 </script>

@@ -51,7 +51,7 @@
                     {label: 'Саундтреки', href: '/soundtracks'},
                     {label: 'Музыка', href: '/music'},
                     {label: 'Новости', href: '/news'},
-                    {label: 'Контакты', href: '/contacts'},
+                    {label: 'Контакты', href: '#contacts'},
                 ],
             }
         )

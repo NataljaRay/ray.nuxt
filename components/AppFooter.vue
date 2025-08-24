@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="footer" id="contacts">
     <div class="footer__inner container">
       <h5 class="h1 footer__title">Связь со мной</h5>
       <p class="footer__text">
