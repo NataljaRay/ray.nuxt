@@ -39,6 +39,10 @@
     background-color: var(--color-brown);
   }
 
+  &--brown-light {
+    background-color: var(--color-brown-light-alt);
+  }
+
   &--transparent {
     background-color: transparent;
     color: var(--color-red);
