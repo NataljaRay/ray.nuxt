@@ -59,11 +59,27 @@
 .section--1 {
   padding-top: 50px;
   padding-bottom: 20px;
+
+  .section__col:last-child {
+    //@include tablet {
+    @media (height <= 450px) and (orientation: landscape) {
+      display: none;
+    }
+    @media (height > 450px) and (orientation: portrait) {
+      display: none;
+    }
+  }
 }
 .section--1__image-wrapper {
   position: relative;
   z-index: 0;
   //overflow: hidden;
+
+  .section__image {
+    @include mobile-s {
+      max-width: 120%;
+    }
+  }
 
   &:before {
     content: '';
@@ -106,7 +122,8 @@
 }
 
 .section--2 {
-  padding: 205px 0;
+  //padding: 205px 0;
+  padding-block: fluid(205, 40); // от 24 к 16 (на мобиле)
 }
 .section--2__image-wrapper {
   position: relative;
