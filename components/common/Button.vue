@@ -13,6 +13,7 @@
     />
 
     <span v-if="!isLabelHidden" class="button__label">{{ label }}</span>
+    <slot/>
 
     <CommonIcon
             v-if="iconName && iconPosition === 'after'"

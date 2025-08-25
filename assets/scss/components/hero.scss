@@ -10,14 +10,18 @@
   height: 650px;
   margin-top: -93px;
 
+  @media (height > 450px) and (orientation: portrait) and (width < 1024) {
+    height: 100vw;
+    margin-top: -66px;
+  }
   @media (height <= 450px) and (orientation: landscape) {
     height: 100vh;
-    margin-top: -19.25vh;
+    margin-top: -66px;
   }
 
-  @media (height > 450px) and (orientation: portrait) {
-    height: 100vw;
-    margin-top: -7vh;
+  @include mobile-s {
+      height: 100vw;
+      margin-top: -66px;
   }
 
   &__inner {
@@ -37,6 +41,10 @@
     @include fluid-text(96, 34);
     font-weight: 400;
     margin-bottom: 4px;
+
+    @include mobile-xs {
+      @include fluid-text(32, 28);
+    }
   }
   &__description {
     font-size: 20px;

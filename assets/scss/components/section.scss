@@ -4,13 +4,27 @@
   overflow: hidden;
   //min-height: 981px;
 
-  &__inner {}
+  &__inner {
+
+    &--center {
+      text-align: center;
+      //justify-content: center;
+    }
+  }
 
   &__col {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+
+    &:last-child {
+      align-items: center;
+    }
+
+    @include mobile-s {
+      align-items: center;
+    }
   }
   &__title {
     margin-bottom: 28px;
@@ -20,16 +34,84 @@
     &--white {
       color: var(--color-white-true)!important;
     }
+
+    &--inner {
+      line-height: 1.4;
+      margin-bottom: 40px;
+    }
+
+    @include tablet {
+      br {display: none}
+    }
   }
   &__text {
-    @include fluid-text(24, 16);
-    margin-bottom: 52px;
+    //@include fluid-text(24, 16);
+    @include fluid-text(24, 18);
+    line-height: fluid(40, 28);
+    //line-height: 1.6;
+    //margin-bottom: 52px;
+    margin-bottom: fluid(52, 28);
+
+    @include mobile-s {
+      //text-align: center;
+    }
+
+    &--inner {
+      @include fluid-text(20, 18);
+      line-height: fluid(32, 28);
+      margin-bottom: 0;
+    }
+
+    &--underlined {
+      &:after {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 6px;
+        background-color: var(--color-red);
+        margin-top: 30px;
+      }
+    }
+
+    &--blockquote {
+      font-family: var(--font-family-quote);
+      @include flex-center;
+      flex-direction: column;
+      max-width: 750px;
+      margin: auto;
+
+      > span {
+        opacity: .7;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        @include square(50px);
+        margin-top: 32px;
+        background: url("@/assets/icons/quote.svg") 50%/cover no-repeat;
+
+      }
+    }
+    &--author {
+      margin-bottom: 0;
+      > span {
+        opacity: .6;
+      }
+    }
   }
   &__button-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 32px;
-    margin-bottom: 32px;
+    //gap: 32px;
+    //margin-bottom: 32px;
+
+    gap: fluid(32, 24);
+    margin-bottom: fluid(32, 24);
+
+    @include mobile-s {
+      justify-content: center;
+    }
   }
   &__button {}
 
@@ -54,23 +136,37 @@
       color: var(--color-white);
     }
   }
+
+  &--rose {
+    background-color: rgba(140, 37, 38, 0.1);
+    .section__title {
+      //color: var(--color-black);
+    }
+
+    .section__text {
+      //color: rgba(24, 28, 35, 0.7);
+      color: var(--color-black);
+    }
+  }
+
 }
 
-.section--1 {
+/** main page **/
+.section--about {
   padding-top: 50px;
   padding-bottom: 20px;
 
-  .section__col:last-child {
+  //.section__col:last-child {
     //@include tablet {
-    @media (height <= 450px) and (orientation: landscape) {
-      display: none;
-    }
-    @media (height > 450px) and (orientation: portrait) {
-      display: none;
-    }
-  }
+    //@media (height <= 450px) and (orientation: landscape) {
+    //  display: none;
+    //}
+    //@media (height > 450px) and (orientation: portrait) {
+    //  display: none;
+    //}
+  //}
 }
-.section--1__image-wrapper {
+.section--about__image-wrapper {
   position: relative;
   z-index: 0;
   //overflow: hidden;
@@ -121,11 +217,15 @@
   to { transform: translateY(9.11vh); }
 }
 
-.section--2 {
+.section--book {
   //padding: 205px 0;
   padding-block: fluid(205, 40); // от 24 к 16 (на мобиле)
+
+  @include laptop {
+    padding-block: fluid(100, 40);
+  }
 }
-.section--2__image-wrapper {
+.section--book__image-wrapper {
   position: relative;
   z-index: 0;
   //overflow: hidden;
@@ -150,10 +250,10 @@
   }
 }
 
-.section--3 {
+.section--music {
   padding: 213px 0;
 }
-.section--3__image-wrapper {
+.section--music__image-wrapper {
   position: relative;
   z-index: 0;
   border-radius: 100%;
@@ -203,4 +303,39 @@
     @include flex-center;
     flex-direction: column;
   }
+}
+
+/** inner pages **/
+
+.section--about-book {
+  padding-block: fluid(80, 40);
+
+  .section__text {
+    @include fluid-text(20, 18);
+    //font-size: fluid(20, 18);
+    line-height: fluid(38, 28);
+  }
+}
+.section--review {
+  padding-block: fluid(70, 40);
+}
+.section--music-book {
+  padding-block: fluid(100, 40);
+  .section__title.h5 {
+    margin-bottom: 12px;
+    font-size: 20px;
+
+    @include mobile-s {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+  }
+  //.section__button.button--image {
+  //  //gap: fluid(32, 24);
+  //  //margin-right: fluid(32, 24);
+  //
+  //  &:not(last-child) {
+  //    margin-right: fluid(32, 24);
+  //  }
+  //}
 }

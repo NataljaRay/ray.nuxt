@@ -1,8 +1,8 @@
 <template>
   <div class="breadcrumbs">
     <div class="breadcrumbs__inner container">
-      <h1 class="breadcrumbs__inner">{{ seo.description }}</h1>
-      <NuxtLink to="/">< Главная</NuxtLink>
+      <h1 class="breadcrumbs__title">{{ seo.description }}</h1>
+      <NuxtLink to="/" class="breadcrumbs__link">Главная</NuxtLink>
     </div>
   </div>
 </template>

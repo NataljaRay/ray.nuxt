@@ -16,7 +16,8 @@ body {
   //margin: 0;
   //padding: 0;
 
-  @include fluid-text(20, 14);
+  @include fluid-text(20, 18);
+  //font-size: 20px;
 
   display: flex;
   flex-direction: column;
@@ -96,4 +97,8 @@ a {
 
 :focus-visible {
   @include focus-visible;
+}
+
+.mb-0 {
+  margin-bottom: 0!important;
 }

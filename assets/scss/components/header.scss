@@ -8,22 +8,30 @@
   width: 100%;
   //padding-block: 24px;
   //padding-block: fluid(24, 16); // от 24 к 16 (на мобиле)
-  padding-block: fluid(16, 8); // от 24 к 16 (на мобиле)
-  //padding-block: 16px; // от 24 к 16 (на мобиле)
+  //padding-block: fluid(16, 8); // от 24 к 16 (на мобиле)
+  padding-block: 16px; // от 24 к 16 (на мобиле)
   animation-name: scrolling-header;
   animation-fill-mode: both;
   animation-timeline: scroll();
   animation-range: 0 100px;
 
   border-bottom: 1px solid transparent;
+
+  height: 93px;
   
   @keyframes scrolling-header {
     to {
-      padding-block: 12px;
+      //padding-block: 12px;
+      //padding-block: fluid(12, 8);
       background-color: var(--color-rose);
       //box-shadow: 0 0 30px 30px var(--color-rose);
       //border-color: var(--color-red);
     }
+  }
+
+  @include tablet {
+    padding-block: 10px;
+    height: 66px;
   }
 
   &__inner {
@@ -91,9 +99,13 @@
   &__logo {
     font-family: var(--font-family-logo);
     color: var(--color-red);
-    @include fluid-text(40, 30);
+    //@include fluid-text(40, 30);
     z-index: 1;
-    //font-size: 40px;
+    font-size: 40px;
+
+    @include tablet {
+      font-size: 30px;
+    }
   }
 
   &__menu {

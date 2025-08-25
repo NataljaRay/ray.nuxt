@@ -1,9 +1,9 @@
 <template>
   <div class="app-wrapper">
-    <a class="skip-link" href="#main">Пропустить к содержимому/ ЯКОРЬ?</a>
+<!--    <a class="skip-link" href="#main">Пропустить к содержимому/ ЯКОРЬ?</a>-->
     <AppHeader/>
     <AppBreadcrumbs :seo="route.meta?.seo"/>
-    <main id="main" class="content container"><slot /></main>
+    <main id="main" class="content"><slot /></main>
     <AppFooter/>
   </div>
 </template>

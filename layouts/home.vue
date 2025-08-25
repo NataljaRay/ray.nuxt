@@ -1,8 +1,8 @@
 <template>
   <div class="app-wrapper">
-    <a class="skip-link" href="#main">Пропустить к содержимому/ ЯКОРЬ?</a>
+<!--    <a class="skip-link" href="#main">Пропустить к содержимому/ ЯКОРЬ?</a>-->
     <AppHeader/>
-    <hero/>
+<!--    <hero/>-->
     <main id="main" class="content"><slot /></main>
     <AppFooter/>
   </div>
@@ -12,7 +12,7 @@
     import { computed } from 'vue'
     import AppHeader from '~/components/AppHeader.vue'
     import AppFooter from '~/components/AppFooter.vue'
-    import Hero from "../components/sections/Hero.vue";
+    // import Hero from "../components/sections/Hero.vue";
 
     const route = useRoute()
     const { public: { siteUrl } } = useRuntimeConfig()

@@ -1,6 +1,7 @@
 <template>
-  <section class="section section--1 section--dark">
-    <div class="section__inner grid-2 container">
+  <hero/>
+  <section class="section section--about section--dark">
+    <div class="section__inner grid-2 grid-2--to-1 grid-2--hide-2d container">
       <div class="section__col">
         <h2 class="section__title">Автор Историй</h2>
         <p class="section__text">
@@ -19,7 +20,7 @@
         </div>
       </div>
       <div class="section__col">
-        <div class="section--1__image-wrapper" style="display: flex">
+        <div class="section--about__image-wrapper" style="display: flex">
 <!--          <img class="section__image" src="/public/images/natalja_ray.png" alt="Natalja Ray">-->
           <img class="section__image" src="/public/images/natalja_ray_new.png" alt="Natalja Ray" width="460">
 <!--          <img class="section__image" src="/public/images/natalja_ray_new_sm.png" alt="Natalja Ray">-->
@@ -30,8 +31,8 @@
 
   </section>
 
-  <section class="section section--2">
-    <div class="section__inner grid-2 container">
+  <section class="section section--book">
+    <div class="section__inner grid-2 grid-2--to-1 container">
       <div class="section__col">
         <h2 class="section__title">Проект «В свете софитов»</h2>
         <p class="section__text">
@@ -56,7 +57,7 @@
         </div>
       </div>
       <div class="section__col">
-        <div class="section--2__image-wrapper">
+        <div class="section--book__image-wrapper">
           <img class="section__image" src="/public/images/book.png" alt="Книга">
         </div>
       </div>
@@ -64,7 +65,7 @@
   </section>
 
 
-  <section class="section section--3 section--dark" style="display: none">
+  <section class="section section--music section--dark" style="display: none">
     <div class="section__inner grid-2 container">
       <div class="section__col">
         <h2 class="section__title">Музыка Natalja Ray</h2>
@@ -84,7 +85,7 @@
         </div>
       </div>
       <div class="section__col">
-        <div class="section--3__image-wrapper">
+        <div class="section--music__image-wrapper">
           <img class="section__image" src="/public/images/natalja_ray_avatar.jpg" alt="Natalja Ray">
         </div>
         <!--        <div class="section__widget">-->
@@ -94,7 +95,7 @@
     </div>
   </section>
 
-  <section class="section section--3 section--red" style="display: none">
+  <section class="section section--music section--red" style="display: none">
     <div class="section__inner grid-2 container">
       <div class="section__col">
         <h2 class="section__title">Музыка Natalja Ray</h2>
@@ -111,7 +112,7 @@
         </div>
       </div>
       <div class="section__col">
-        <div class="section--3__image-wrapper">
+        <div class="section--music__image-wrapper">
           <img class="section__image" src="/public/images/natalja_ray_avatar.jpg" alt="Natalja Ray">
         </div>
         <!--        <div class="section__widget">-->
@@ -143,6 +144,7 @@
 </template>
 
 <script setup>
+    import Hero from "../components/sections/Hero.vue";
     import Button from '@/components/common/Button.vue'
     import NewsCard from "@/components/blocks/NewsCard.vue";
 
