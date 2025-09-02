@@ -36,7 +36,7 @@
       <div class="section__col">
         <h2 class="section__title">Проект «В свете софитов»</h2>
         <p class="section__text">
-          Психологическая драма о взрослении, сцене и тенях внутри. Каждый её эпизод сопровождается авторским саундтреком. Это не просто книга. Это история, которую можно слушать.
+          Психологическая драма о взрослении, сцене и тенях внутри. Некоторые её эпизоды сопровождаются саундтреками - как мировыми хитами, так и авторскими композициями. Это не просто книга. Это история, которую можно слушать.
         </p>
         <div class="section__button-container">
           <Button class="section__button"
@@ -59,6 +59,37 @@
       <div class="section__col">
         <div class="section--book__image-wrapper">
           <img class="section__image" src="/public/images/book.png" alt="Книга">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--music section--dark" >
+    <div class="section__inner grid-2 grid-2--to-1 container">
+      <div class="section__col">
+        <h2 class="section__title">Музыка Natalja Ray</h2>
+        <p class="section__text">
+          От инди до альтернативного рока — моя музыка рождена из эмоций. Это звуковые пьесы, которые продолжают книги или живут собственной историей.
+        </p>
+        <div class="section__button-container">
+          <Button class="section__button"
+                  target="_blank"
+                  href="https://band.link/nataljaray"
+                  label="Слушать музыку"
+          />
+        </div>
+      </div>
+      <div class="section__col">
+        <div class="section__widget">
+          <iframe class="section__iframe" frameborder="0" allow="clipboard-write" style="border:none;width:465px;height:556px;"
+                  height="556" src="https://music.yandex.ru/iframe/album/37825294">Слушайте <a
+                  href="https://music.yandex.ru/album/37825294?utm_source=web&utm_medium=copy_link">Neurotic
+            Love</a> — <a href="https://music.yandex.ru/artist/21974129">Natalja Ray</a> на Яндекс Музыке
+          </iframe>
+          <div class="section__iframe-cover">
+            <img  src="https://avatars.yandex.net/get-music-content/14651289/2f8cef7b.a.37825294-1/400x400"
+                 width="120" height="120" alt="Neurotic Love">
+          </div>
         </div>
       </div>
     </div>

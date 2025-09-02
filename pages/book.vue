@@ -1,5 +1,5 @@
 <template>
-  <section class="section section--about-book" style="display: none">
+  <section class="section section--about-book">
     <div class="section__inner grid-2 grid-2--to-1 container">
       <div class="section__col">
         <p class="section__text section__text--underlined">
@@ -14,7 +14,7 @@
     </div>
   </section>
 
-  <section class="section section--review section--rose"  style="display: none">
+  <section class="section section--review section--rose">
     <div class="section__inner section__inner--center container">
       <p class="section__text section__text--blockquote">
         <span>
@@ -93,7 +93,7 @@
                 icon-name="piano"
         />
         <Button class="section__button button--tile"
-                href="/soundtracks"
+                href="/music"
                 label="Музыкальный альбом"
                 icon-name="record"
                 color="brown"
