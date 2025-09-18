@@ -49,6 +49,11 @@
             @widget-ok="onWidgetOk"
             @widget-error="onWidgetError"
     />
+
+      <div v-if="!loaded" class="embed-loader first-loader" style="background-color: var(--color-rose)">
+        <span class="loader" />
+<!--        <p v-if="timedOut" class="hint">Долго грузится… проверьте VPN/CSP</p>-->
+      </div>
     </div>
 
     <div v-else class="no-sources">Нет доступных источников для этого трека.</div>
@@ -56,7 +61,7 @@
 </template>
 
 <script setup>
-    import { ref, computed, reactive } from 'vue'
+    import {ref, computed, reactive, onMounted, onBeforeUnmount} from 'vue'
     import YandexMusicWidget from '@/components/widgets/YandexMusicWidget.vue'
     import SpotifyWidget     from '@/components/widgets/SpotifyWidget.vue'
     import YouTubeWidget     from '@/components/widgets/YouTubeWidget.vue'
@@ -144,6 +149,29 @@
             default: return base
         }
     })
+
+  //loader
+
+    const loaded = ref(false)
+    // const timedOut = ref(false)
+    let t
+    function onLoad() {
+        loaded.value = true
+        clearTimeout(t)
+        emit('widget-ok', { key: props.platformKey })
+    }
+    onMounted(() => {
+        loaded.value = false
+        // timedOut.value = false
+        t = setTimeout(() => {
+            // if (!loaded.value) {
+                loaded.value = true
+                // timedOut.value = true
+                // emit('widget-error', { key: props.platformKey, code: 'timeout' })
+            // }
+        }, 7000)
+    })
+    onBeforeUnmount(() => clearTimeout(t))
 </script>
 
 <style scoped>

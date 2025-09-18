@@ -13,6 +13,7 @@
       />
       <div v-if="!loaded" class="embed-loader">
         <span class="spinner" />
+<!--        <span class="loader" />-->
         <p v-if="timedOut" class="hint">Долго грузится… проверьте VPN/CSP</p>
       </div>
     </div>
@@ -62,8 +63,7 @@
 
 <style scoped>
   .embed-wrap{position:relative;overflow:hidden}
-  .embed-loader{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;background:rgba(255,255,255,.9)}
+  .embed-loader{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;background:rgba(255,255,255,1)}
   .spinner{width:28px;height:28px;border:3px solid #ccc;border-top-color:#111;border-radius:50%;animation:spin .8s linear infinite}
-  .hint{margin-top:8px;font-size:.85rem;opacity:.75}
   @keyframes spin{to{transform:rotate(360deg)}}
 </style>

@@ -11,6 +11,7 @@
 @use "components/news-card";
 @use "components/soundtrack";
 @use "components/player";
+@use "components/loader";
 
 .app-wrapper {
   display: flex;

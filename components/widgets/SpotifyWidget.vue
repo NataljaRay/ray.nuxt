@@ -37,7 +37,7 @@
 
 <style scoped>
   .embed-wrap{position:relative;overflow:hidden}
-  .embed-loader{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;background:rgba(255,255,255,.9)}
+  .embed-loader{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;background:rgba(255,255,255,1)}
   .spinner{width:28px;height:28px;border:3px solid #ccc;border-top-color:#111;border-radius:50%;animation:spin .8s linear infinite}
   @keyframes spin{to{transform:rotate(360deg)}}
 </style>

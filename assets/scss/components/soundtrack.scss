@@ -2,11 +2,13 @@
 
 .soundtrack {
   //margin-bottom: 40px;
-  padding-top: 40px;
+  //padding-top: 40px;
+  padding-top: 80px;
 
 
   /* Целевые секции/элементы с id */
   scroll-margin-top: var(--header-h, 40px);
+  //scroll-margin-top: var(--header-h, 60px);
 
 
   &__description {
@@ -19,6 +21,10 @@
     //height: 350px;
     overflow: hidden;
     //background-color: pink;
+
+    @include mobile-s {
+      height: 300px;
+    }
   }
 }
 

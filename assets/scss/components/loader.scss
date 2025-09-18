@@ -1,0 +1,99 @@
+@use "@/assets/scss/helpers/index" as *;
+
+.embed-wrap {
+  position: relative;
+  overflow: hidden
+}
+
+.embed-loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  //background: rgba(255, 255, 255, .9);
+  background-color: var(--color-white);
+  //background-color: var(--color-black);
+  //opacity: .75;
+}
+
+//.spinner {
+//  width: 28px;
+//  height: 28px;
+//  border: 3px solid #ccc;
+//  border-top-color: #111;
+//  border-radius: 50%;
+//  animation: spin .8s linear infinite
+//}
+
+.hint {
+  margin-top: 8px;
+  //margin-top: 50px;
+  font-size: .85rem;
+  opacity: .75;
+  //color: var(--color-white-true);
+
+  //@include abs-center;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+  animation: showloader 1s linear 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+.loader::after,
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  //border: 2px solid #FFF;
+  border: 2px solid var(--color-black);
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: animloader 2s linear infinite;
+}
+
+.loader::after {
+  animation-delay: 1s;
+}
+
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+@keyframes showloader {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes hideloader {
+  100% {
+    opacity: 0;
+  }
+}
+.first-loader {
+  animation: hideloader .2s linear 1;
+  animation-fill-mode: forwards;
+  animation-delay: 5s;
+}

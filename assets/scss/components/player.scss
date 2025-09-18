@@ -5,12 +5,19 @@
 .btn.ok:hover{border-color:#333;cursor:pointer}
 //.btn{display: inline-block}
 .btn.off{
+  display: none;
   opacity:.5;cursor:not-allowed!important;
   > * {
     pointer-events: none;
   }
 }
-.btn.active{border-color:#333}
+.btn.active{
+  //border-color:#333;
+
+  .button--image {
+    filter: none;
+  }
+}
 .btn.err{border-color:#d22; color:#d22}
 .no-sources{
   opacity:.7;
@@ -28,21 +35,33 @@
   height:100%;
   //width: 100%;
 
-  @include tablet {
+  @include mobile-s {
     flex-direction: column;
   }
 
   &__controls {
     flex: 1;
     order: 1;
-    @include flex-center;
-    //margin-left: 38px;
-    //gap: 49px;
+    //@include flex-center;
+    margin-left: 38px;
+    display: flex;
+    align-items: center;
+
     gap: 3.5vw;
 
-
     @include tablet {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    @include mobile-s {
       order: 0;
+      flex-direction: row;
+      //align-items: start;
+      justify-content: center;
+      margin-left: 0;
+      gap: 6vw;
+      margin-bottom: 12px;
     }
 
     .btn {
@@ -51,7 +70,8 @@
   }
 
   &__widget {
-    //width: 614px;
+    width: 614px;
+    position: relative;
     //flex-grow: 1;
     //background-color: yellowgreen;
     //background-color: var(--color-white-true);
