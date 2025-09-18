@@ -14,18 +14,20 @@
   }
 
   &__widget {
-    //height: 244px;
-    height: 282px;
-    height: 350px;
+    height: 244px;
+    //height: 282px;
+    //height: 350px;
     overflow: hidden;
+    //background-color: pink;
   }
 }
 
 .soundtrack__media {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 34px;
+  margin-top: 24px;
+  //display: flex;
+  //align-items: center;
+  //justify-content: space-between;
+  //gap: 34px;
 }
 
 .soundtrack__list {

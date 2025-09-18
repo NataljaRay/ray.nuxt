@@ -10,7 +10,6 @@
         <p class="soundtrack__description" v-if="track.description">{{track.description}}</p>
         <div class="soundtrack__media">
           <div class="soundtrack__widget">
-            <div class="widget">
               <SmartPlayer
                       :ym="track.ym"
                       :spotify="track.spotify"
@@ -21,12 +20,6 @@
                       :height="244"
                       :debug-country="true"
               />
-            </div>
-          </div>
-          <div class="soundtrack__list">
-            <div class="h5 soundtrack__list-item" v-for="item in track.player">
-              {{item.key}}
-            </div>
           </div>
         </div>
       </div>
@@ -71,6 +64,7 @@
     import { useRoute, useRouter } from '#imports'
     import YandexMusicWidget from '../components/widgets/YandexMusicWidget.vue'
     import SmartPlayer from '@/components/SmartPlayer.vue'
+
 
     const route = useRoute()
     const router = useRouter()

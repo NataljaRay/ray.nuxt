@@ -5,6 +5,16 @@
     <AppBreadcrumbs :seo="route.meta?.seo"/>
     <main id="main" class="content"><slot /></main>
     <AppFooter/>
+
+<!--    &lt;!&ndash; как обычная кнопка &ndash;&gt;-->
+<!--    <Button label="Click me" mode="transparent" color="red" class="w-full" />-->
+
+<!--    &lt;!&ndash; внутренняя ссылка (NuxtLink) &ndash;&gt;-->
+<!--    <Button href="/about" label="About us" icon-name="arrow-right" icon-position="after" />-->
+
+<!--    &lt;!&ndash; внешняя ссылка &ndash;&gt;-->
+<!--    <Button href="https://example.com" target="_blank" label="External" color="blue" />-->
+
   </div>
 </template>
 

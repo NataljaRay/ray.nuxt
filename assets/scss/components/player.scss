@@ -1,0 +1,59 @@
+@use "@/assets/scss/helpers/index" as *;
+
+//.player-controls{margin-bottom:.6rem;display:flex;flex-wrap:wrap;gap:.5rem}
+//.btn{padding:.35rem .6rem;border:1px solid #cfcfcf;border-radius:8px;background:#fff;cursor:pointer}
+.btn.ok:hover{border-color:#333;cursor:pointer}
+//.btn{display: inline-block}
+.btn.off{
+  opacity:.5;cursor:not-allowed!important;
+  > * {
+    pointer-events: none;
+  }
+}
+.btn.active{border-color:#333}
+.btn.err{border-color:#d22; color:#d22}
+.no-sources{
+  opacity:.7;
+  width: 100%;
+  @include flex-center;
+  height:100%;
+  text-align: center;
+  background-color: lightgrey;
+}
+
+
+.player {
+  display: flex;
+  justify-content: space-between;
+  height:100%;
+  //width: 100%;
+
+  @include tablet {
+    flex-direction: column;
+  }
+
+  &__controls {
+    flex: 1;
+    order: 1;
+    @include flex-center;
+    //margin-left: 38px;
+    //gap: 49px;
+    gap: 3.5vw;
+
+
+    @include tablet {
+      order: 0;
+    }
+
+    .btn {
+      @include square(48px);
+    }
+  }
+
+  &__widget {
+    //width: 614px;
+    //flex-grow: 1;
+    //background-color: yellowgreen;
+    //background-color: var(--color-white-true);
+  }
+}

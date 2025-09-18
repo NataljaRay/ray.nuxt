@@ -1,26 +1,47 @@
 <template>
-  <div class="smart-player">
+  <div class="player">
     <!-- Кнопки плееров (YT и YT Music = одна кнопка) -->
-    <div class="player-controls">
-      <button
-              v-for="key in ORDER"
-              :key="key"
-              class="btn"
-              :class="[
+    <div class="player__controls" v-if="currentComponent">
+
+      <div v-for="key in ORDER"
+           :key="key"
+           :id="key"
+           class="btn"
+           :class="[
           { active: currentKey === key },
           available[key] ? 'ok' : 'off',
           errors[key] ? 'err' : ''
         ]"
-              :disabled="!available[key]"
-              :title="btnTitle(key)"
-              @click="select(key)"
+           :disabled="!available[key]"
+           :title="btnTitle(key)"
+           @click="select(key)"
       >
-        {{ labels[key] }}
-      </button>
+        <Button class="button--music button--image">
+          <img :src="`/icons/music/${key}.svg`"
+               :alt="labels[key] || 'Иконка'"
+               :title="labels[key] || ''">
+        </Button>
+      </div>
+<!--      <button-->
+<!--              v-for="key in ORDER"-->
+<!--              :key="key"-->
+<!--              class="btn"-->
+<!--              :class="[-->
+<!--          { active: currentKey === key },-->
+<!--          available[key] ? 'ok' : 'off',-->
+<!--          errors[key] ? 'err' : ''-->
+<!--        ]"-->
+<!--              :disabled="!available[key]"-->
+<!--              :title="btnTitle(key)"-->
+<!--              @click="select(key)"-->
+<!--      >-->
+<!--        {{ labels[key] }}-->
+<!--      </button>-->
     </div>
 
     <!-- Текущий виджет -->
-    <component
+    <div class="player__widget" v-if="currentComponent">
+      <component
             v-if="currentComponent"
             :is="currentComponent"
             v-bind="currentProps"
@@ -28,8 +49,9 @@
             @widget-ok="onWidgetOk"
             @widget-error="onWidgetError"
     />
+    </div>
 
-    <p v-else class="no-sources">Нет доступных источников для этого трека.</p>
+    <div v-else class="no-sources">Нет доступных источников для этого трека.</div>
   </div>
 </template>
 
@@ -39,6 +61,7 @@
     import SpotifyWidget     from '@/components/widgets/SpotifyWidget.vue'
     import YouTubeWidget     from '@/components/widgets/YouTubeWidget.vue'
     import VkWidget          from '@/components/widgets/VkWidget.vue'
+    import Button from '@/components/common/Button.vue'
 
     const props = defineProps({
         ym:      { type: Object, default: null }, // { albumId?, trackId? }
@@ -53,7 +76,7 @@
 
     /** Порядок приоритета и подписи */
     const ORDER  = ['ym', 'vk', 'youtube', 'spotify']
-    const labels = { ym: 'Яндекс', vk: 'VK', youtube: 'YouTube', spotify: 'Spotify' }
+    const labels = { ym: 'Яндекс Музыка', vk: 'Вконтакте', youtube: 'YouTube', spotify: 'Spotify' }
 
     /** Проверяем наличие данных */
     const hasDataForYM      = v => !!(v?.albumId || v?.trackId)
@@ -124,11 +147,11 @@
 </script>
 
 <style scoped>
-  .player-controls{margin-bottom:.6rem;display:flex;flex-wrap:wrap;gap:.5rem}
-  .btn{padding:.35rem .6rem;border:1px solid #cfcfcf;border-radius:8px;background:#fff;cursor:pointer}
-  .btn.ok:hover{border-color:#333}
-  .btn.off{opacity:.5;cursor:not-allowed}
-  .btn.active{border-color:#333}
-  .btn.err{border-color:#d22; color:#d22}
-  .no-sources{opacity:.7}
+  /*.player-controls{margin-bottom:.6rem;display:flex;flex-wrap:wrap;gap:.5rem}*/
+  /*.btn{padding:.35rem .6rem;border:1px solid #cfcfcf;border-radius:8px;background:#fff;cursor:pointer}*/
+  /*.btn.ok:hover{border-color:#333}*/
+  /*.btn.off{opacity:.5;cursor:not-allowed}*/
+  /*.btn.active{border-color:#333}*/
+  /*.btn.err{border-color:#d22; color:#d22}*/
+  /*.no-sources{opacity:.7}*/
 </style>

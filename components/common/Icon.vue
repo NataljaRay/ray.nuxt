@@ -10,6 +10,9 @@
     import IconLink from '@/assets/icons/socials/link.svg?raw'
     import IconTg from '@/assets/icons/socials/tg.svg?raw'
     import IconVk from '@/assets/icons/socials/vk.svg?raw'
+    // import IconYm from '@/assets/icons/music/ym.svg?raw'
+    // import IconSpotify from '@/assets/icons/music/spotify.svg?raw'
+    // import IconVkMusic from '@/assets/icons/music/vk.svg?raw'
     import {computed} from "vue";
     const props = defineProps({
         name: { type: String, required: true },
@@ -22,6 +25,9 @@
         'download': IconDownload,
         'record': IconRecord,
         'piano': IconPiano,
+        // 'ym': IconYm,
+        // 'spotify': IconSpotify,
+        // 'vkMusic': IconVkMusic
     }
 
     defineOptions({
