@@ -54,6 +54,17 @@
             href: new URL(base.replace(/\/$/, '') + route.path, siteUrl || 'http://localhost').toString()
         }]
     }))
+
+    // Фавиконки
+    // useHead(() => ({
+    //     link: [
+    //         { rel: 'icon', type: 'image/x-icon', href: base + 'favicon.ico' },
+    //         // опционально:
+    //         // { rel: 'icon', type: 'image/svg+xml', href: base + 'icon.svg' },
+    //         // { rel: 'apple-touch-icon', sizes: '180x180', href: base + 'apple-touch-icon.png' },
+    //         // { rel: 'manifest', href: base + 'site.webmanifest' },
+    //     ]
+    // }))
 </script>
 <style scoped>
   .skip-link{position:absolute;left:-9999px;top:-9999px}

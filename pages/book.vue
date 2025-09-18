@@ -77,7 +77,7 @@
                alt="Купить на Ozon" title="Купить на Ozon">
         </Button>
         <Button class="section__button button--image"
-                href="/soundtracks"
+                href="#"
                 label="Скачать"
                 icon-name="download"
                 icon-position="after"

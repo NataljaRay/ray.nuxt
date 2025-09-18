@@ -1,37 +1,77 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 // nuxt.config.ts
+import { defineNuxtConfig } from 'nuxt/config'
+
+const isProd = process.env.NODE_ENV === 'production'
+const baseURL = process.env.NUXT_APP_BASE_URL || '/ray.nuxt/'
+
 export default defineNuxtConfig({
-  // app: { baseURL: '/ray.nuxt/' },
-  // runtimeConfig: {
-  //   public: {
-  //     siteUrl: 'https://nataljaray.github.io' // твой корневой домен
-  //     // siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000'
-  //   }
-  // },
-
-  app: { baseURL: process.env.NUXT_APP_BASE_URL || '/ray.nuxt/' }, // на реальном домене поставишь '/'
-  runtimeConfig: {
-    public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000'
-    }
-  },
-
-  // для реального хостинга
-  // app: { baseURL: '/' },
-  // runtimeConfig: { public: { siteUrl: 'https://nataljaray.me' } }, // подставить реальный домен
-
-  css: ['~/assets/scss/main.scss'], // глобальные стили для всех страниц
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          // переменные/миксины во всех <style lang="scss">
-          additionalData: '@use "@/assets/scss/helpers/index" as *;'
-          // additionalData: '@use "@/assets/scss/variables-old.scss" as *;'
-          // additionalData: '@use "@/assets/scss/variables" as *;\n' +
-          //     '@use "@/assets/scss/helpers/index" as *;'
+    app: {
+        // на реальном домене можно будет поставить '/'
+        baseURL,
+        head: {
+            // Meta-CSP: мягкая для dev, строгая в prod (добавляем upgrade-insecure-requests только в prod)
+            meta: [
+                {
+                    'http-equiv': 'Content-Security-Policy',
+                    content: [
+                        "default-src 'self' blob: data:",
+                        // "frame-src 'self' https://music.yandex.ru https://music.yandex.net https://open.spotify.com",
+                        "frame-src 'self' https://music.yandex.ru https://music.yandex.net https://open.spotify.com https://www.youtube.com https://www.youtube-nocookie.com https://vk.com https://*.vk.com",
+                        // "script-src 'self' 'unsafe-inline' 'unsafe-eval'", // нужно Nuxt/Vite HMR в dev
+                        "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vk.com https://static.vk.com https://www.youtube.com",
+                        "style-src 'self' 'unsafe-inline'",
+                        // "img-src 'self' data: blob:",
+                        "img-src 'self' data: blob: https://vk.com https://*.vk.com https://avatars.yandex.net https://i.ytimg.com https://i.scdn.co",
+                        "font-src 'self' data:",
+                        // "connect-src 'self' ws:",
+                        "connect-src 'self' ws: https://vk.com https://api.vk.com",
+                        // "connect-src 'self' ws: https://ipapi.co",
+                        isProd ? "upgrade-insecure-requests" : null,        // ← только в проде
+                    ].filter(Boolean).join('; ')
+                }
+            ],
+            // Фавиконки/иконки: пути учитывают baseURL
+            link: [
+                { rel: 'icon', type: 'image/x-icon',      href: `${baseURL}favicon.ico` },
+                { rel: 'icon', type: 'image/svg+xml',     href: `${baseURL}icon.svg` },              // опционально
+                { rel: 'apple-touch-icon', sizes: '180x180', href: `${baseURL}apple-touch-icon.png` }, // опционально
+                { rel: 'manifest',                        href: `${baseURL}site.webmanifest` },      // опционально
+            ],
+            // link: [
+            //     { rel: 'icon', type: 'image/x-icon', href: `${baseURL}favicon.ico` },
+            // ]
         }
-      }
+    },
+
+    runtimeConfig: {
+        public: {
+            siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+        }
+    },
+
+    css: ['~/assets/scss/main.scss'],
+
+    vite: {
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    additionalData: '@use "@/assets/scss/helpers/index" as *;'
+                }
+            }
+        }
+    },
+
+    modules: ['nuxt-security'],
+
+    nitro: {
+        compatibilityDate: '2025-09-18',
+    },
+
+    // Серверный CSP от nuxt-security временно выключен (чтобы не ловить sources.filter)
+    security: {
+        headers: {
+            contentSecurityPolicy: false,
+            xFrameOptions: 'SAMEORIGIN',
+        },
     }
-  }
 })

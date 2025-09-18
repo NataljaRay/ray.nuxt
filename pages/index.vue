@@ -81,11 +81,17 @@
       </div>
       <div class="section__col">
         <div class="section__widget">
-          <iframe class="section__iframe" frameborder="0" allow="clipboard-write" style="border:none;width:465px;height:556px;"
-                  height="556" src="https://music.yandex.ru/iframe/album/37825294">Слушайте <a
-                  href="https://music.yandex.ru/album/37825294?utm_source=web&utm_medium=copy_link">Neurotic
-            Love</a> — <a href="https://music.yandex.ru/artist/21974129">Natalja Ray</a> на Яндекс Музыке
-          </iframe>
+<!--          <iframe class="section__iframe" frameborder="0" allow="clipboard-write" style="border:none;width:465px;height:556px;"-->
+<!--                  height="556" src="https://music.yandex.ru/iframe/album/37825294">Слушайте <a-->
+<!--                  href="https://music.yandex.ru/album/37825294?utm_source=web&utm_medium=copy_link">Neurotic-->
+<!--            Love</a> — <a href="https://music.yandex.ru/artist/21974129">Natalja Ray</a> на Яндекс Музыке-->
+<!--          </iframe>-->
+          <YandexMusicWidget
+                  album-id="37825294"
+                  :width="465"
+                  :height="556"
+                  title="Yandex Music album"
+          />
           <div class="section__iframe-cover">
             <img  src="https://avatars.yandex.net/get-music-content/14651289/2f8cef7b.a.37825294-1/400x400"
                  width="120" height="120" alt="Neurotic Love">
@@ -178,6 +184,7 @@
     import Hero from "../components/sections/Hero.vue";
     import Button from '@/components/common/Button.vue'
     import NewsCard from "@/components/blocks/NewsCard.vue";
+    import YandexMusicWidget from '@/components/widgets/YandexMusicWidget.vue'
 
     definePageMeta({
         seo: {
