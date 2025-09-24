@@ -8,6 +8,8 @@
             mode="transparent"
             :icon-name="link.label"
             :class="buttonCustomClass"
+            :ariaLabel="link.label"
+            class="button--social"
     />
   </div>
 </template>

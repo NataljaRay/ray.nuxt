@@ -1,38 +1,42 @@
 <template>
-<!--  YandexMusicWidget-->
   <ClientOnly>
     <div class="embed-wrap" :style="wrapStyle">
       <iframe
-              :title="title"
+              :title="title || 'Плеер Яндекс Музыки'"
               :src="src"
+              width="100%"
+              height="100%"
               frameborder="0"
               allow="autoplay; clipboard-write; encrypted-media"
-              :width="width"
-              :height="height"
               style="border:none"
+              referrerpolicy="strict-origin-when-cross-origin"
               loading="lazy"
               @load="onLoad"
       />
-      <div v-if="!loaded" class="embed-loader">
-        <span class="spinner" />
-<!--        <span class="loader" />-->
-        <p v-if="timedOut" class="hint">Долго грузится… проверьте VPN/CSP</p>
-      </div>
+      <EmbedLoader :show="!loaded" :hint="timedOut ? 'Долго грузится… проверьте VPN/CSP' : ''" />
+<!--      <div v-if="!loaded" class="embed-loader">-->
+<!--        <span class="spinner" />-->
+<!--        <p v-if="timedOut" class="hint">Долго грузится… проверьте VPN/CSP</p>-->
+<!--      </div>-->
     </div>
   </ClientOnly>
 </template>
 
 <script setup>
     import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
+    import EmbedLoader from '@/components/common/EmbedLoader.vue'
+
     const emit = defineEmits(['widget-ok','widget-error'])
     const props = defineProps({
         title: { type: String, default: '' },
         platformKey: { type: String, default: 'ym' },
         albumId: { type: String, default: '' },
         trackId:  { type: String, default: '' },
-        width:    { type: String, default: '100%' },
-        height:   { type: Number, default: 244 },
+        width:    { type: [String, Number], default: '100%' },
+        height:   { type: [String, Number], default: 244 },
     })
+    const toCssSize = (v) => typeof v === 'number' ? `${v}px` : v
+
     const src = computed(() => {
         const { albumId, trackId } = props
         if (albumId && trackId) return `https://music.yandex.ru/iframe/album/${albumId}/track/${trackId}`
@@ -40,9 +44,12 @@
         if (albumId && !trackId) return `https://music.yandex.ru/iframe/album/${albumId}`
         return ''
     })
-    const width  = computed(() => props.width)
-    const height = computed(() => props.height)
-    const wrapStyle = computed(() => `position:relative;width:${width.value}px;height:${height.value}px;`)
+    const wrapStyle = computed(() => ({
+        position: 'relative',
+        width:  toCssSize(props.width),
+        height: toCssSize(props.height),
+        overflow: 'hidden'
+    }))
     const loaded = ref(false)
     const timedOut = ref(false)
     let t
@@ -63,10 +70,3 @@
     })
     onBeforeUnmount(() => clearTimeout(t))
 </script>
-
-<style scoped>
-  .embed-wrap{position:relative;overflow:hidden}
-  .embed-loader{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;background:rgba(255,255,255,1)}
-  .spinner{width:28px;height:28px;border:3px solid #ccc;border-top-color:#111;border-radius:50%;animation:spin .8s linear infinite}
-  @keyframes spin{to{transform:rotate(360deg)}}
-</style>

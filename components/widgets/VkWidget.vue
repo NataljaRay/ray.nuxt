@@ -1,12 +1,12 @@
 <template>
-<!--  VkWidget-->
   <ClientOnly>
     <div class="embed-wrap vk-widget" :style="wrapStyle">
       <div :id="elId" class="vk-playlist-widget" />
-      <div v-if="!loaded" class="embed-loader">
-        <span class="spinner" />
-        <p v-if="timedOut" class="hint">VK долго грузится…</p>
-      </div>
+      <EmbedLoader :show="!loaded" :hint="timedOut ? 'VK долго грузится…' : ''" />
+<!--      <div v-if="!loaded" class="embed-loader">-->
+<!--        <span class="spinner" />-->
+<!--        <p v-if="timedOut" class="hint">VK долго грузится…</p>-->
+<!--      </div>-->
     </div>
     <p v-if="showFallback" class="vk-fallback">
       Не удалось загрузить виджет VK. Откройте плейлист:
@@ -14,30 +14,34 @@
     </p>
   </ClientOnly>
 </template>
-
 <script setup>
     import { computed, onMounted, watch, ref, onBeforeUnmount } from 'vue'
-    const width = 614
+    import EmbedLoader from '@/components/common/EmbedLoader.vue'
+
     const emit = defineEmits(['widget-ok','widget-error'])
+    const width = 614
     const props = defineProps({
         platformKey: { type: String, default: 'vk' },
         ownerId: { type: [Number, String], required: true },
         playlistId: { type: [Number, String], required: true },
         hash: { type: String, required: true },
         elementId: { type: String, default: '' },
-        // width:  { type: [Number, String], default: 614 },
+        // width:  { type: [Number, String], default: '100%' },  // ← вернули
         height: { type: [Number, String], default: 420 },
         vkOptions: { type: Object, default: () => ({}) }
     })
+    const toCssSize = (v) => typeof v === 'number' ? `${v}px` : v
 
     const loaded = ref(false)
     const timedOut = ref(false)
     let to, mo
-    const wrapStyle = computed(() => {
-        const w = typeof props.width === 'number' ? `${props.width}px` : props.width
-        const h = typeof props.height === 'number' ? `${props.height}px` : props.height
-        return `position:relative;width:${w};height:${h};`
-    })
+
+    const wrapStyle = computed(() => ({
+        position: 'relative',
+        width:  toCssSize(props.width),
+        height: toCssSize(props.height),
+        overflow: 'hidden'
+    }))
 
     const showFallback = ref(false)
     const fallbackHref = computed(() => `https://m.vk.com/music/playlist/${props.ownerId}_${props.playlistId}`)
@@ -64,9 +68,7 @@
         const root = document.getElementById(elId.value)
         if (!root) return
         const existing = root.querySelector('iframe')
-        const onOk = () => {
-            loaded.value = true; clearTimeout(to); emit('widget-ok', { key: props.platformKey })
-        }
+        const onOk = () => { loaded.value = true; clearTimeout(to); emit('widget-ok', { key: props.platformKey }) }
         if (existing) { existing.addEventListener('load', onOk, { once: true }); return }
         mo = new MutationObserver(() => {
             const ifr = root.querySelector('iframe')
@@ -90,6 +92,7 @@
             if (el) el.innerHTML = ''
 
             const options = { ...props.vkOptions }
+            // ширину VK ждёт строкой без 'px'
             if (props.width) options.width = typeof props.width === 'number' ? `${props.width}` : String(props.width)
 
             to = setTimeout(() => {
@@ -100,7 +103,6 @@
             }, 15000)
 
             observeIframeAndLoadFlag()
-
             VK.Widgets.Playlist(elId.value, Number(props.ownerId), Number(props.playlistId), props.hash, options)
         } catch (e) {
             showFallback.value = true
@@ -115,21 +117,4 @@
     onBeforeUnmount(() => { clearTimeout(to); mo?.disconnect?.() })
 </script>
 
-<style scoped>
-  .embed-wrap{position:relative;overflow:hidden}
-  .embed-loader{
-    position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;
-    background:rgba(255,255,255,1)
-  }
-  .spinner{width:28px;height:28px;border:3px solid #ccc;border-top-color:#111;border-radius:50%;animation:spin .8s linear infinite}
-  .hint{margin-top:8px;font-size:.85rem;opacity:.75}
-  .vk-fallback{margin-top:.5rem;font-size:.9rem;opacity:.85}
-  @keyframes spin{to{transform:rotate(360deg)}}
 
-  .vk-widget {
-    display: flex;
-    align-items: center;
-    background-color: var(--color-white-true);
-    box-shadow: 0 0 1px 1px inset rgba(0, 0, 0, 0.15);
-  }
-</style>

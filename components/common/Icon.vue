@@ -10,6 +10,7 @@
     import IconLink from '@/assets/icons/socials/link.svg?raw'
     import IconTg from '@/assets/icons/socials/tg.svg?raw'
     import IconVk from '@/assets/icons/socials/vk.svg?raw'
+    import ExtLink from '@/assets/icons/ext-link.svg?raw'
     // import IconYm from '@/assets/icons/music/ym.svg?raw'
     // import IconSpotify from '@/assets/icons/music/spotify.svg?raw'
     // import IconVkMusic from '@/assets/icons/music/vk.svg?raw'
@@ -25,6 +26,7 @@
         'download': IconDownload,
         'record': IconRecord,
         'piano': IconPiano,
+        'external-link': ExtLink,
         // 'ym': IconYm,
         // 'spotify': IconSpotify,
         // 'vkMusic': IconVkMusic

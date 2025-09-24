@@ -16,6 +16,8 @@
                   target="_blank"
                   href="https://band.link/nataljaray"
                   label="Слушать музыку"
+                  icon-name="external-link"
+                  icon-position="after"
           />
         </div>
       </div>
@@ -50,7 +52,7 @@
         </div>
         <div class="section__button-container">
           <Button class="section__button"
-                  href="/book"
+                  href="/book#buy-book"
                   label="Купить книгу"
                   color="brown"
           />
