@@ -35,7 +35,7 @@
         пережить на разных уровнях восприятия
       </h2>
     </div>
-    <div class="section__inner grid-2 grid-2--to-1 grid-2--hide-2d container" style="margin-bottom: 62px">
+    <div class="section__inner grid-2 grid-2--to-1 grid-2--hide-2d container" >
       <div class="section__col">
         <div class="section__text section__text--inner">
           <p>
@@ -61,7 +61,7 @@
         </div>
       </div>
     </div>
-    <div class="section__inner container">
+    <div class="section__inner container" id="buy-book" style="padding-top: 62px">
       <h3 class="section__title h5">Приобрести книгу:</h3>
       <div class="section__button-container button-image-container">
         <Button class="section__button button--image"

@@ -17,7 +17,7 @@
     const props = defineProps({
         platformKey: { type: String, default: 'spotify' },
         trackId: String, albumId: String, playlistId: String,
-        width: { type: Number, default: 614 },
+        width: { type: String, default: '614' },
         height:{ type: Number, default: 232 },
     })
     const src = computed(() => {

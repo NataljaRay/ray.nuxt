@@ -25,7 +25,7 @@
     <ul id="primary-menu" class="header__menu-list" :class="{ open }">
       <li class="header__menu-item" v-for="item in menuItems" :key="item.label">
 <!--        <NuxtLink :to="item.href" class="header__menu-link" exact-active-class="is-exact-active">{{item.label}}</NuxtLink>-->
-        <NuxtLink :to="item.href" class="header__menu-link" exact-active-class="is-active">{{item.label}}</NuxtLink>
+        <NuxtLink :to="item.href" class="header__menu-link" exact-active-class="is-active" @click="closeMenu">{{item.label}}</NuxtLink>
       </li>
 
 
@@ -36,27 +36,49 @@
     </ul>
   </nav>
 </template>
+<script setup>
+    // const props = defineProps({ open: Boolean })
+    const { open } = defineProps({ open: Boolean })
+    const emit = defineEmits(['update:open'])
+    const closeMenu = () => emit('update:open', false)
 
-<script>
-    export default {
-        name: 'AppNav',
-        props: ['open'],
-        data: () => (
-            {
-                // open: false,
-                menuItems: [
-                    {label: 'Главная', href: '/'},
-                    {label: 'Обо мне', href: '/about'},
-                    {label: 'О книге', href: '/book'},
-                    {label: 'Саундтреки', href: '/soundtracks'},
-                    {label: 'Музыка', href: '/music'},
-                    {label: 'Новости', href: '/news'},
-                    {label: 'Контакты', href: '#contacts'},
-                ],
-            }
-        )
-    }
+    const menuItems = [
+        { label: 'Главная', href: '/' },
+        { label: 'Обо мне', href: '/about' },
+        { label: 'О книге', href: '/book' },
+        { label: 'Саундтреки', href: '/soundtracks' },
+        { label: 'Музыка', href: '/music' },
+        { label: 'Новости', href: '/news' },
+        { label: 'Контакты', href: '#contacts' },
+    ]
 </script>
+<!--<script>-->
+<!--    export default {-->
+<!--        name: 'AppNav',-->
+<!--        // props: ['open'],-->
+<!--        props: { open: Boolean },-->
+<!--        emits: ['update:open'],-->
+<!--        data: () => (-->
+<!--            {-->
+<!--                // open: false,-->
+<!--                menuItems: [-->
+<!--                    {label: 'Главная', href: '/'},-->
+<!--                    {label: 'Обо мне', href: '/about'},-->
+<!--                    {label: 'О книге', href: '/book'},-->
+<!--                    {label: 'Саундтреки', href: '/soundtracks'},-->
+<!--                    {label: 'Музыка', href: '/music'},-->
+<!--                    {label: 'Новости', href: '/news'},-->
+<!--                    {label: 'Контакты', href: '#contacts'},-->
+<!--                ],-->
+<!--            }-->
+<!--        ),-->
+<!--        methods: {-->
+<!--            closeMenu() {-->
+<!--                this.$emit('update:open', false)-->
+<!--            }-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
 
 <style scoped>
   /*.app-nav{display:flex;align-items:center;gap:16px}*/

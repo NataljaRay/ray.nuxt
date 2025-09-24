@@ -1,17 +1,19 @@
 <template>
   <header class="header">
     <div class="header__inner container">
-      <NuxtLink class="header__logo logo" to="/" aria-label="Home">Natalja Ray</NuxtLink>
+      <NuxtLink class="header__logo logo" to="/" aria-label="Home" @click="closeMenu">Natalja Ray</NuxtLink>
 
       <dialog class="header__overlay-menu-dialog" :open="open">
-        <AppNav :open="open" />
+<!--        <AppNav :open="open" />-->
+        <AppNav v-model:open="open" />
         <social-links class="header__actions"/>
 
         <div class="header__actions">
           <Button class="header__button"
-                  href="/book"
+                  href="/book#buy-book"
                   label="Купить книгу"
                   color="brown"
+                  @click="closeMenu"
           />
         </div>
       </dialog>
@@ -22,7 +24,7 @@
               :class="open ? 'is-active' : ''"
               :aria-expanded="open ? 'true' : 'false'"
               aria-controls="primary-menu"
-              @click="open = !open"
+              @click="toggleMenu"
       >
         <svg class="burger-button__svg" width="30" height="30" viewBox="0 0 100 100">
           <path class="burger-button__line burger-button__line--1"
@@ -37,23 +39,74 @@
   </header>
 </template>
 
-<script>
-
+<script setup>
+    import { ref } from 'vue'
+    import { useHead } from '#imports'
     import Button from '@/components/common/Button.vue'
     import AppNav from '@/components/AppNav.vue'
-    import SocialLinks from "./blocks/SocialLinks";
+    import SocialLinks from './blocks/SocialLinks'
 
-    export default {
-        name: 'AppHeader',
-        components: {SocialLinks, AppNav, Button },
-        data: () =>  ({
-            open: false,
-            titleOpenMenu: 'Open menu',
-        })
-    }
+    const open = ref(false)
+    const titleOpenMenu = 'Open menu'
+
+    const toggleMenu = () => { open.value = !open.value }
+    const closeMenu = () => { open.value = false }
+
+    // Реактивный класс на <body>
+    useHead(() => ({
+        bodyAttrs: {
+            class: { 'no-scroll': open.value }
+        }
+    }))
+
+    // Закрываем меню при смене маршрута (на случай навигации не через клик по пункту)
+    const route = useRoute()
+    watch(() => route.fullPath, () => { open.value = false })
+
+    // const closeMenu = () => {
+    //     open.value = false
+    // }
+    //
+    // // ЕДИНСТВЕННЫЙ реактивный head-запрос.
+    // // Класс будет добавляться/убираться автоматически при изменении open.
+    // useHead(() => ({
+    //     bodyAttrs: {
+    //         class: { 'no-scroll': open.value }
+    //     }
+    // }))
 </script>
+<!--<script>-->
 
+<!--    import Button from '@/components/common/Button.vue'-->
+<!--    import AppNav from '@/components/AppNav.vue'-->
+<!--    import SocialLinks from "./blocks/SocialLinks";-->
+
+<!--    export default {-->
+<!--        name: 'AppHeader',-->
+<!--        components: {SocialLinks, AppNav, Button },-->
+<!--        data: () =>  ({-->
+<!--            open: false,-->
+<!--            titleOpenMenu: 'Open menu',-->
+<!--        }),-->
+<!--        -->
+<!--        // watch: {-->
+<!--        //     open(value) {-->
+<!--        //         useHead({-->
+<!--        //             bodyAttrs: {-->
+<!--        //                 class: value ? 'no-scroll' : 'test'-->
+<!--        //             }-->
+<!--        //         })-->
+<!--        //     }-->
+<!--        // }-->
+<!--    }-->
+<!--</script>-->
+<style>
+  .no-scroll {
+    overflow: hidden;
+  }
+</style>
 <style scoped>
+
   /*.site-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 16px;border-bottom:1px solid rgba(0,0,0,.1)}*/
   /*.logo{font-weight:700;text-decoration:none}*/
 </style>

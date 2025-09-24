@@ -24,6 +24,7 @@
 
     @include mobile-s {
       height: 300px;
+      margin-inline: -32px;
     }
   }
 }

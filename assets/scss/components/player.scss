@@ -47,11 +47,14 @@
     display: flex;
     align-items: center;
 
-    gap: 3.5vw;
+    gap: 3.2vw;
+    //gap: 48px;
 
     @include tablet {
       flex-direction: column;
       align-items: start;
+      gap: 6%;
+      justify-content: center;
     }
 
     @include mobile-s {
@@ -72,6 +75,11 @@
   &__widget {
     width: 614px;
     position: relative;
+
+
+    @include mobile-s {
+      width: 100%;
+    }
     //flex-grow: 1;
     //background-color: yellowgreen;
     //background-color: var(--color-white-true);

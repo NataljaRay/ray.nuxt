@@ -27,7 +27,7 @@
         platformKey: { type: String, default: 'ym' },
         albumId: { type: String, default: '' },
         trackId:  { type: String, default: '' },
-        width:    { type: Number, default: 614 },
+        width:    { type: String, default: '100%' },
         height:   { type: Number, default: 244 },
     })
     const src = computed(() => {

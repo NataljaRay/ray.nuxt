@@ -49,6 +49,15 @@
         }]
     }))
 
+    const menuOpen = ref(false)
+    provide('menuOpen', menuOpen)
+
+    useHead(() => ({
+        bodyAttrs: {
+            class: menuOpen.value ? 'no-scroll' : ''
+        }
+    }))
+
     // // Фавиконки
     // useHead(() => ({
     //     link: [

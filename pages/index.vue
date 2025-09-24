@@ -88,14 +88,20 @@
 <!--          </iframe>-->
           <YandexMusicWidget
                   album-id="37825294"
-                  :width="465"
+                  :width="'100%'"
                   :height="556"
                   title="Yandex Music album"
           />
-          <div class="section__iframe-cover">
-            <img  src="https://avatars.yandex.net/get-music-content/14651289/2f8cef7b.a.37825294-1/400x400"
-                 width="120" height="120" alt="Neurotic Love">
-          </div>
+<!--          <YandexMusicWidget-->
+<!--                  album-id="37825294"-->
+<!--                  :width="465"-->
+<!--                  :height="556"-->
+<!--                  title="Yandex Music album"-->
+<!--          />-->
+<!--          <div class="section__iframe-cover">-->
+<!--            <img  src="https://avatars.yandex.net/get-music-content/14651289/2f8cef7b.a.37825294-1/400x400"-->
+<!--                 width="120" height="120" alt="Neurotic Love">-->
+<!--          </div>-->
         </div>
       </div>
     </div>

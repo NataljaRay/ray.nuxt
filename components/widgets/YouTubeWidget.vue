@@ -20,7 +20,7 @@
         videoId: String,
         playlistId: String,
         useNoCookie: { type: Boolean, default: true },
-        width:  { type: Number, default: 614 },
+        width:  { type: String, default: '614' },
         height: { type: Number, default: 346 }
     })
 

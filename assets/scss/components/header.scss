@@ -58,9 +58,14 @@
     //transition-duration: var(--transition-duration-longer);
     transition-duration: 1s;
       transition-behavior: allow-discrete;
+    display: flex;
 
     @include menu-visible {
       display: contents;
+    }
+
+    @include menu-visible-low {
+      justify-content: center;
     }
 
     //@mixin starting-styles {
@@ -73,7 +78,7 @@
     //}
 
     &[open] {
-      display: flex;
+      //display: flex;
 
       //@starting-style {
       //  @include starting-styles;
@@ -91,8 +96,10 @@
     }
     &:not([open]){
       //@include starting-styles;
+      //display: flex;
         opacity: 0;
       transform: translateX(100%);
+      //transform: translateX(50%);
     }
   }
 

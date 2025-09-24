@@ -257,48 +257,65 @@
     padding-block: fluid(80, 40);
   }
 
+  .section__col:last-child {
+    @media (width <= 383px) {
+      //margin-inline: var(--cotainer-padding-x);
+      margin-inline: -32px;
+    }
+  }
+
   .section__widget {
     position: relative;
+    width: 465px;
+
+    @include mobile {
+      width: 100%;
+    }
+
+    //@media (width <= 383px) {
+    //  //margin-inline: var(--cotainer-padding-x);
+    //  margin-inline: -32px;
+    //}
   }
   .section__iframe {
     @include mobile {
       width: 100%!important;
     }
   }
-  .section__iframe-cover {
-    position: absolute;
-    right: 15px;
-    top: 45px;
-
-    z-index: 0;
-    display: none;
-
-
-    @include mobile {
-     display: block;
-    }
-
-    > img {
-      border-radius: 6px;
-    }
-
-    &:before {
-      content: '';
-      width: 100%;
-      height: 100%;
-      filter: blur(10px);
-      background: url(https://avatars.yandex.net/get-music-content/14651289/2f8cef7b.a.37825294-1/400x400);
-      background-size: cover;
-      border-radius: 6px;
-
-      z-index: -1;
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-  }
+  //.section__iframe-cover {
+  //  position: absolute;
+  //  right: 15px;
+  //  top: 45px;
+  //
+  //  z-index: 0;
+  //  display: none;
+  //
+  //
+  //  @include mobile {
+  //   display: block;
+  //  }
+  //
+  //  > img {
+  //    border-radius: 6px;
+  //  }
+  //
+  //  &:before {
+  //    content: '';
+  //    width: 100%;
+  //    height: 100%;
+  //    filter: blur(10px);
+  //    background: url(https://avatars.yandex.net/get-music-content/14651289/2f8cef7b.a.37825294-1/400x400);
+  //    background-size: cover;
+  //    border-radius: 6px;
+  //
+  //    z-index: -1;
+  //    display: block;
+  //    position: absolute;
+  //    top: 50%;
+  //    left: 50%;
+  //    transform: translate(-50%, -50%);
+  //  }
+  //}
 }
 .section--music__image-wrapper {
   position: relative;

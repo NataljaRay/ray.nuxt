@@ -75,7 +75,7 @@
         yt:      { type: Object, default: null }, // { videoId?|playlistId? }
         vk:      { type: Object, default: null }, // { embedSrc? | href? | ownerId?&playlistId?&hash? }
 
-        width:  { type: Number, default: 614 },
+        width:  { type: String, default: '100%' },
         height: { type: Number, default: 244 },
     })
 
