@@ -65,7 +65,6 @@
     import YandexMusicWidget from '../components/widgets/YandexMusicWidget.vue'
     import SmartPlayer from '@/components/SmartPlayer.vue'
 
-
     const route = useRoute()
     const router = useRouter()
 

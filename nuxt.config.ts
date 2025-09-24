@@ -45,7 +45,8 @@ export default defineNuxtConfig({
 
     runtimeConfig: {
         public: {
-            siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+            siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+            baseURL,
         }
     },
 
@@ -65,6 +66,24 @@ export default defineNuxtConfig({
 
     nitro: {
         compatibilityDate: '2025-09-18',
+        // если не передаёшь через CLI, можно зафиксировать тут:
+        // preset: 'github_pages',
+        prerender: {
+            // на всякий случай: не падать, пока правим (уберёшь после проверки)
+            failOnError: false,
+            // не пытаться «пререндерить» клиентские ассеты
+            ignore: [
+                '/_nuxt/**',
+                `${baseURL.replace(/\/$/, '')}/_nuxt/**`
+            ],
+            // (опционально) если хочешь полный контроль:
+            // crawlLinks: false,
+            // routes: ['/', '/about', '/book', '/music', '/contacts', '/news', '/soundtracks'],
+        },
+    },
+
+    routeRules: {
+        '/**': { prerender: true }
     },
 
     // Серверный CSP от nuxt-security временно выключен (чтобы не ловить sources.filter)

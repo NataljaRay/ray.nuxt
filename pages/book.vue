@@ -61,7 +61,7 @@
         </div>
       </div>
     </div>
-    <div class="section__inner container" id="buy-book" style="padding-top: 62px">
+    <div class="section__inner container buy-book" id="buy-book">
       <h3 class="section__title h5">Приобрести книгу:</h3>
       <div class="section__button-container button-image-container">
         <Button class="section__button button--image"

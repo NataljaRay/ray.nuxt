@@ -2,7 +2,7 @@
   <div class="news-card">
       <div class="news-card__head">
         <img class="news-card__image"
-             :src="`/images/news/${item.img}.png`"
+             :src="`${baseURL}/images/news/${item.img}.png`"
              :alt="item.title || ''">
       </div>
       <div class="news-card__body">
@@ -16,7 +16,11 @@
 <script>
     export default {
         name: "NewsCard",
-        props: ['item']
+        props: ['item'],
+        setup() {
+            const { public: { baseURL } } = useRuntimeConfig()
+            return { baseURL }
+        }
     }
 </script>
 

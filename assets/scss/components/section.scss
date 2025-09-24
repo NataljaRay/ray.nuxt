@@ -394,6 +394,11 @@
       margin-bottom: 24px;
     }
   }
+
+  .buy-book {
+    padding-top: 62px;
+    scroll-margin-top: var(--header-h, 40px);
+  }
   //.section__button.button--image {
   //  //gap: fluid(32, 24);
   //  //margin-right: fluid(32, 24);

@@ -17,7 +17,7 @@
            @click="select(key)"
       >
         <Button class="button--music button--image">
-          <img :src="`/icons/music/${key}.svg`"
+          <img :src="`${baseURL}/icons/music/${key}.svg`"
                :alt="labels[key] || 'Иконка'"
                :title="labels[key] || ''">
         </Button>
@@ -67,6 +67,8 @@
     import YouTubeWidget     from '@/components/widgets/YouTubeWidget.vue'
     import VkWidget          from '@/components/widgets/VkWidget.vue'
     import Button from '@/components/common/Button.vue'
+
+    const { public: { baseURL, siteUrl } } = useRuntimeConfig();
 
     const props = defineProps({
         ym:      { type: Object, default: null }, // { albumId?, trackId? }

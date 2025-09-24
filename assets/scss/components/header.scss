@@ -56,7 +56,8 @@
     row-gap: 20px;
     //transition-duration: var(--transition-duration);
     //transition-duration: var(--transition-duration-longer);
-    transition-duration: 1s;
+    //transition-duration: 1s;
+    transition-duration: var(--transition-duration-longer);
       transition-behavior: allow-discrete;
     display: flex;
 
@@ -97,7 +98,7 @@
     &:not([open]){
       //@include starting-styles;
       //display: flex;
-        opacity: 0;
+      //  opacity: 0;
       transform: translateX(100%);
       //transform: translateX(50%);
     }
@@ -174,6 +175,15 @@
     @include fluid-text(16, 14);
     padding: fluid-to-laptop(8,4) fluid-to-laptop(24,10);
     //padding: 6px 20px;
+
+    @include menu-visible-low {
+      font-size: 16px;
+      padding: 8px 24px;
+    }
+    //@include menu-visible {
+    //  @include fluid-text(16, 14);
+    //  padding: fluid-to-laptop(8,4) fluid-to-laptop(24,10);
+    //}
   }
 
   &__burger-button {
