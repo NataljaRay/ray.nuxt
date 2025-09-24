@@ -2,6 +2,7 @@
   <ClientOnly>
     <div class="embed-wrap" :style="wrapStyle">
       <iframe
+              :title="title"
               :src="src"
               frameborder="0"
               allow="autoplay; clipboard-write; encrypted-media"
@@ -24,6 +25,7 @@
     import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
     const emit = defineEmits(['widget-ok','widget-error'])
     const props = defineProps({
+        title: { type: String, default: '' },
         platformKey: { type: String, default: 'ym' },
         albumId: { type: String, default: '' },
         trackId:  { type: String, default: '' },

@@ -76,7 +76,7 @@
         ytm:     { type: Object, default: null }, // { videoId?|playlistId? }
         yt:      { type: Object, default: null }, // { videoId?|playlistId? }
         vk:      { type: Object, default: null }, // { embedSrc? | href? | ownerId?&playlistId?&hash? }
-
+        title:   { type: String, default: '' },
         width:  { type: String, default: '100%' },
         height: { type: Number, default: 244 },
     })
@@ -139,7 +139,7 @@
         }
     })
     const currentProps = computed(() => {
-        const base = { width: props.width, height: props.height }
+        const base = { width: props.width, height: props.height, title: props.title }
         switch (currentKey.value) {
             case 'ym': return { ...base, ...props.ym }
             case 'vk': return { ...base, ...props.vk }

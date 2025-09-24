@@ -1,7 +1,7 @@
 <template>
   <footer class="footer" id="contacts">
     <div class="footer__inner container">
-      <h5 class="h1 footer__title">Связь со мной</h5>
+      <div class="h1 footer__title">Связь со мной</div>
       <p class="footer__text">
         Хочешь задать вопрос, оставить отзыв или предложить сотрудничество?<br/>
         Напиши мне!

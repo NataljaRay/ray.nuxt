@@ -16,6 +16,7 @@
                       :ytm="track.ytm"
                       :yt="track.yt"
                       :vk="track.vk"
+                      :title="track.soundtrack"
                       :width="'100%'"
                       :height="244"
                       :debug-country="true"

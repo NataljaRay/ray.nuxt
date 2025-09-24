@@ -9,6 +9,7 @@ export default defineNuxtConfig({
         // на реальном домене можно будет поставить '/'
         baseURL,
         head: {
+            htmlAttrs: { lang: 'ru' },
             // Meta-CSP: мягкая для dev, строгая в prod (добавляем upgrade-insecure-requests только в prod)
             meta: [
                 {
@@ -70,12 +71,14 @@ export default defineNuxtConfig({
         // preset: 'github_pages',
         prerender: {
             // на всякий случай: не падать, пока правим (уберёшь после проверки)
+            // failOnError: false // можно убрать, когда 404 уйдут
             failOnError: false,
             // не пытаться «пререндерить» клиентские ассеты
-            ignore: [
-                '/_nuxt/**',
-                `${baseURL.replace(/\/$/, '')}/_nuxt/**`
-            ],
+            // ignore: [
+            //     '/_nuxt/**',
+            //     `${baseURL.replace(/\/$/, '')}/_nuxt/**`
+            // ],
+            ignore: ['**/_nuxt/**'],
             // (опционально) если хочешь полный контроль:
             // crawlLinks: false,
             // routes: ['/', '/about', '/book', '/music', '/contacts', '/news', '/soundtracks'],
