@@ -1,6 +1,6 @@
 <template>
   <ClientOnly>
-    <div class="embed-wrap" :style="wrapStyle">
+    <div class="embed-wrap vk-widget" :style="wrapStyle">
       <div :id="elId" class="vk-playlist-widget" />
       <div v-if="!loaded" class="embed-loader">
         <span class="spinner" />
@@ -124,4 +124,11 @@
   .hint{margin-top:8px;font-size:.85rem;opacity:.75}
   .vk-fallback{margin-top:.5rem;font-size:.9rem;opacity:.85}
   @keyframes spin{to{transform:rotate(360deg)}}
+
+  .vk-widget {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-white-true);
+    box-shadow: 0 0 1px 1px inset rgba(0, 0, 0, 0.15);
+  }
 </style>
