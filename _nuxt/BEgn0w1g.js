@@ -1,1 +1,0 @@
-import{c as e,o as c}from"./Z4Koe3cs.js";const a={__name:"music",setup(t){return(o,r)=>(c(),e("h1",null,"Music"))}};export{a as default};
