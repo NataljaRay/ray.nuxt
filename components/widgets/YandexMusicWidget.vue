@@ -1,4 +1,5 @@
 <template>
+<!--  YandexMusicWidget-->
   <ClientOnly>
     <div class="embed-wrap" :style="wrapStyle">
       <iframe

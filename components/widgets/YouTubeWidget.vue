@@ -1,4 +1,5 @@
 <template>
+<!--  YouTubeWidget-->
   <ClientOnly>
     <div class="embed-wrap" :style="wrapStyle">
       <!-- сюда API вставит iframe -->

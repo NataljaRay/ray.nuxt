@@ -1,4 +1,5 @@
 <template>
+<!--  VkWidget-->
   <ClientOnly>
     <div class="embed-wrap vk-widget" :style="wrapStyle">
       <div :id="elId" class="vk-playlist-widget" />

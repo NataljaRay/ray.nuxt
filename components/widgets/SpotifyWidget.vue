@@ -1,4 +1,5 @@
 <template>
+<!--  SpotifyWidget-->
   <ClientOnly>
     <div class="embed-wrap" :style="wrapStyle">
       <iframe
