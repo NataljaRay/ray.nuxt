@@ -85,3 +85,10 @@
     //background-color: var(--color-white-true);
   }
 }
+
+.vk-widget {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-white-true);
+  box-shadow: 0 0 1px 1px inset rgba(0, 0, 0, 0.15);
+}

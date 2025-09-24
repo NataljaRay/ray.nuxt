@@ -26,23 +26,34 @@
       </div>
     </div>
 
+<!--    &lt;!&ndash; Текущий виджет &ndash;&gt;-->
+<!--    <div class="player__widget" v-if="currentComponent">-->
+<!--      &lt;!&ndash; Яндекс Музыка: фасад до клика &ndash;&gt;-->
+<!--      <div-->
+<!--              v-if="currentKey === 'ym' && !ymActivated"-->
+<!--              class="player-facade"-->
+<!--              @click="activateYM"-->
+<!--      >-->
+<!--        <div class="facade-overlay">-->
+<!--          <span class="play-icon" aria-hidden="true">▶</span>-->
+<!--          <span class="facade-text">Открыть плеер</span>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; Остальные платформы или ЯМ после клика &ndash;&gt;-->
+<!--      <component-->
+<!--              v-else-->
+<!--              :is="currentComponent"-->
+<!--              v-bind="currentProps"-->
+<!--              :platform-key="currentKey"-->
+<!--              @widget-ok="onWidgetOk"-->
+<!--              @widget-error="onWidgetError"-->
+<!--      />-->
+
     <!-- Текущий виджет -->
     <div class="player__widget" v-if="currentComponent">
-      <!-- Яндекс Музыка: фасад до клика -->
-      <div
-              v-if="currentKey === 'ym' && !ymActivated"
-              class="player-facade"
-              @click="activateYM"
-      >
-        <div class="facade-overlay">
-          <span class="play-icon" aria-hidden="true">▶</span>
-          <span class="facade-text">Открыть плеер</span>
-        </div>
-      </div>
-
-      <!-- Остальные платформы или ЯМ после клика -->
       <component
-              v-else
+              v-if="currentComponent"
               :is="currentComponent"
               v-bind="currentProps"
               :platform-key="currentKey"
@@ -116,27 +127,26 @@
     }
 
     /** По умолчанию: ЯМ → VK → YouTube → Spotify */
-    // const initialKey = (['ym','vk','youtube','spotify']).find(k => available.value[k]) || null
-    // const currentKey = ref(initialKey)
-
-    // 2) используем ORDER для initialKey (чтобы не расходилось)
-    const initialKey = ORDER.find(k => available.value[k]) || null
+    const initialKey = (['ym','vk','youtube','spotify']).find(k => available.value[k]) || null
     const currentKey = ref(initialKey)
 
-    // 3) флаг "пользователь кликнул открыть ЯМ"
-    const ymActivated = ref(false)
-    // function activateYM() { ymActivated.value = true }
-
-    function activateYM() {
-        ymActivated.value = true
-        // чуть ускорим соединение
-        useHead({
-            link: [
-                { rel: 'preconnect', href: 'https://music.yandex.ru', crossorigin: '' },
-                { rel: 'preconnect', href: 'https://avatars.yandex.net', crossorigin: '' }
-            ]
-        })
-    }
+    // // 2) используем ORDER для initialKey (чтобы не расходилось)
+    // const initialKey = ORDER.find(k => available.value[k]) || null
+    // const currentKey = ref(initialKey)
+    //
+    // // 3) флаг "пользователь кликнул открыть ЯМ"
+    // const ymActivated = ref(false)
+    //
+    // function activateYM() {
+    //     ymActivated.value = true
+    //     // чуть ускорим соединение
+    //     useHead({
+    //         link: [
+    //             { rel: 'preconnect', href: 'https://music.yandex.ru', crossorigin: '' },
+    //             { rel: 'preconnect', href: 'https://avatars.yandex.net', crossorigin: '' }
+    //         ]
+    //     })
+    // }
 
     function select(key) {
         if (!available.value[key]) return

@@ -26,6 +26,14 @@
     margin-left: 10px;
   }
 
+  .button__label + .button__icon {
+    @include square(24px);
+
+    .button__icon {
+      --icon-size: 24px;
+    }
+  }
+
   &:active {
     scale: 1.05;
   }
@@ -80,6 +88,7 @@
   }
 
 }
+
 .button--social {
   padding: 0;
 }

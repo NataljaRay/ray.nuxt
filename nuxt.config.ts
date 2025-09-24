@@ -94,6 +94,12 @@ export default defineNuxtConfig({
         headers: {
             contentSecurityPolicy: false,
             xFrameOptions: 'SAMEORIGIN',
+            permissionsPolicy: {
+                // ✅ варианты:
+                // 1) разрешить всем: fullscreen: ['*']
+                // 2) разрешить себе и YouTube:
+                fullscreen: ['self', '"https://www.youtube-nocookie.com"', '"https://www.youtube.com"'],
+            },
         },
     }
 })

@@ -81,6 +81,25 @@
             videoId: props.videoId || undefined,
             events: {
                 onReady: () => {
+                  try {
+                      // const iframe = player?.getIframe?.()
+                      // iframe?.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen')
+                      // iframe?.setAttribute('allowfullscreen', '')
+
+                          const iframe = player?.getIframe?.()
+                          if (iframe) {
+                              iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen')
+                              // iframe.removeAttribute('allowfullscreen') // можно убрать, чтобы не было «will take precedence»
+                          }
+                          // if (iframe) {
+                          //   iframe.setAttribute(
+                          //         'allow',
+                          //         'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen'
+                          //       )
+                          //   iframe.setAttribute('allowfullscreen', '') // boolean-атрибут
+                          //   iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin')
+                          // }
+                      } catch {}
                     if (!settled.value) {
                         settled.value = true
                         clearTimeout(timeoutId)
