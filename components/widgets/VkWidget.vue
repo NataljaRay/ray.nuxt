@@ -16,6 +16,7 @@
 
 <script setup>
     import { computed, onMounted, watch, ref, onBeforeUnmount } from 'vue'
+    const width = 614
     const emit = defineEmits(['widget-ok','widget-error'])
     const props = defineProps({
         platformKey: { type: String, default: 'vk' },
@@ -23,7 +24,7 @@
         playlistId: { type: [Number, String], required: true },
         hash: { type: String, required: true },
         elementId: { type: String, default: '' },
-        width:  { type: [Number, String], default: 614 },
+        // width:  { type: [Number, String], default: 614 },
         height: { type: [Number, String], default: 420 },
         vkOptions: { type: Object, default: () => ({}) }
     })

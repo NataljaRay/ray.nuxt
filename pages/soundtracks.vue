@@ -16,7 +16,7 @@
                       :ytm="track.ytm"
                       :yt="track.yt"
                       :vk="track.vk"
-                      :width="[track.vk ? 614 : '100%']"
+                      :width="'100%'"
                       :height="244"
                       :debug-country="true"
               />
