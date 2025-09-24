@@ -33,6 +33,7 @@
               v-if="currentKey === 'ym' && !ymActivated"
               class="player-facade"
               @click="activateYM"
+              :style="currentProps.bgColor ? `background-color: ${currentProps.bgColor}` : ''"
       >
         <div class="facade-overlay">
           <span class="play-icon" aria-hidden="true">▶</span>
@@ -160,7 +161,7 @@
         }
     })
     const currentProps = computed(() => {
-        const base = { width: props.width, height: props.height, title: props.title }
+        const base = { width: props.width, height: props.height, title: props.title, bgColor: props.bgColor }
         switch (currentKey.value) {
             case 'ym': return { ...base, ...props.ym }
             case 'vk': return { ...base, ...props.vk }
@@ -198,34 +199,6 @@
 </script>
 
 <style scoped>
-  /* НЕ scoped, если хочешь переиспользовать — можно и scoped */
-  .player-facade {
-    position: relative;
-    /*display: grid;*/
-    /*place-items: center;*/
-    width: 100%;
-    height: 100%;
-    /*aspect-ratio: 16 / 9;             !* или высоту по твоему виджету *!*/
-    /*border-radius: 12px;*/
-    overflow: hidden;
-    /*background: var(--color-black);*/
-    cursor: pointer;
 
-
-  }
-  .facade-overlay {
-    position: absolute; inset: 0;
-    /*display: grid; place-items: center; */
-    gap: .5rem;
-    color: #fff; font-weight: 600;
-    background: linear-gradient(to top, rgba(0,0,0,.45), rgba(0,0,0,.2));
-    text-shadow: 0 1px 2px rgba(0,0,0,.6);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  .play-icon { font-size: 2rem; line-height: 1; }
 
 </style>

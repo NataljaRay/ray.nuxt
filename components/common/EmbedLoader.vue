@@ -36,6 +36,7 @@
     display:flex; flex-direction:column;
     justify-content:center; align-items:center;
     background:var(--loader-bg);
+    /*opacity: .7;*/
   }
   .spinner{
     width:var(--loader-size); height:var(--loader-size);

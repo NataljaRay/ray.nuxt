@@ -79,6 +79,7 @@
 
     @include mobile-s {
       width: 100%;
+      height: 100%;
     }
     //flex-grow: 1;
     //background-color: yellowgreen;
@@ -92,3 +93,33 @@
   background-color: var(--color-white-true);
   box-shadow: 0 0 1px 1px inset rgba(0, 0, 0, 0.15);
 }
+
+//background: rgb(136, 119, 97);
+
+.player-facade {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /*background: var(--color-black);*/
+  //background: rgb(136, 119, 97);
+  cursor: pointer;
+  //background-image: url("https://avatars.yandex.net/get-music-content/5413882/48819957.a.19810900-1/400x400");
+  //background-size: contain;
+  //background-repeat: no-repeat;
+  //background-position: center;
+}
+.facade-overlay {
+  position: absolute; inset: 0;
+  gap: .5rem;
+  color: #fff; font-weight: 600;
+  background: linear-gradient(to top, rgba(0,0,0,.45), rgba(0,0,0,.2));
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+ }
+.play-icon { font-size: 2rem; line-height: 1; }

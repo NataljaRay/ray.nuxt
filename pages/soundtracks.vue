@@ -83,28 +83,6 @@
             chapter: 'Глава 14.',
             soundtrack: 'Natalja Ray — Каков твой план?',
             description: 'Первый шаг на сцену. Волнение. Свет бьёт в глаза. Всё начинается.',
-            player: [
-                {
-                    key: 'vk',
-                    iframe: ``,
-                },
-                {
-                    key: 'ym',
-                    iframe: ``,
-                },
-                {
-                    key: 'sp',
-                    iframe: ``,
-                },
-                {
-                    key: 'yt',
-                    iframe: ``,
-                },
-                {
-                    key: 'ytm',
-                    iframe: ``,
-                },
-            ],
         },
         {
             anchor: 'shame-on-me',
@@ -112,75 +90,24 @@
             soundtrack: 'Catch Your Breath — Shame On Me',
             description: '',
 
-            ym: { albumId: '19810900', trackId: '96626688' },
-            // Spotify track:
+            ym: { albumId: '19810900', trackId: '96626688', bgColor: 'rgb(136, 119, 97)' },
             spotify: { trackId: '0H3DL0piGt5bRRJUOhgCWR' }, // Shame on Me — Catch Your Breath
-            // YouTube Music/YouTube используют один и тот же videoId
             ytm: { videoId: 'q_4UUm0TiGw' },           // офиц. клип BVTV
             yt:  { videoId: 'q_4UUm0TiGw' },           // тот же id
-            // vk:  { href: 'https://vk.com/music/artist/...' },
 
-            player: [
-                {
-                    key: 'vk',
-                    iframe: ``,
-                },
-                // {
-                //     key: 'ym',
-                //     iframe: `<iframe frameborder="0" allow="clipboard-write" style="border:none;width:614px;height:244px;" width="614" height="244" src="https://music.yandex.ru/iframe/album/19810900/track/96626688">Слушайте <a href="https://music.yandex.ru/track/96626688?utm_source=web&utm_medium=copy_link">Shame On Me</a> — <a href="https://music.yandex.ru/artist/12001265">Catch Your Breath</a> на Яндекс Музыке</iframe>`,
-                // },
-                { key: 'ym', type: 'ym', albumId: '19810900', trackId: '96626688' },
-                {
-                    key: 'sp',
-                    iframe: ``,
-                },
-                {
-                    key: 'yt',
-                    iframe: ``,
-                },
-                {
-                    key: 'ytm',
-                    iframe: ``,
-                },
-            ],
         },
         {
             anchor: 'the-pretender-radio-tapok',
             chapter: 'Глава 15.',
             soundtrack: 'Radio Tapok — The Pretender',
             description: '',
-
-            ym: { albumId: '17950261', trackId: '90655720' },
-            // Spotify track:
+        // , bgColor: 'rgb(103, 39, 35)'
+            ym: { albumId: '17950261', trackId: '90655720', bgColor: 'rgb(95, 71, 67)' },
             spotify: { trackId: '72iyzWAM2158Kn8KD1ZImq' }, // The Pretender — RADIO TAPOK
             ytm: { videoId: 'SBklWPmxb_k' },           // Ролик Radio Tapok на YouTube
             yt:  { videoId: 'SBklWPmxb_k' },
-            // vk:  { href: 'https://vk.com/music/artist/...' },
-            // vk:  { href: 'https://vk.com/audio-2001880993_95880993' },
             vk:  { ownerId: -2000884330, playlistId: 12884330, hash: 'df969e4ab45df34deb' },
 
-            player: [
-                {
-                    key: 'vk',
-                    iframe: ``,
-                },
-                {
-                    key: 'ym',
-                    iframe: ``,
-                },
-                {
-                    key: 'sp',
-                    iframe: ``,
-                },
-                {
-                    key: 'yt',
-                    iframe: ``,
-                },
-                {
-                    key: 'ytm',
-                    iframe: ``,
-                },
-            ],
         },
         {
             anchor: 'the-pretender-foo-fighters',
@@ -188,38 +115,10 @@
             soundtrack: 'Foo Fighters — The Pretender',
             description: '',
 
-            ym: {/* если есть в Я.Музыке */},
-            // Spotify track (любая каноничная публикация):
             spotify: { trackId: '7x8dCjCr0x6x2lXKujYD34' }, // The Pretender — Foo Fighters
             ytm: { videoId: 'SBjQ9tuuTJQ' },           // офиц. клип Foo Fighters
             yt:  { videoId: 'SBjQ9tuuTJQ' },
-            // пример с VK-видео, если хотите встраивать именно видео: вставьте src из «Экспорт»
-            // vk: { embedSrc: "https://vk.com/video_ext.php?oid=...&id=...&hash=...&hd=2" }
-            // vk: { href: 'https://vk.com/...' },
-            // vk: { href: 'https://vk.com/audio474499314_456913022_1fa1ebebb8858b3fda' },
 
-            player: [
-                {
-                    key: 'vk',
-                    iframe: ``,
-                },
-                {
-                    key: 'ym',
-                    iframe: ``,
-                },
-                {
-                    key: 'sp',
-                    iframe: ``,
-                },
-                {
-                    key: 'yt',
-                    iframe: ``,
-                },
-                {
-                    key: 'ytm',
-                    iframe: ``,
-                },
-            ],
         },
         {
             anchor: 'how-much-natalja-ray',
@@ -227,33 +126,11 @@
             soundtrack: 'Natalja Ray - How Much?',
             description: '',
 
-            ym: { albumId: '37825294', trackId: '141932162' },
+            ym: { albumId: '37825294', trackId: '141932162', bgColor: 'rgb(103, 39, 35)' },
             spotify: { trackId: '2G6kJ7jabSKft66Vj2mKjb' },
             yt:  { videoId: 'zi8n1VX57kg' },
             vk:  { ownerId: -186374269, playlistId: 25, hash: 'b862a0f446f0be0a57' },
 
-            player: [
-                {
-                    key: 'vk',
-                    iframe: ``,
-                },
-                {
-                    key: 'ym',
-                    iframe: ``,
-                },
-                {
-                    key: 'sp',
-                    iframe: ``,
-                },
-                {
-                    key: 'yt',
-                    iframe: ``,
-                },
-                {
-                    key: 'ytm',
-                    iframe: ``,
-                },
-            ],
         },
     ]
 </script>
