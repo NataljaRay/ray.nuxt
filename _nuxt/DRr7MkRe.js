@@ -1,1 +1,0 @@
-import{_ as t,c as n,a as o,o as a}from"./ClrxGatf.js";const r={name:"HomePage",head(){return{title:"Главная — Ray",meta:[{hid:"description",name:"description",content:"Описание главной"}]}}};function s(c,e,i,d,p,l){return a(),n("section",null,e[0]||(e[0]=[o("h1",null,"Главная",-1)]))}const u=t(r,[["render",s]]);export{u as default};

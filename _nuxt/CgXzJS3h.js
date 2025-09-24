@@ -1,1 +1,0 @@
-import{_ as t,c as n,a as o,o as a}from"./ClrxGatf.js";const r={name:"AboutPage",head(){return{title:"Обо мне — Ray",meta:[{hid:"description",name:"description",content:"Описание обо мне"}]}}};function s(c,e,i,p,d,l){return a(),n("section",null,e[0]||(e[0]=[o("h1",null,"Обо мне",-1)]))}const m=t(r,[["render",s]]);export{m as default};

@@ -1,1 +1,0 @@
-import{_ as t,c as n,a as o,o as a}from"./ClrxGatf.js";const s={name:"SoundtracksPage",head(){return{title:"Саундтреки — Ray",meta:[{hid:"description",name:"description",content:"Описание Саундтреки"}]}}};function r(c,e,d,i,p,l){return a(),n("section",null,e[0]||(e[0]=[o("h1",null,"Саундтреки",-1)]))}const m=t(s,[["render",r]]);export{m as default};
