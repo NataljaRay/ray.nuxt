@@ -34,6 +34,8 @@
                     label="Перейти на страницу релиза"
             />
 
+            <div class="player__note">Слушать на музыкальных площадках: </div>
+
             <div class="album__streamings">
               <Streamings :streamings="album.streamings" />
             </div>
@@ -45,7 +47,7 @@
         <div class="album-widget">
 <!--          <div class="album-player">-->
             <SmartPlayer
-                    :mode="'mode-2'"
+                    :mode="'mode-music'"
                     :ym="album.ym"
                     :spotify="album.spotify"
                     :ytm="album.ytm"

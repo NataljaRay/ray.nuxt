@@ -8,23 +8,33 @@
         </p>
       </div>
     </section>
+    <div>
+      <p v-if="isMobile">мобилка ✅</p>
+      <p v-else-if="isTablet">планшет ✅</p>
+      <p v-else>десктоп ✅</p>
+    </div>
 
-    <Album v-for="album in albums" :key="album.title" :album="album"/>
+    <template v-if="isMobile || isTablet">
+        <section class="section section--album section--album-min">
+          <div class="section__inner grid-2 grid-2--mirrow grid-2--to-1 container">
+            <div class="section__col"
+                 v-for="album in albums" :key="album.title">
+              <AlbumMin :album="album"/>
+            </div>
+          </div>
+        </section>
+    </template>
+    <template v-else>
+      <Album v-for="album in albums" :key="album.title" :album="album"/>
+    </template>
 
-<!--    или-->
-<!--    <section class="section section&#45;&#45;album section&#45;&#45;album-min">-->
-<!--      <div class="section__inner grid-2 grid-2&#45;&#45;mirrow grid-2&#45;&#45;to-1 container">-->
-<!--        <div class="section__col"-->
-<!--             v-for="album in albums" :key="album.title">-->
-<!--          <AlbumMin :album="album"/>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </section>-->
 
   </div>
 </template>
 
 <script setup>
+    import {computed} from "vue";
+
     definePageMeta({
         seo: {
             title: 'Natalja Ray | Музыка',
@@ -36,6 +46,13 @@
 
     import Album from '@/components/sections/Album.vue'
     import AlbumMin from '@/components/blocks/AlbumMin.vue'
+
+    // mpbile check
+    const device = useDevice()
+
+    const isMobile = computed(() => device.value.isMobile)
+    const isTablet = computed(() => device.value.isTablet)
+    const isDesktop = computed(() => device.value.isDesktop)
 
     const albums = [
         {

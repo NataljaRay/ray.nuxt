@@ -454,7 +454,8 @@
   &:not(.section--album-min) {
     .section__col:last-child {
       justify-content: start;
-      @media (width <= 383px) {
+      //@media (width <= 383px) {
+      @include mobile-s {
         margin-inline: -32px;
       }
     }

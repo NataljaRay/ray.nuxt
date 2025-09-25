@@ -8,53 +8,31 @@
       <div class="soundtrack" v-for="track in soundtracks" :key="track.anchor" :id="track.anchor">
         <p class="h4">{{track.chapter}} {{track.soundtrack}}</p>
         <p class="soundtrack__description" v-if="track.description">{{track.description}}</p>
-<!--        <ClientOnly>-->
-<!--        <iframe style="border: 0; width: 100%; height: 120px;"-->
-<!--                src="https://bandcamp.com/EmbeddedPlayer/track=731891676/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"-->
-<!--                seamless>-->
-<!--&lt;!&ndash;          <a href="https://invoguerecords.bandcamp.com/track/shame-on-me">Shame on Me by Catch Your&ndash;&gt;-->
-<!--&lt;!&ndash;          Breath</a>&ndash;&gt;-->
-<!--        </iframe>-->
-
-<!--        <iframe style="border: 0; width: 400px; height: 472px;"-->
-<!--                src="https://bandcamp.com/EmbeddedPlayer/album=739978498/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/"-->
-<!--                seamless>-->
-<!--&lt;!&ndash;          <a href="https://invoguerecords.bandcamp.com/album/shame-on-me">Shame On Me by Catch Your Breath</a>&ndash;&gt;-->
-<!--        </iframe>-->
-<!--          </ClientOnly>-->
 
         <!-- Трек (миниконтролы) -->
-        <div style="width:100%;">
-        <iframe
-                style="border:0; width:100%; height:120px;"
-                src="https://bandcamp.com/EmbeddedPlayer/track=731891676/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
-                loading="lazy"
-                seamless
-        ></iframe>
-<!--        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"-->
-<!--                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A15273221&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>-->
+<!--        <div style="width:100%;">-->
+<!--        <iframe-->
+<!--                style="border:0; width:100%; height:120px;"-->
+<!--                src="https://bandcamp.com/EmbeddedPlayer/track=731891676/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"-->
+<!--                loading="lazy"-->
+<!--                seamless-->
+<!--        ></iframe>-->
+<!--&lt;!&ndash;        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"&ndash;&gt;-->
+<!--&lt;!&ndash;                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A15273221&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>&ndash;&gt;-->
 
-          <iframe
-                  width="100%"
-                  height="166"
-                  scrolling="no"
-                  frameborder="no"
-                  src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F15273221&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
-          </iframe>
-
-
-          <!--        <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">-->
-<!--          <a href="https://soundcloud.com/foofighters" title="Foo Fighters" target="_blank"-->
-<!--             style="color: #cccccc; text-decoration: none;">Foo Fighters</a> · <a-->
-<!--                href="https://soundcloud.com/foofighters/foo-fighters-the-pretender"-->
-<!--                title="Foo Fighters - The Pretender" target="_blank" style="color: #cccccc; text-decoration: none;">Foo-->
-<!--          Fighters - The Pretender</a></div>-->
-
-        </div>
+<!--          <iframe-->
+<!--                  width="100%"-->
+<!--                  height="166"-->
+<!--                  scrolling="no"-->
+<!--                  frameborder="no"-->
+<!--                  src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F15273221&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">-->
+<!--          </iframe>-->
+<!--        </div>-->
 
         <div class="soundtrack__media">
           <div class="soundtrack__widget">
               <SmartPlayer
+                      :mode="'mode-soundtracks'"
                       :ym="track.ym"
                       :spotify="track.spotify"
                       :ytm="track.ytm"

@@ -1,8 +1,44 @@
 <template>
   <div class="player" :class="mode ? 'player--' + mode : ''">
+
+    <div>
+      <p v-if="isMobile">мобилка ✅</p>
+      <p v-else-if="isTablet">планшет ✅</p>
+      <p v-else>десктоп ✅</p>
+    </div>
+
     <!-- Кнопки плееров (YT и YT Music = одна кнопка) -->
-    <div class="player__controls" v-if="currentComponent">
-      <div v-if="mode" class="player__note">Активный плеер: </div>
+    <template v-if="mode != 'mode-music'">
+      <div class="player__controls" v-if="currentComponent">
+        <div class="player__note">Активный плеер: </div>
+        <div class="player__nav">
+          <div v-for="key in ORDER"
+             :key="key"
+             :id="key"
+             class="btn"
+             :class="[
+          { active: currentKey === key },
+          available[key] ? 'ok' : 'off',
+          errors[key] ? 'err' : ''
+        ]"
+             :disabled="!available[key]"
+             :title="btnTitle(key)"
+             @click="select(key)"
+        >
+          <Button class="button--music button--image">
+            <img :src="iconUrl(key)"
+                 :alt="labels[key] || 'Иконка'"
+                 :title="labels[key] || ''"
+                 width="48" height="48" loading="lazy" decoding="async"
+            >
+          </Button>
+        </div>
+        </div>
+      </div>
+    </template>
+    <template v-else>
+      <div class="player__controls" v-if="currentComponent">
+      <div v-if="mode === 'mode-music'" class="player__note">Активный плеер: </div>
 
       <div v-for="key in ORDER"
            :key="key"
@@ -26,6 +62,7 @@
         </Button>
       </div>
     </div>
+    </template>
 
     <!-- Текущий виджет -->
     <div class="player__widget" v-if="currentComponent">
@@ -216,6 +253,13 @@
         }, 7000)
     })
     onBeforeUnmount(() => clearTimeout(t))
+
+    // mpbile check
+    const device = useDevice()
+
+    const isMobile = computed(() => device.value.isMobile)
+    const isTablet = computed(() => device.value.isTablet)
+    const isDesktop = computed(() => device.value.isDesktop)
 </script>
 
 <style scoped>
