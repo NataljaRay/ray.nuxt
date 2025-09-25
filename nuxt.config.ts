@@ -17,15 +17,15 @@ export default defineNuxtConfig({
                     content: [
                         "default-src 'self' blob: data:",
                         // "frame-src 'self' https://music.yandex.ru https://music.yandex.net https://open.spotify.com",
-                        "frame-src 'self' https://music.yandex.ru https://music.yandex.net https://open.spotify.com https://www.youtube.com https://www.youtube-nocookie.com https://vk.com https://*.vk.com https://bandcamp.com https://*.bandcamp.com https://*.soundcloud.com",
+                        "frame-src 'self' https://music.yandex.ru https://music.yandex.net https://open.spotify.com https://www.youtube.com https://www.youtube-nocookie.com https://vk.com https://*.vk.com https://bandcamp.com https://*.bandcamp.com https://w.soundcloud.com https://soundcloud.com https://*.soundcloud.com",
                         // "script-src 'self' 'unsafe-inline' 'unsafe-eval'", // нужно Nuxt/Vite HMR в dev
                         "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vk.com https://static.vk.com https://www.youtube.com",
                         "style-src 'self' 'unsafe-inline'",
                         // "img-src 'self' data: blob:",
-                        "img-src 'self' data: blob: https://vk.com https://*.vk.com https://avatars.yandex.net https://i.ytimg.com https://i.scdn.co",
+                        "img-src 'self' data: blob: https://vk.com https://*.vk.com https://avatars.yandex.net https://i.ytimg.com https://i.scdn.co https://i1.sndcdn.com https://i.sndcdn.com https://a-v2.sndcdn.com",
                         "font-src 'self' data:",
                         // "connect-src 'self' ws:",
-                        "connect-src 'self' ws: https://vk.com https://api.vk.com https://bandcamp.com https://*.bandcamp.com https://*.soundcloud.com",
+                        "connect-src 'self' ws: https://vk.com https://api.vk.com https://bandcamp.com https://*.bandcamp.com https://w.soundcloud.com https://soundcloud.com https://*.soundcloud.com",
                         // "connect-src 'self' ws: https://ipapi.co",
                         isProd ? "upgrade-insecure-requests" : null,        // ← только в проде
                     ].filter(Boolean).join('; ')
