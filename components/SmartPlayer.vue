@@ -37,11 +37,11 @@
               :style="currentProps.bgColor ? `background-color: ${currentProps.bgColor}` : ''"
       >
         <div class="facade-overlay">
-          <span class="facade-text facade-text--small" aria-hidden="true">
-            Для максимально корректной загрузки виджета мы были вынуждены поставить эту заглушку...
-            <br/>
-            Благодарим за терпение <3
-          </span>
+<!--          <span class="facade-text facade-text&#45;&#45;small" aria-hidden="true">-->
+<!--            Для максимально корректной загрузки виджета мы были вынуждены поставить эту заглушку...-->
+<!--            <br/>-->
+<!--            Благодарим за терпение <3-->
+<!--          </span>-->
           <span class="play-icon" aria-hidden="true">▶</span>
           <span class="facade-text">Открыть плеер</span>
         </div>
