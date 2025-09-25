@@ -15,7 +15,7 @@
           </div>
 
           <div class="album__info-wrapper">
-            <h2 class="album__title">{{album.altTitle}}</h2>
+            <div class="h3 album__title">{{album.altTitle}}</div>
 
             <ul class="album__info">
               <li class="album__info-item">
@@ -43,24 +43,20 @@
       </div>
       <div class="section__col">
         <div class="album-widget">
-          <SmartPlayer
-                  :mode="'mode-2'"
-                  :ym="album.ym"
-                  :spotify="album.spotify"
-                  :ytm="album.ytm"
-                  :yt="album.yt"
-                  :vk="album.vk"
-                  :title="album.title"
-                  :width="'100%'"
-                  :height="556"
-                  :debug-country="true"
-          />
-<!--          <YandexMusicWidget-->
-<!--                  album-id="37825294"-->
-<!--                  :width="'100%'"-->
-<!--                  :height="556"-->
-<!--                  title="Yandex Music album"-->
-<!--          />-->
+<!--          <div class="album-player">-->
+            <SmartPlayer
+                    :mode="'mode-2'"
+                    :ym="album.ym"
+                    :spotify="album.spotify"
+                    :ytm="album.ytm"
+                    :yt="album.yt"
+                    :vk="album.vk"
+                    :title="album.title"
+                    :width="'100%'"
+                    :height="556"
+                    :debug-country="true"
+            />
+<!--          </div>-->
         </div>
 
       </div>

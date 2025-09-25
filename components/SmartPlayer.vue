@@ -2,6 +2,7 @@
   <div class="player" :class="mode ? 'player--' + mode : ''">
     <!-- Кнопки плееров (YT и YT Music = одна кнопка) -->
     <div class="player__controls" v-if="currentComponent">
+      <div v-if="mode" class="player__note">Активный плеер: </div>
 
       <div v-for="key in ORDER"
            :key="key"
@@ -36,6 +37,11 @@
               :style="currentProps.bgColor ? `background-color: ${currentProps.bgColor}` : ''"
       >
         <div class="facade-overlay">
+          <span class="facade-text facade-text--small" aria-hidden="true">
+            Для максимально корректной загрузки виджета мы были вынуждены поставить эту заглушку...
+            <br/>
+            Благодарим за терпение <3
+          </span>
           <span class="play-icon" aria-hidden="true">▶</span>
           <span class="facade-text">Открыть плеер</span>
         </div>
@@ -52,6 +58,7 @@
       />
 
       <div v-if="!loaded" class="embed-loader first-loader" style="background-color: var(--color-rose)">
+<!--      <div  class="embed-loader first-loader" style="z-index:1;opacity:1!important;background-color: var(&#45;&#45;color-rose)">-->
         <span class="loader" />
       </div>
     </div>
@@ -86,8 +93,8 @@
     })
 
     /** Порядок приоритета и подписи */
-    // const ORDER  = ['ym', 'vk', 'youtube', 'spotify']
-    const ORDER  = ['spotify', 'youtube', 'ym', 'vk']
+    const ORDER  = ['ym', 'vk', 'youtube', 'spotify']
+    // const ORDER  = ['spotify', 'youtube', 'ym', 'vk']
     const labels = { ym: 'Яндекс Музыка', vk: 'Вконтакте', youtube: 'YouTube', spotify: 'Spotify' }
 
     /** Проверяем наличие данных */
@@ -144,6 +151,7 @@
     function select(key) {
         if (!available.value[key]) return
         currentKey.value = key
+        console.clear();
     }
 
     function btnTitle(key) {

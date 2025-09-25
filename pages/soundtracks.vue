@@ -25,7 +25,7 @@
         </div>
       </div>
 
-      <div>
+      <div style="margin-top: 40px">
         <p class="h4">Саундтреки по главам</p>
         <ol>
           <li v-for="t in soundtracks" :key="t.anchor" :id="t.anchor"> <!-- t.id без # -->
@@ -78,12 +78,12 @@
     }
 
     const soundtracks = [
-        {
-            anchor: 'what-is-your-plan',
-            chapter: 'Глава 14.',
-            soundtrack: 'Natalja Ray — Каков твой план?',
-            description: 'Первый шаг на сцену. Волнение. Свет бьёт в глаза. Всё начинается.',
-        },
+        // {
+        //     anchor: 'what-is-your-plan',
+        //     chapter: 'Глава 14.',
+        //     soundtrack: 'Natalja Ray — Каков твой план?',
+        //     description: 'Первый шаг на сцену. Волнение. Свет бьёт в глаза. Всё начинается.',
+        // },
         {
             anchor: 'shame-on-me',
             chapter: 'Глава 14.',
