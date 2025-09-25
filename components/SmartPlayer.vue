@@ -30,26 +30,34 @@
     <!-- Текущий виджет -->
     <div class="player__widget" v-if="currentComponent">
       <!-- Яндекс Музыка: фасад до клика -->
-      <div
-              v-if="currentKey === 'ym' && !ymActivated"
-              class="player-facade"
-              @click="activateYM"
-              :style="currentProps.bgColor ? `background-color: ${currentProps.bgColor}` : ''"
-      >
-        <div class="facade-overlay">
-<!--          <span class="facade-text facade-text&#45;&#45;small" aria-hidden="true">-->
-<!--            Для максимально корректной загрузки виджета мы были вынуждены поставить эту заглушку...-->
-<!--            <br/>-->
-<!--            Благодарим за терпение <3-->
-<!--          </span>-->
-          <span class="play-icon" aria-hidden="true">▶</span>
-          <span class="facade-text">Открыть плеер</span>
-        </div>
-      </div>
+<!--      <div-->
+<!--              v-if="currentKey === 'ym' && !ymActivated"-->
+<!--              class="player-facade"-->
+<!--              @click="activateYM"-->
+<!--              :style="currentProps.bgColor ? `background-color: ${currentProps.bgColor}` : ''"-->
+<!--      >-->
+<!--        <div class="facade-overlay">-->
+<!--&lt;!&ndash;          <span class="facade-text facade-text&#45;&#45;small" aria-hidden="true">&ndash;&gt;-->
+<!--&lt;!&ndash;            Для максимально корректной загрузки виджета мы были вынуждены поставить эту заглушку...&ndash;&gt;-->
+<!--&lt;!&ndash;            <br/>&ndash;&gt;-->
+<!--&lt;!&ndash;            Благодарим за терпение <3&ndash;&gt;-->
+<!--&lt;!&ndash;          </span>&ndash;&gt;-->
+<!--          <span class="play-icon" aria-hidden="true">▶</span>-->
+<!--          <span class="facade-text">Открыть плеер</span>-->
+<!--        </div>-->
+<!--      </div>-->
 
       <!-- Остальные платформы или ЯМ после клика -->
+<!--      <component-->
+<!--              v-else-->
+<!--              :is="currentComponent"-->
+<!--              v-bind="currentProps"-->
+<!--              :platform-key="currentKey"-->
+<!--              @widget-ok="onWidgetOk"-->
+<!--              @widget-error="onWidgetError"-->
+<!--      />-->
+
       <component
-              v-else
               :is="currentComponent"
               v-bind="currentProps"
               :platform-key="currentKey"
@@ -200,6 +208,8 @@
         t = setTimeout(() => {
             // if (!loaded.value) {
                 loaded.value = true
+                // для автозагрузки ЯМ !!!!
+                activateYM
                 // timedOut.value = true
                 // emit('widget-error', { key: props.platformKey, code: 'timeout' })
             // }
