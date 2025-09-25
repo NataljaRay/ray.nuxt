@@ -8,6 +8,29 @@
       <div class="soundtrack" v-for="track in soundtracks" :key="track.anchor" :id="track.anchor">
         <p class="h4">{{track.chapter}} {{track.soundtrack}}</p>
         <p class="soundtrack__description" v-if="track.description">{{track.description}}</p>
+<!--        <ClientOnly>-->
+<!--        <iframe style="border: 0; width: 100%; height: 120px;"-->
+<!--                src="https://bandcamp.com/EmbeddedPlayer/track=731891676/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"-->
+<!--                seamless>-->
+<!--&lt;!&ndash;          <a href="https://invoguerecords.bandcamp.com/track/shame-on-me">Shame on Me by Catch Your&ndash;&gt;-->
+<!--&lt;!&ndash;          Breath</a>&ndash;&gt;-->
+<!--        </iframe>-->
+
+<!--        <iframe style="border: 0; width: 400px; height: 472px;"-->
+<!--                src="https://bandcamp.com/EmbeddedPlayer/album=739978498/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/"-->
+<!--                seamless>-->
+<!--&lt;!&ndash;          <a href="https://invoguerecords.bandcamp.com/album/shame-on-me">Shame On Me by Catch Your Breath</a>&ndash;&gt;-->
+<!--        </iframe>-->
+<!--          </ClientOnly>-->
+
+        <!-- Трек (миниконтролы) -->
+        <iframe
+                style="border:0; width:100%; height:120px;"
+                src="https://bandcamp.com/EmbeddedPlayer/track=731891676/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+                loading="lazy"
+                seamless
+        ></iframe>
+
         <div class="soundtrack__media">
           <div class="soundtrack__widget">
               <SmartPlayer
