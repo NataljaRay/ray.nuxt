@@ -9,7 +9,9 @@
   //  grid-template-columns: 1fr 1fr;
     gap: 18px;
   }
-
+  &--mirrow {
+    grid-template-columns: 1fr 1fr;
+  }
   &--to-1 {
     //@media (height > 450px) and (orientation: portrait) {
     @include tablet {

@@ -1,0 +1,97 @@
+@use "@/assets/scss/helpers/index" as *;
+
+.album {
+  //padding-bottom: 80px;
+  //margin-bottom: 80px;
+  //position: relative;
+  //width: 100%;
+  @include tablet {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    //gap: 36px;
+    gap: 8vw;
+    margin-bottom: 28px;
+  }
+  @include mobile {
+    width: unset;
+  }
+  //@include mobile-s {
+  @media (width <= 567px) {
+    flex-direction: column;
+    align-items: start;
+  }
+
+}
+.album__image-wrapper {
+  position: relative;
+  z-index: 0;
+  &:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 28px;
+    left: 28px;
+    //margin: auto;
+    border: 5px solid var(--color-brown);
+    @include square(342px);
+    z-index: -1;
+
+    //@include mobile-s {
+    //@include mobile {
+    @include tablet {
+      width: 100%;
+      height: 100%;
+      top: 14px;
+      left: 14px;
+    }
+  }
+}
+
+.album__info-wrapper {
+  margin-top: 56px;
+  @include tablet {
+    margin-top: 0;
+  }
+  @include mobile-s {
+    margin-top: 28px;
+  }
+
+}
+//.album__title {
+//
+//}
+
+.album__info {
+  &-item {
+    font-size: 16px;
+    line-height: 30px;
+    > span {
+      opacity: .7;
+    }
+  }
+}
+.album__streamings {
+  display: flex;
+  margin-top: 18px;
+  //gap: 16px;
+  gap: fluid(20, 14);
+  flex-wrap: wrap;
+}
+
+
+.album-widget {
+  width: 465px;
+  height: 100%;
+
+  @include mobile {
+    width: 100%;
+  }
+
+  //.player {
+  //  flex-direction: column;
+  //}
+  //.player__widget {
+  //  width: 100%;
+  //}
+}

@@ -44,8 +44,11 @@
 }
 
 .loader {
-  width: 48px;
-  height: 48px;
+  //width: 48px;
+  //height: 48px;
+  width: 160px;
+  height: 160px;
+  //@include square(160px);
   display: inline-block;
   position: relative;
   animation: showloader 1s linear 1;
@@ -57,8 +60,11 @@
 .loader::before {
   content: '';
   box-sizing: border-box;
-  width: 48px;
-  height: 48px;
+  //width: 48px;
+  //height: 48px;
+  width: 160px;
+  height: 160px;
+  //@include square(160px);
   border-radius: 50%;
   //border: 2px solid #FFF;
   border: 2px solid var(--color-black);

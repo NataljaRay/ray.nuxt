@@ -421,3 +421,55 @@
     //margin-bottom: fluid(60, 40);
   }
 }
+
+.section--music-page {
+  padding-block: fluid(80, 60);
+
+  .section__text {
+    max-width: 880px;
+    margin-bottom: 0;
+  }
+}
+
+.section--album {
+  position: relative;
+  padding-bottom: 80px;
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: center;
+
+  &:not(:last-child) {
+    &:after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      margin: auto;
+      background-color: var(--color-brown);
+      width: 234px;
+      height: 6px;
+    }
+  }
+
+  &:not(.section--album-min) {
+    .section__col:last-child {
+      justify-content: start;
+      @media (width <= 383px) {
+        margin-inline: -32px;
+      }
+    }
+  }
+
+
+}
+
+.section--album-min {
+  .section__col {
+    justify-content: start;
+
+    @include tablet {
+      align-items: center;
+    }
+
+  }
+}

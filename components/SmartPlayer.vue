@@ -1,5 +1,5 @@
 <template>
-  <div class="player">
+  <div class="player" :class="mode ? 'player--' + mode : ''">
     <!-- Кнопки плееров (YT и YT Music = одна кнопка) -->
     <div class="player__controls" v-if="currentComponent">
 
@@ -82,10 +82,12 @@
         title:   { type: String, default: '' },
         width:  { type: String, default: '100%' },
         height: { type: Number, default: 244 },
+        mode: { type: String, default: '' },
     })
 
     /** Порядок приоритета и подписи */
-    const ORDER  = ['ym', 'vk', 'youtube', 'spotify']
+    // const ORDER  = ['ym', 'vk', 'youtube', 'spotify']
+    const ORDER  = ['spotify', 'youtube', 'ym', 'vk']
     const labels = { ym: 'Яндекс Музыка', vk: 'Вконтакте', youtube: 'YouTube', spotify: 'Spotify' }
 
     /** Проверяем наличие данных */

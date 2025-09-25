@@ -123,3 +123,19 @@
 
  }
 .play-icon { font-size: 2rem; line-height: 1; }
+
+
+.player--mode-2 {
+  flex-direction: column;
+  .player__widget {
+    width: 100%;
+  }
+  .player__controls {
+    margin-left: 0;
+    gap: fluid(20, 14);
+
+    .btn {
+      @include square(40px);
+    }
+  }
+}

@@ -12,6 +12,7 @@
 @use "components/soundtrack";
 @use "components/player";
 @use "components/loader";
+@use "components/album";
 
 .app-wrapper {
   display: flex;
