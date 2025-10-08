@@ -1,8 +1,6 @@
 <template>
   <div class="app-wrapper">
-<!--    <a class="skip-link" href="#main">Пропустить к содержимому/ ЯКОРЬ?</a>-->
     <AppHeader/>
-<!--    <hero/>-->
     <main id="main" class="content"><slot /></main>
     <AppFooter/>
   </div>
@@ -12,7 +10,6 @@
     import { computed } from 'vue'
     import AppHeader from '~/components/AppHeader.vue'
     import AppFooter from '~/components/AppFooter.vue'
-    // import Hero from "../components/sections/Hero.vue";
 
     const route = useRoute()
     const { public: { siteUrl } } = useRuntimeConfig()
@@ -57,19 +54,7 @@
             class: menuOpen.value ? 'no-scroll' : ''
         }
     }))
-
-    // // Фавиконки
-    // useHead(() => ({
-    //     link: [
-    //         { rel: 'icon', type: 'image/x-icon', href: base + 'favicon.ico' },
-    //         // опционально:
-    //         // { rel: 'icon', type: 'image/svg+xml', href: base + 'icon.svg' },
-    //         // { rel: 'apple-touch-icon', sizes: '180x180', href: base + 'apple-touch-icon.png' },
-    //         // { rel: 'manifest', href: base + 'site.webmanifest' },
-    //     ]
-    // }))
 </script>
 <style scoped>
-  .skip-link{position:absolute;left:-9999px;top:-9999px}
-  .skip-link:focus{left:16px;top:16px;background:#fff;padding:6px 10px;border:1px solid #000}
+
 </style>

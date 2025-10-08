@@ -41,7 +41,7 @@
         🎧 На мобильных устройствах для полного воспроизведения трека откройте ссылку в приложении Spotify / Яндекс Музыка / ВКонтакте и др.
       </div>
 
-      <div style="margin-top: 40px">
+      <div style="margin-top: 60px; display: none">
         <p class="h4">Саундтреки по главам</p>
         <ol>
           <li v-for="t in soundtracks" :key="t.anchor" :id="t.anchor"> <!-- t.id без # -->

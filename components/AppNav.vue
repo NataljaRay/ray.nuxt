@@ -44,11 +44,11 @@
 
     const menuItems = [
         { label: 'Главная', href: '/' },
-        { label: 'Обо мне', href: '/about' },
+        // { label: 'Обо мне', href: '/about' },
         { label: 'О книге', href: '/book' },
         { label: 'Саундтреки', href: '/soundtracks' },
         { label: 'Музыка', href: '/music' },
-        { label: 'Новости', href: '/news' },
+        // { label: 'Новости', href: '/news' },
         { label: 'Контакты', href: '#contacts' },
     ]
 </script>

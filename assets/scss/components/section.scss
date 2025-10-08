@@ -1,7 +1,7 @@
 @use "@/assets/scss/helpers/index" as *;
 
 .section {
-  overflow: hidden;
+  //overflow: hidden;
   //min-height: 981px;
 
   &__inner {
@@ -73,6 +73,34 @@
       }
     }
 
+    &--annotate {
+      font-family: var(--font-family-quote);
+      //@include flex-center;
+      //flex-direction: column;
+      max-width: 750px;
+      margin-inline: auto;
+
+      //margin-bottom: 16px;
+      &:not(:last-child) {
+        margin-bottom: var(--paragraphMarginBottom);
+      }
+      &:last-child {
+        &:after {
+          content: '';
+          display: block;
+          @include square(50px);
+          margin-top: 32px;
+          margin-inline: auto;
+          background: url("@/assets/icons/quote.svg") 50%/cover no-repeat;
+
+        }
+      }
+
+      > span {
+        opacity: .7;
+      }
+
+    }
     &--blockquote {
       font-family: var(--font-family-quote);
       @include flex-center;
@@ -372,12 +400,22 @@
 /** inner pages **/
 
 .section--about-book {
-  padding-block: fluid(80, 40);
+  //padding-block: fluid(80, 40);
+  padding-block: fluid(60, 40);
 
-  .section__text {
-    @include fluid-text(20, 18);
-    //font-size: fluid(20, 18);
-    line-height: fluid(38, 28);
+  //.section__text {
+  //  @include fluid-text(20, 18);
+  //  //font-size: fluid(20, 18);
+  //  line-height: fluid(38, 28);
+  //}
+  .section__text--inner {
+    &:not(:last-child) {
+      margin-bottom: var(--paragraphMarginBottom);
+    }
+  }
+
+  .section--about-book__image-wrapper {
+    min-height: 476px;
   }
 }
 .section--review {
@@ -477,5 +515,25 @@
       align-items: center;
     }
 
+  }
+}
+
+
+///
+//.section--soundtracks
+.section--universal {
+  padding-block: fluid(60, 40);
+
+  .section__text {
+    @include fluid-text(20, 18);
+    line-height: fluid(38, 28);
+    margin-bottom: 20px;
+    //margin-bottom: fluid(60, 40);
+  }
+
+  .section__text.section__text--inner {
+    &:not(:last-child) {
+      margin-bottom: var(--paragraphMarginBottom);
+    }
   }
 }

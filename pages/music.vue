@@ -1,7 +1,7 @@
 <template>
 <!--  music.vue-->
   <div>
-    <section class="section section--music-page">
+    <section class="section section--music-page section--universal">
       <div class="section__inner container">
         <p class="section__text">
           Моя музыка рождается из состояний, ощущений и сцен. Здесь вы найдёте как саундтреки к книгам, так и независимые композиции — истории, которые звучат изнутри.

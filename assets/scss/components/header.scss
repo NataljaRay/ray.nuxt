@@ -10,10 +10,16 @@
   //padding-block: fluid(24, 16); // от 24 к 16 (на мобиле)
   //padding-block: fluid(16, 8); // от 24 к 16 (на мобиле)
   padding-block: 16px; // от 24 к 16 (на мобиле)
+
+  //background-color: rgba(233, 223, 229, 0.5);
+  //background-color: rgba(241, 231, 239, 0.5);
   animation-name: scrolling-header;
   animation-fill-mode: both;
   animation-timeline: scroll();
   animation-range: 0 100px;
+  //animation-range: 0 180px;
+  //transition-duration: var(--transition-duration-longer);
+  transition-delay: var(--transition-duration-longer);
 
   border-bottom: 1px solid transparent;
 
@@ -33,6 +39,10 @@
     padding-block: 10px;
     height: 66px;
   }
+
+  //@include mobile-s {
+  //  animation-range: 0 100px;
+  //}
 
   &__inner {
     display: flex;
@@ -157,6 +167,11 @@
       &.is-active {
         border-bottom-color: var(--color-red);
         pointer-events: none;
+
+        @include menu-visible-low {
+          border-bottom-color: transparent;
+          color: var(--color-red);
+        }
       }
     }
   }

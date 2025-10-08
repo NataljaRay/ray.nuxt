@@ -8,16 +8,17 @@
           Я — Natalja Ray, автор и композитор. Пишу книги, в которых живёт музыка, и музыку, в которой звучат истории. Мои проекты объединяют слово и звук, чтобы передать то, что не укладывается в одно измерение.
         </p>
         <div class="section__button-container">
+<!--          <Button class="section__button"-->
+<!--                  href="/about"-->
+<!--                  label="Моя биография"-->
+<!--          />-->
           <Button class="section__button"
-                  href="/about"
-                  label="Моя биография"
+                  href="/book"
+                  label="О книге"
           />
           <Button class="section__button"
-                  target="_blank"
-                  href="https://band.link/nataljaray"
+                  href="/music"
                   label="Слушать музыку"
-                  icon-name="external-link"
-                  icon-position="after"
           />
         </div>
       </div>
@@ -75,9 +76,15 @@
         </p>
         <div class="section__button-container">
           <Button class="section__button"
+                  href="/music"
+                  label="Слушать музыку"
+          />
+          <Button class="section__button"
                   target="_blank"
                   href="https://band.link/nataljaray"
-                  label="Слушать музыку"
+                  label="band.link"
+                  icon-name="external-link"
+                  icon-position="after"
           />
         </div>
       </div>

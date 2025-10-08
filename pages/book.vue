@@ -1,5 +1,5 @@
 <template>
-  <section class="section section--about-book">
+  <section class="section section--about-book" style="display: none">
     <div class="section__inner grid-2 grid-2--to-1 container">
       <div class="section__col">
         <p class="section__text section__text--underlined">
@@ -14,7 +14,32 @@
     </div>
   </section>
 
-  <section class="section section--review section--rose">
+  <section class="section section--review section--rose" style="display: none">
+    <div class="section__inner section__inner--center container">
+      <p class="section__text section__text--inner section__text--annotate">
+        <span>
+          Когда-то они были детьми. Он — тем, кто невольно превратил ее жизнь в ад. Она — той, кто научилась жить в одиночестве.
+        </span>
+      </p>
+      <p class="section__text section__text--inner section__text--annotate">
+          <span>
+            Спустя годы их пути пересекаются вновь. Но теперь всё иначе: Рэй больше не ждёт спасения, а Уоррен — единственный, кто готов его предложить. Тот, кого она ненавидела все это время… и чья музыка звучит с ней в унисон.
+          </span>
+      </p>
+      <p class="section__text section__text--inner section__text--annotate">
+          <span>
+            Можно ли восстановить то, что однажды было сломано?
+          </span>
+      </p>
+      <p class="section__text section__text--inner section__text--annotate">
+          <span>
+            История о борьбе за право быть услышанным — на сцене и в жизни. <br>О музыке, которая сильнее слов.
+          </span>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--review section--rose" style="display: none">
     <div class="section__inner section__inner--center container">
       <p class="section__text section__text--blockquote">
         <span>
@@ -28,7 +53,35 @@
     </div>
   </section>
 
-  <section class="section section--music-book">
+  <section class="section section--about-book section--universal1" style="padding-bottom: 0">
+    <div class="section__inner grid-2 grid-2--to-1 container">
+      <div class="section__col">
+        <p class="section__text section__text--inner">
+          Когда-то они были детьми. Он — тем, кто невольно превратил ее жизнь в ад. Она — той, кто научилась жить в одиночестве.
+        </p>
+        <p class="section__text section__text--inner">
+          Спустя годы их пути пересекаются вновь. Но теперь всё иначе: Рэй больше не ждёт спасения, а Уоррен — единственный, кто готов его предложить. Тот, кого она ненавидела все это время… и чья музыка звучит с ней в унисон.
+        </p>
+        <p class="section__text section__text--inner">
+          Можно ли восстановить то, что однажды было сломано?
+        </p>
+        <p class="section__text section__text--inner section__text--underlined">
+          История о борьбе за право быть услышанным — на сцене и в жизни. О музыке, которая сильнее слов.
+        </p>
+
+        <p class="section__text section__text--underlined" style="display: none">
+          <strong>«В свете софитов»</strong> — это психологическая драма с музыкальным ритмом и разбитым пульсом. История молодой девушки, чьё взросление проходит под светом сцены и в глубокой тени внутри. Вопросы, которые она себе задаёт, знакомы каждому, кто пытался быть услышанным: «Кто я?», «Зачем я здесь?» и «Что делать, если в самый важный момент голос исчезает?»
+        </p>
+      </div>
+      <div class="section__col">
+        <div class="section--about-book__image-wrapper">
+          <img class="section__image" src="/public/images/book_md.png" alt="Книга">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--music-book" style="padding-top: 40px">
     <div class="section__inner container">
       <h2 class="section__title section__title--inner">
         Это не просто книга, это история, которую можно<br>
@@ -42,7 +95,7 @@
             Книга <strong>«В свете софитов»</strong> — это не просто роман, а мультимедийное погружение в мир музыки, эмоций и внутренних переживаний. Её уникальность — в <strong>саундтреках</strong>, подобранных специально для этой истории.
           </p>
           <p>
-            Некоторые главы сопровождаются <strong>тематической композицией</strong>, которая усиливает атмосферу. В кульминационные моменты музыка сливается с текстом, создавая эффект "кино в голове".
+            Некоторые главы сопровождаются <strong>тематическими композициями</strong>, которые усиливают атмосферу. В кульминационные моменты музыка сливается с текстом, создавая эффект "кино в голове".
           </p>
           <p>
             <strong>QR-коды</strong> в тексте помогут перейти к треку в момент чтения.

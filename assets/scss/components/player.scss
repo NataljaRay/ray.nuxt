@@ -147,13 +147,19 @@
     height: 100%;
   }
   .player__controls {
-    order: 0;
-    margin-bottom: 16px;
+    order: 0;            //!!!!!
+    margin-bottom: 16px; //!!!!!
     margin-left: 0;
     gap: fluid(20, 14);
     justify-content: end;
 
+    @include tablet-above {
+      margin-top: -56px;
+      //margin-top: 16px;
+    }
+
     @include tablet {
+      order: 0;
       flex-direction: row;
     }
     @include mobile-s {
@@ -172,6 +178,8 @@
     align-items: start;
     background-color: transparent;
     box-shadow: none;
+    //height: auto!important;
+    //min-height: 323px;
   }
 
   .embed-loader {
