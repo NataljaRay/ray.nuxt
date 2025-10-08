@@ -87,16 +87,16 @@
 
     const hideNote = () => {hideNoteWindow.value = true}
 
-    const route = useRoute()
-    const router = useRouter()
-
-    // Хэш из URL всегда приходит с решёткой — убираем её для внутреннего использования
-    const activeId = computed(() => route.hash ? route.hash.replace(/^#/, '') : '')
-
-    // Пример перехода к треку: добавляем # только в URL
-    function goTo(id) {
-        router.replace({ hash: id }) // Nuxt сам добавит #
-    }
+    // const route = useRoute()
+    // const router = useRouter()
+    //
+    // // Хэш из URL всегда приходит с решёткой — убираем её для внутреннего использования
+    // const activeId = computed(() => route.hash ? route.hash.replace(/^#/, '') : '')
+    //
+    // // Пример перехода к треку: добавляем # только в URL
+    // function goTo(id) {
+    //     router.replace({ hash: id }) // Nuxt сам добавит #
+    // }
     // mpbile check
     const device = useDevice()
 
@@ -307,15 +307,50 @@
         return header ? header.offsetHeight : 0
     }
 
-    /** обновление hash без скролла (замена записи истории) */
+    /** обновление hash без скролла (замена записи истории) 1 вариант */
+    // function replaceHash(id) {
+    //     if (!id) {
+    //         history.replaceState(null, '', window.location.pathname + window.location.search)
+    //     } else {
+    //         const newUrl = window.location.pathname + window.location.search + `#${id}`
+    //         if (window.location.hash !== `#${id}`) {
+    //             history.replaceState(null, '', newUrl)
+    //         }
+    //     }
+    // }
+
+    /** обновление hash без скролла (замена записи истории)  2 вариант */
+    // function replaceHash(id) {
+    //     if (typeof window === 'undefined') return
+    //
+    //     // берём pathname и нормализуем: убираем trailing slash (кроме корня '/')
+    //     const rawPath = window.location.pathname || ''
+    //     const path = (rawPath !== '/' ? rawPath.replace(/\/$/, '') : rawPath)
+    //     const search = window.location.search || ''
+    //     const hash = id ? `#${id}` : ''
+    //
+    //     const newUrl = path + search + hash
+    //
+    //     // только если реально отличается — заменяем
+    //     if (window.location.pathname + window.location.search + window.location.hash !== newUrl) {
+    //         history.replaceState(null, '', newUrl)
+    //     }
+    // }
+
+    /** обновление hash без скролла (замена записи истории) 3 вариант */
     function replaceHash(id) {
-        if (!id) {
-            history.replaceState(null, '', window.location.pathname + window.location.search)
-        } else {
-            const newUrl = window.location.pathname + window.location.search + `#${id}`
-            if (window.location.hash !== `#${id}`) {
-                history.replaceState(null, '', newUrl)
-            }
+        if (typeof window === 'undefined') return
+
+        // гарантируем, что pathname всегда заканчивается на '/'
+        const rawPath = window.location.pathname || ''
+        const path = rawPath.endsWith('/') ? rawPath : rawPath + '/'
+        const search = window.location.search || ''
+        const hash = id ? `#${id}` : ''
+
+        const newUrl = path + search + hash
+
+        if (window.location.pathname + window.location.search + window.location.hash !== newUrl) {
+            history.replaceState(null, '', newUrl)
         }
     }
 
