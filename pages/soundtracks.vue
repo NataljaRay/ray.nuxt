@@ -18,6 +18,7 @@
 <!--            <Streamings :streamings="track.streamings" />-->
 <!--          </div>-->
           <div class="soundtrack__widget" v-else>
+<!--            <iframe src="https://vk.com/video_ext.php?oid=-1680&id=456239254&hd=2" width="853" height="480" style="background-color: #000" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>-->
               <SmartPlayer
                       :mode="'mode-soundtracks'"
                       :ym="track.ym"
@@ -25,6 +26,7 @@
                       :ytm="track.ytm"
                       :yt="track.yt"
                       :vk="track.vk"
+                      :vkVideo="track.vkVideo"
                       :title="track.soundtrack"
                       :width="'100%'"
                       :height="244"
@@ -111,6 +113,7 @@
         //     description: 'Первый шаг на сцену. Волнение. Свет бьёт в глаза. Всё начинается.',
         // },
         {
+            cover: 'Catch_Your_Breath-Shame_On_Me.jpg',
             anchor: 'shame-on-me',
             chapter: 'Глава 14.',
             soundtrack: 'Catch Your Breath — Shame On Me',
@@ -121,8 +124,42 @@
             ytm: { videoId: 'q_4UUm0TiGw' },           // офиц. клип BVTV
             yt:  { videoId: 'q_4UUm0TiGw' },           // тот же id
 
+            streamings: {
+                ym: {
+                    id: 'ym',
+                    fullName: 'Yandex Music',
+                    link: 'https://music.yandex.ru/track/96626688',
+                },
+                spotify: {
+                    id: 'spotify',
+                    fullName: 'Spotify',
+                    link: 'https://open.spotify.com/track/6S2iHbyPSlhQgCyAVQ2SO6',
+                },
+                apple: {
+                    id: 'apple-music',
+                    fullName: 'Apple Music / Itunes',
+                    link: 'https://music.apple.com/song/shame-on-me/1732047531'
+                },
+                ytMusic: {
+                    id: 'youtube-music',
+                    fullName: 'Youtube Music',
+                    link: 'https://music.youtube.com/watch?v=ihEQYiq89PU'
+                },
+                zvuk: {
+                    id: 'zvuk',
+                    fullName: 'Zvuk',
+                    link: 'https://zvuk.com/track/159958770'
+                },
+                vkMusic: {
+                    // id: 'vk-music',
+                    id: 'vk',
+                    fullName: 'Vk Music',
+                    link: 'https://vk.com/audio-2001295867_143295867'
+                },
+            }
         },
         {
+            cover: 'Radio_Tapok-The_Pretender.jpg',
             anchor: 'the-pretender-radio-tapok',
             chapter: 'Глава 15.',
             soundtrack: 'Radio Tapok — The Pretender',
@@ -134,8 +171,42 @@
             yt:  { videoId: 'SBklWPmxb_k' },
             vk:  { ownerId: -2000884330, playlistId: 12884330, hash: 'df969e4ab45df34deb' },
 
+            streamings: {
+                ym: {
+                    id: 'ym',
+                    fullName: 'Yandex Music',
+                    link: 'https://music.yandex.ru/track/90655720',
+                },
+                spotify: {
+                    id: 'spotify',
+                    fullName: 'Spotify',
+                    link: 'https://open.spotify.com/track/72iyzWAM2158Kn8KD1ZImq',
+                },
+                apple: {
+                    id: 'apple-music',
+                    fullName: 'Apple Music / Itunes',
+                    link: 'https://music.apple.com/song/the-pretender/1584800066'
+                },
+                ytMusic: {
+                    id: 'youtube-music',
+                    fullName: 'Youtube Music',
+                    link: 'https://music.youtube.com/watch?v=N7QwN0EAWEg'
+                },
+                zvuk: {
+                    id: 'zvuk',
+                    fullName: 'Zvuk',
+                    link: 'https://zvuk.com/track/108361695'
+                },
+                vkMusic: {
+                    // id: 'vk-music',
+                    id: 'vk',
+                    fullName: 'Vk Music',
+                    link: 'https://vk.ru/audio-2001880993_95880993'
+                },
+            }
         },
         {
+            cover: 'Foo_fighters-The_Pretender.jpg',
             anchor: 'the-pretender-foo-fighters',
             chapter: 'Глава 15.',
             soundtrack: 'Foo Fighters — The Pretender',
@@ -144,7 +215,32 @@
             spotify: { trackId: '7x8dCjCr0x6x2lXKujYD34' }, // The Pretender — Foo Fighters
             ytm: { videoId: 'SBjQ9tuuTJQ' },           // офиц. клип Foo Fighters
             yt:  { videoId: 'SBjQ9tuuTJQ' },
+            // vkVideo:  { videoId: '456239254' },
+            vkVideo:  { ownerId: -1680, videoId: 456239254 },
 
+            streamings: {
+                spotify: {
+                    id: 'spotify',
+                    fullName: 'Spotify',
+                    link: 'https://open.spotify.com/track/7x8dCjCr0x6x2lXKujYD34',
+                },
+                apple: {
+                    id: 'apple-music',
+                    fullName: 'Apple Music / Itunes',
+                    link: 'https://music.apple.com/song/the-pretender/262743414'
+                },
+                ytMusic: {
+                    id: 'youtube-music',
+                    fullName: 'Youtube Music',
+                    link: 'https://music.youtube.com/watch?v=BMMGwtklEeE'
+                },
+                vkVideo: {
+                    id: 'vk-video',
+                    fullName: 'Vk Video',
+                    link: 'https://vk.com/video-1680_456239254'
+                },
+
+            }
         },
         {
             cover: 'Natalja_Ray-Neurotic_Love.jpg',

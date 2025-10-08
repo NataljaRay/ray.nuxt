@@ -118,6 +118,7 @@
     import SpotifyWidget     from '@/components/widgets/SpotifyWidget.vue'
     import YouTubeWidget     from '@/components/widgets/YouTubeWidget.vue'
     import VkWidget          from '@/components/widgets/VkWidget.vue'
+    import VkVideoWidget     from '@/components/widgets/VkVideoWidget.vue'
     import Button from '@/components/common/Button.vue'
     import { withBase } from 'ufo'
 
@@ -131,6 +132,7 @@
         ytm:     { type: Object, default: null }, // { videoId?|playlistId? }
         yt:      { type: Object, default: null }, // { videoId?|playlistId? }
         vk:      { type: Object, default: null }, // { embedSrc? | href? | ownerId?&playlistId?&hash? }
+        vkVideo: { type: Object, default: null }, //
         title:   { type: String, default: '' },
         width:  { type: String, default: '100%' },
         height: { type: Number, default: 244 },
@@ -138,9 +140,9 @@
     })
 
     /** Порядок приоритета и подписи */
-    const ORDER  = ['ym', 'vk', 'youtube', 'spotify']
+    const ORDER  = ['ym', 'vk', 'vkVideo', 'youtube', 'spotify']
     // const ORDER  = ['spotify', 'youtube', 'ym', 'vk']
-    const labels = { ym: 'Яндекс Музыка', vk: 'Вконтакте', youtube: 'YouTube', spotify: 'Spotify' }
+    const labels = { ym: 'Яндекс Музыка', vk: 'Вконтакте', vkVideo: 'Vk Video', youtube: 'YouTube', spotify: 'Spotify' }
 
     /** Проверяем наличие данных */
     const hasDataForYM      = v => !!(v?.albumId || v?.trackId)
@@ -148,6 +150,7 @@
     const hasDataForYT      = v => !!(v?.videoId || v?.playlistId)
     const hasDataForVK      = v => !!(v?.embedSrc || v?.href ||
         (v && v.ownerId != null && v.playlistId != null && typeof v.hash === 'string' && v.hash.length > 0))
+    const hasDataForVkVideo = v => !!(v?.ownerId || v?.videoId)
 
     // одна кнопка YouTube для yt/ytm
     const hasYouTube = computed(() => hasDataForYT(props.yt) || hasDataForYT(props.ytm))
@@ -157,6 +160,7 @@
         vk: hasDataForVK(props.vk),
         youtube: hasYouTube.value,
         spotify: hasDataForSpotify(props.spotify),
+        vkVideo: hasDataForVkVideo(props.vkVideo),
     }))
 
     /** Ошибки по платформам */
@@ -212,6 +216,7 @@
             case 'vk':      return VkWidget
             case 'youtube': return YouTubeWidget
             case 'spotify': return SpotifyWidget
+            case 'vkVideo': return VkVideoWidget
             default:        return null
         }
     })
@@ -220,6 +225,7 @@
         switch (currentKey.value) {
             case 'ym': return { ...base, ...props.ym }
             case 'vk': return { ...base, ...props.vk }
+            case 'vkVideo': return { ...base, ...props.vkVideo }
             case 'youtube': {
                 const ytInput = hasDataForYT(props.yt) ? props.yt : (hasDataForYT(props.ytm) ? props.ytm : null)
                 return { ...base, ...(ytInput || {}) }
