@@ -1,7 +1,7 @@
 @use "@/assets/scss/helpers/index" as *;
 
 .section {
-  //overflow: hidden;
+  overflow: hidden;
   //min-height: 981px;
 
   &__inner {
@@ -414,9 +414,9 @@
     }
   }
 
-  .section--about-book__image-wrapper {
-    min-height: 476px;
-  }
+  //.section--about-book__image-wrapper {
+  //  min-height: 476px;
+  //}
 }
 .section--review {
   padding-block: fluid(70, 40);
@@ -470,6 +470,7 @@
 }
 
 .section--album {
+  overflow: visible;
   position: relative;
   //padding-bottom: 80px;
   margin-bottom: 80px;
