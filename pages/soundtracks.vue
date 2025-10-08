@@ -87,16 +87,16 @@
 
     const hideNote = () => {hideNoteWindow.value = true}
 
-    // const route = useRoute()
-    // const router = useRouter()
-    //
-    // // Хэш из URL всегда приходит с решёткой — убираем её для внутреннего использования
-    // const activeId = computed(() => route.hash ? route.hash.replace(/^#/, '') : '')
-    //
-    // // Пример перехода к треку: добавляем # только в URL
-    // function goTo(id) {
-    //     router.replace({ hash: id }) // Nuxt сам добавит #
-    // }
+    const route = useRoute()
+    const router = useRouter()
+
+    // Хэш из URL всегда приходит с решёткой — убираем её для внутреннего использования
+    const activeId = computed(() => route.hash ? route.hash.replace(/^#/, '') : '')
+
+    // Пример перехода к треку: добавляем # только в URL
+    function goTo(id) {
+        router.replace({ hash: id }) // Nuxt сам добавит #
+    }
     // mpbile check
     const device = useDevice()
 
@@ -206,7 +206,7 @@
             }
         },
         {
-            cover: 'Foo_fighters-The_Pretender.jpg',
+            cover: 'Foo_Fighters-The_Pretender.jpg',
             anchor: 'the-pretender-foo-fighters',
             chapter: 'Глава 15.',
             soundtrack: 'Foo Fighters — The Pretender',
