@@ -13,6 +13,9 @@
 
   //background-color: rgba(233, 223, 229, 0.5);
   //background-color: rgba(241, 231, 239, 0.5);
+  background-color: transparent;
+  transition: background-color var(--transition-duration-longer);
+
   animation-name: scrolling-header;
   animation-fill-mode: both;
   animation-timeline: scroll();
@@ -67,8 +70,8 @@
     //transition-duration: var(--transition-duration);
     //transition-duration: var(--transition-duration-longer);
     //transition-duration: 1s;
-    //transition-duration: var(--transition-duration-longer);
-    transition-duration: .7s;
+    transition-duration: var(--transition-duration-longer);
+    //transition-duration: .7s;
       transition-behavior: allow-discrete;
     display: flex;
 
