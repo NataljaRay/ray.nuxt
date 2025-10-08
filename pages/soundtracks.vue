@@ -11,27 +11,29 @@
 
 
         <div class="soundtrack__media">
-          <div class="soundtrack__item" v-if="isMobile || isTablet">
+<!--          <div class="soundtrack__item" v-if="isMobile || isTablet">-->
+          <div class="soundtrack__item" v-if="isClient && (isMobile || isTablet)">
             <AlbumMin :album="track"/>
           </div>
 <!--          <div class="soundtrack__streamings" v-if="isMobile || isTablet">-->
 <!--            <Streamings :streamings="track.streamings" />-->
 <!--          </div>-->
           <div class="soundtrack__widget" v-else>
-<!--            <iframe src="https://vk.com/video_ext.php?oid=-1680&id=456239254&hd=2" width="853" height="480" style="background-color: #000" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>-->
-              <SmartPlayer
-                      :mode="'mode-soundtracks'"
-                      :ym="track.ym"
-                      :spotify="track.spotify"
-                      :ytm="track.ytm"
-                      :yt="track.yt"
-                      :vk="track.vk"
-                      :vkVideo="track.vkVideo"
-                      :title="track.soundtrack"
-                      :width="'100%'"
-                      :height="244"
-                      :debug-country="true"
-              />
+              <ClientOnly>
+                <SmartPlayer
+                        :mode="'mode-soundtracks'"
+                        :ym="track.ym"
+                        :spotify="track.spotify"
+                        :ytm="track.ytm"
+                        :yt="track.yt"
+                        :vk="track.vk"
+                        :vkVideo="track.vkVideo"
+                        :title="track.soundtrack"
+                        :width="'100%'"
+                        :height="244"
+                        :debug-country="true"
+                />
+              </ClientOnly>
           </div>
         </div>
       </div>
@@ -83,8 +85,20 @@
     import Streamings from '@/components/blocks/Streamings.vue'
     import AlbumMin from '@/components/blocks/AlbumMin.vue'
 
-    const hideNoteWindow = ref(false)
+    const isClient = ref(false)
 
+    onMounted(() => {
+        isClient.value = true
+    })
+
+    // mobile check
+    const device = useDevice()
+
+    const isMobile = computed(() => device.value.isMobile)
+    const isTablet = computed(() => device.value.isTablet)
+    const isDesktop = computed(() => device.value.isDesktop)
+
+    const hideNoteWindow = ref(false)
     const hideNote = () => {hideNoteWindow.value = true}
 
     // const route = useRoute()
@@ -97,13 +111,6 @@
     // function goTo(id) {
     //     router.replace({ hash: id }) // Nuxt сам добавит #
     // }
-    // mpbile check
-    const device = useDevice()
-
-    const isMobile = computed(() => device.value.isMobile)
-    const isTablet = computed(() => device.value.isTablet)
-    const isDesktop = computed(() => device.value.isDesktop)
-
 
     const soundtracks = [
         // {
@@ -404,6 +411,7 @@
     }
 
     onMounted(async () => {
+        // isClient.value = true
         await nextTick()
 
         const root = containerRef.value || document
@@ -427,6 +435,8 @@
 
         // initial calc
         updateActiveByTop(nodesList)
+
+        // isClient.value = true
 
         // подписываемся на скролл/резайз для realtime
         window.addEventListener('scroll', onScrollOrResize, { passive: true })
