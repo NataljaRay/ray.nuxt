@@ -13,8 +13,8 @@
 
   //background-color: rgba(233, 223, 229, 0.5);
   //background-color: rgba(241, 231, 239, 0.5);
-  background-color: transparent;
-  transition: background-color var(--transition-duration-longer);
+  //background-color: transparent;
+  //transition: background-color var(--transition-duration-longer);
 
   animation-name: scrolling-header;
   animation-fill-mode: both;
@@ -22,7 +22,7 @@
   animation-range: 0 100px;
   //animation-range: 0 180px;
   //transition-duration: var(--transition-duration-longer);
-  transition-delay: var(--transition-duration-longer);
+  //transition-delay: var(--transition-duration-longer);
 
   border-bottom: 1px solid transparent;
 
