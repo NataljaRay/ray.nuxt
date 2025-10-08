@@ -40,6 +40,37 @@
   //align-items: center;
   //justify-content: space-between;
   //gap: 34px;
+
+
+}
+.soundtrack__item {
+  margin-bottom: 32px;
+  //border-bottom: 2px solid var(--color-brown);
+
+  .album {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    //gap: 36px;
+    gap: 8vw;
+  }
+  .album__image-wrapper + .album__info-wrapper {
+    margin-top: 0;
+  }
+  .album__image-wrapper {
+    //max-width: 50%;
+    width: 20vw;
+    &:after {
+      width: 100%;
+      height: 100%;
+      top: 14px;
+      left: 14px;
+    }
+
+    @include mobile-s {
+      width: 50vw;
+    }
+  }
 }
 
 .soundtrack__list {
@@ -52,4 +83,18 @@
 
     @include flex-center;
   }
+}
+
+.soundtrack__streamings {
+  display: flex;
+  margin-top: 18px;
+  //gap: 16px;
+  gap: fluid(20, 14);
+  flex-wrap: wrap;
+}
+
+.soundtrack.is-current {
+  //outline: 2px solid rgba(0,0,0,0.06);
+  //background: rgba(255,255,255,1);
+  /* или твои стили активации */
 }

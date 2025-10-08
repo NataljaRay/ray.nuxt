@@ -433,7 +433,7 @@
 
 .section--album {
   position: relative;
-  padding-bottom: 80px;
+  //padding-bottom: 80px;
   margin-bottom: 80px;
   display: flex;
   justify-content: center;
@@ -452,6 +452,8 @@
   }
 
   &:not(.section--album-min) {
+    padding-bottom: 80px;
+    //margin-bottom: 80px;
     .section__col:last-child {
       justify-content: start;
       //@media (width <= 383px) {
@@ -461,10 +463,13 @@
     }
   }
 
-
+  @include mobile-s {
+    margin-bottom: 40px;
+  }
 }
 
 .section--album-min {
+  //margin-bottom: 40px;
   .section__col {
     justify-content: start;
 

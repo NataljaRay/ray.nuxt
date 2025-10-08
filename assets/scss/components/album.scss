@@ -11,7 +11,8 @@
     align-items: center;
     //gap: 36px;
     gap: 8vw;
-    margin-bottom: 28px;
+    //margin-bottom: 28px;
+    margin-bottom: 40px;
   }
   @include mobile {
     width: unset;
@@ -24,7 +25,10 @@
 
   .player__note {
     height: unset;
-    margin-top: 8px;
+    color: var(--color-black);
+    font-family: inherit;
+    font-weight: 600;
+    //margin-top: 8px;
 
     & + .album__streamings {
       margin-top: 8px;
@@ -56,13 +60,16 @@
   }
 }
 
-.album__info-wrapper {
+
+//.album__info-wrapper {
+.album__image-wrapper + .album__info-wrapper {
   margin-top: 56px;
   @include tablet {
     margin-top: 0;
   }
   @include mobile-s {
-    margin-top: 28px;
+    //margin-top: 28px;
+    margin-top: 4px;
   }
 
 }
@@ -71,6 +78,9 @@
 //}
 
 .album__info {
+  //margin-bottom: 8px;
+  //margin-bottom: 4px;
+  margin-block: 4px;
   &-item {
     font-size: 16px;
     line-height: 30px;

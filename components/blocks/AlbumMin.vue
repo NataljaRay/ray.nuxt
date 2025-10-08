@@ -2,7 +2,7 @@
 <!--  album-min.vue-->
         <div class="album">
 
-          <div class="album__image-wrapper">
+          <div class="album__image-wrapper" v-if="album.cover">
             <img :src="imgUrl(album.cover)"
                  :alt="album.title"
                  :title="album.title || ''"
@@ -11,27 +11,27 @@
           </div>
 
           <div class="album__info-wrapper">
-            <div class="h4 album__title">{{album.altTitle}}</div>
+            <div class="h4 album__title" v-if="album.altTitle">{{album.altTitle}}</div>
 
-            <ul class="album__info">
-              <li class="album__info-item">
+            <ul class="album__info" v-if="album.info">
+              <li class="album__info-item" v-if="album.info.releaseDate">
                 Дата релиза: <span>{{album.info.releaseDate}}</span>
               </li>
-              <li class="album__info-item">
+              <li class="album__info-item" v-if="album.info.label">
                 Лейбл: <span>{{album.info.label}}</span>
               </li>
-              <li class="album__info-item">
+              <li class="album__info-item" v-if="album.info.type">
                 Формат: <span>{{album.info.type}}</span>
               </li>
             </ul>
-            <Button class="button--link"
-                    target="_blank"
-                    :href="album.info.releasePage"
-                    label="Перейти на страницу релиза"
-            />
+<!--            <Button class="button&#45;&#45;link"-->
+<!--                    target="_blank"-->
+<!--                    :href="album.info.releasePage"-->
+<!--                    label="Перейти на страницу релиза"-->
+<!--            />-->
 
-            <div class="player__note">Слушать на музыкальных площадках: </div>
-            <div class="album__streamings">
+            <div class="player__note" v-if="album.streamings">Слушать на музыкальных площадках: </div>
+            <div class="album__streamings" v-if="album.streamings">
               <Streamings :streamings="album.streamings" />
             </div>
           </div>

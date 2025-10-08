@@ -1,11 +1,11 @@
 <template>
   <div class="player" :class="mode ? 'player--' + mode : ''">
 
-    <div>
-      <p v-if="isMobile">мобилка ✅</p>
-      <p v-else-if="isTablet">планшет ✅</p>
-      <p v-else>десктоп ✅</p>
-    </div>
+<!--    <div>-->
+<!--      <p v-if="isMobile">мобилка ✅</p>-->
+<!--      <p v-else-if="isTablet">планшет ✅</p>-->
+<!--      <p v-else>десктоп ✅</p>-->
+<!--    </div>-->
 
     <!-- Кнопки плееров (YT и YT Music = одна кнопка) -->
     <template v-if="mode != 'mode-music'">

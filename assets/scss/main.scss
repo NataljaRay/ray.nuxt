@@ -26,3 +26,53 @@
   overflow: hidden; clip: rect(0,0,0,0);
   white-space: nowrap; border: 0;
 }
+
+.mobile-note {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  left: 0;
+  bottom: 0;
+  padding: 32px;
+
+  background-color: var(--color-red);
+  color: var(--color-white);
+
+  transition-duration: var(--transition-duration);
+  transform: translateY(100%);
+  //animation: showNote;
+  animation: showNote var(--transition-duration) linear 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+
+  &.hidden {
+    //transform: translateY(100%);
+
+    animation: hideNote var(--transition-duration) linear 1;
+    animation-fill-mode: forwards;
+  }
+
+  &__close {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    transform: rotate(45deg);
+    font-size: 40px;
+    font-weight: 400;
+    width: 40px;
+    height: 40px;
+    @include flex-center;
+    z-index: 9;
+    //background-color: rebeccapurple;
+
+  }
+}
+
+@keyframes showNote {
+  from {transform: translateY(100%);}
+  to {transform: translateY(0);}
+}
+@keyframes hideNote {
+  from {transform: translateY(0);}
+  to {transform: translateY(100%);}
+}

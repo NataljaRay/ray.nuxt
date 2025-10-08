@@ -8,11 +8,11 @@
         </p>
       </div>
     </section>
-    <div>
-      <p v-if="isMobile">мобилка ✅</p>
-      <p v-else-if="isTablet">планшет ✅</p>
-      <p v-else>десктоп ✅</p>
-    </div>
+<!--    <div>-->
+<!--      <p v-if="isMobile">мобилка ✅</p>-->
+<!--      <p v-else-if="isTablet">планшет ✅</p>-->
+<!--      <p v-else>десктоп ✅</p>-->
+<!--    </div>-->
 
     <template v-if="isMobile || isTablet">
         <section class="section section--album section--album-min">
@@ -88,7 +88,7 @@
                 apple: {
                     id: 'apple-music',
                     fullName: 'Apple Music / Itunes',
-                    link: 'https://music.apple.com/ru/album/neurotic-love-ep/1833250573'
+                    link: 'https://music.apple.com/album/neurotic-love-ep/1833250573'
                 },
                 ytMusic: {
                     id: 'youtube-music',
@@ -101,7 +101,8 @@
                     link: 'https://zvuk.com/release/40554105'
                 },
                 vkMusic: {
-                    id: 'vk-music',
+                    // id: 'vk-music',
+                    id: 'vk',
                     fullName: 'Vk Music',
                     link: 'https://boom.ru/redirect/album/30898060'
                 },
@@ -137,22 +138,22 @@
                 apple: {
                     id: 'apple-music',
                     fullName: 'Apple Music / Itunes',
-                    link: 'https://music.apple.com/ru/album/youre-nice-but-i-hate-you-single/1821690077'
+                    link: 'https://music.apple.com/album/youre-nice-but-i-hate-you-single/1821690077'
                 },
                 ytMusic: {
                     id: 'youtube-music',
                     fullName: 'Youtube Music',
-                    link: 'https://music.youtube.com/playlist?list=OLAK5uy_kfpnyTmUfg2LB7vR22iqzYoQEGcsEP22M'
+                    link: 'https://music.youtube.com/watch?v=zi8n1VX57kg'
                 },
                 zvuk: {
                     id: 'zvuk',
                     fullName: 'Zvuk',
-                    link: 'https://zvuk.com/release/39153986'
+                    link: 'https://zvuk.com/track/150803315'
                 },
                 vkMusic: {
-                    id: 'vk-music',
+                    id: 'vk',
                     fullName: 'Vk Music',
-                    link: 'https://boom.ru/redirect/album/30317560'
+                    link: 'https://vk.ru/audio-2001203207_142203207'
                 },
 
             }

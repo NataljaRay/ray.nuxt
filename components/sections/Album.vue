@@ -28,11 +28,11 @@
                 Формат: <span>{{album.info.type}}</span>
               </li>
             </ul>
-            <Button class="button--link"
-                    target="_blank"
-                    :href="album.info.releasePage"
-                    label="Перейти на страницу релиза"
-            />
+<!--            <Button class="button&#45;&#45;link"-->
+<!--                    target="_blank"-->
+<!--                    :href="album.info.releasePage"-->
+<!--                    label="Перейти на страницу релиза"-->
+<!--            />-->
 
             <div class="player__note">Слушать на музыкальных площадках: </div>
 

@@ -1,5 +1,5 @@
 <template>
-  <section class="section section--soundtracks">
+  <section class="section section--soundtracks" ref="containerRef">
     <div class="section__inner container">
         <p class="section__text">
           Некоторые главы книги <strong>«В свете софитов»</strong> сопровождаются композицями, подобранными специально под её атмосферу. Здесь вы можете прослушать саундтреки, перейти к любимым главам и погрузиться глубже в эмоции героев.
@@ -9,28 +9,15 @@
         <p class="h4">{{track.chapter}} {{track.soundtrack}}</p>
         <p class="soundtrack__description" v-if="track.description">{{track.description}}</p>
 
-        <!-- Трек (миниконтролы) -->
-<!--        <div style="width:100%;">-->
-<!--        <iframe-->
-<!--                style="border:0; width:100%; height:120px;"-->
-<!--                src="https://bandcamp.com/EmbeddedPlayer/track=731891676/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"-->
-<!--                loading="lazy"-->
-<!--                seamless-->
-<!--        ></iframe>-->
-<!--&lt;!&ndash;        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"&ndash;&gt;-->
-<!--&lt;!&ndash;                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A15273221&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>&ndash;&gt;-->
-
-<!--          <iframe-->
-<!--                  width="100%"-->
-<!--                  height="166"-->
-<!--                  scrolling="no"-->
-<!--                  frameborder="no"-->
-<!--                  src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F15273221&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">-->
-<!--          </iframe>-->
-<!--        </div>-->
 
         <div class="soundtrack__media">
-          <div class="soundtrack__widget">
+          <div class="soundtrack__item" v-if="isMobile || isTablet">
+            <AlbumMin :album="track"/>
+          </div>
+<!--          <div class="soundtrack__streamings" v-if="isMobile || isTablet">-->
+<!--            <Streamings :streamings="track.streamings" />-->
+<!--          </div>-->
+          <div class="soundtrack__widget" v-else>
               <SmartPlayer
                       :mode="'mode-soundtracks'"
                       :ym="track.ym"
@@ -45,6 +32,11 @@
               />
           </div>
         </div>
+      </div>
+
+      <div class="mobile-note" :class="{hidden: hideNoteWindow}" v-if="isMobile || isTablet">
+        <span class="mobile-note__close" @click="hideNote">+</span>
+        🎧 На мобильных устройствах для полного воспроизведения трека откройте ссылку в приложении Spotify / Яндекс Музыка / ВКонтакте и др.
       </div>
 
       <div style="margin-top: 40px">
@@ -83,21 +75,33 @@
         }
     });
 
-    import { computed } from 'vue'
+    import { ref, computed, onMounted, onBeforeUnmount, nextTick } from 'vue'
     import { useRoute, useRouter } from '#imports'
-    import YandexMusicWidget from '../components/widgets/YandexMusicWidget.vue'
     import SmartPlayer from '@/components/SmartPlayer.vue'
+    import Streamings from '@/components/blocks/Streamings.vue'
+    import AlbumMin from '@/components/blocks/AlbumMin.vue'
 
-    const route = useRoute()
-    const router = useRouter()
+    const hideNoteWindow = ref(false)
 
-    // Хэш из URL всегда приходит с решёткой — убираем её для внутреннего использования
-    const activeId = computed(() => route.hash ? route.hash.replace(/^#/, '') : '')
+    const hideNote = () => {hideNoteWindow.value = true}
 
-    // Пример перехода к треку: добавляем # только в URL
-    function goTo(id) {
-        router.replace({ hash: id }) // Nuxt сам добавит #
-    }
+    // const route = useRoute()
+    // const router = useRouter()
+    //
+    // // Хэш из URL всегда приходит с решёткой — убираем её для внутреннего использования
+    // const activeId = computed(() => route.hash ? route.hash.replace(/^#/, '') : '')
+    //
+    // // Пример перехода к треку: добавляем # только в URL
+    // function goTo(id) {
+    //     router.replace({ hash: id }) // Nuxt сам добавит #
+    // }
+    // mpbile check
+    const device = useDevice()
+
+    const isMobile = computed(() => device.value.isMobile)
+    const isTablet = computed(() => device.value.isTablet)
+    const isDesktop = computed(() => device.value.isDesktop)
+
 
     const soundtracks = [
         // {
@@ -143,8 +147,9 @@
 
         },
         {
+            cover: 'Natalja_Ray-Neurotic_Love.jpg',
             anchor: 'how-much-natalja-ray',
-            chapter: 'Глава _.',
+            chapter: 'Глава 54.',
             soundtrack: 'Natalja Ray - How Much?',
             description: '',
 
@@ -153,6 +158,154 @@
             yt:  { videoId: 'zi8n1VX57kg' },
             vk:  { ownerId: -186374269, playlistId: 25, hash: 'b862a0f446f0be0a57' },
 
+            streamings: {
+                ym: {
+                    id: 'ym',
+                    fullName: 'Yandex Music',
+                    link: 'https://music.yandex.ru/track/141932162',
+                },
+                spotify: {
+                    id: 'spotify',
+                    fullName: 'Spotify',
+                    link: 'https://open.spotify.com/track/2G6kJ7jabSKft66Vj2mKjb',
+                },
+                apple: {
+                    id: 'apple-music',
+                    fullName: 'Apple Music / Itunes',
+                    link: 'https://music.apple.com/song/how-much/1833250577'
+                },
+                ytMusic: {
+                    id: 'youtube-music',
+                    fullName: 'Youtube Music',
+                    link: 'https://music.youtube.com/watch?v=zi8n1VX57kg'
+                },
+                zvuk: {
+                    id: 'zvuk',
+                    fullName: 'Zvuk',
+                    link: 'https://zvuk.com/track/150803315'
+                },
+                vkMusic: {
+                    // id: 'vk-music',
+                    id: 'vk',
+                    fullName: 'Vk Music',
+                    link: 'https://vk.ru/audio-2001203207_142203207'
+                },
+            }
+
         },
     ]
+
+    // refs
+    const containerRef = ref(null)
+    const currentAnchor = ref('')
+
+    /** helper: header height */
+    function getHeaderHeight() {
+        const root = document.documentElement
+        const v = getComputedStyle(root).getPropertyValue('--header-h')
+        if (v) {
+            const num = parseInt(v.trim().replace('px', ''), 10)
+            if (!Number.isNaN(num)) return num
+        }
+        const header = document.querySelector('header')
+        return header ? header.offsetHeight : 0
+    }
+
+    /** обновление hash без скролла (замена записи истории) */
+    function replaceHash(id) {
+        if (!id) {
+            history.replaceState(null, '', window.location.pathname + window.location.search)
+        } else {
+            const newUrl = window.location.pathname + window.location.search + `#${id}`
+            if (window.location.hash !== `#${id}`) {
+                history.replaceState(null, '', newUrl)
+            }
+        }
+    }
+
+    /** Удалить is-current у всех и поставить на el */
+    function setActiveElement(el) {
+        if (!el) return
+        document.querySelectorAll('.soundtrack.is-current').forEach(n => n.classList.remove('is-current'))
+        el.classList.add('is-current')
+    }
+
+    /** Основная логика: выбираем элемент, чья верхняя граница (top) ближе всего к верхней границе окна с учётом хедера */
+    function updateActiveByTop(nodes) {
+        if (!nodes || !nodes.length) return
+        const headerH = getHeaderHeight()
+        let best = null
+        let bestDist = Infinity
+
+        for (const el of nodes) {
+            const rect = el.getBoundingClientRect()
+            // расстояние от верхней границы элемента до верхней видимой границы (с учётом header)
+            const dist = Math.abs(rect.top - headerH)
+            // можно игнорировать полностью невидимые элементы (опционально)
+            // например: если rect.bottom < 0 || rect.top > window.innerHeight => пропустить
+            // но мы выбираем ближайший по top, даже если он уже прошёл — обычно это ожидаемо
+            if (dist < bestDist) {
+                bestDist = dist
+                best = el
+            }
+        }
+
+        if (best) {
+            const id = best.getAttribute('id') || best.dataset.anchor
+            if (id && currentAnchor.value !== id) {
+                currentAnchor.value = id
+                setActiveElement(best)
+                replaceHash(id)
+            }
+        }
+    }
+
+    /** Наблюдатель + scroll/resize оптимизация через rAF */
+    let io = null
+    let rafId = null
+    let nodesList = []
+
+    function onScrollOrResize() {
+        if (rafId) cancelAnimationFrame(rafId)
+        rafId = requestAnimationFrame(() => {
+            updateActiveByTop(nodesList)
+        })
+    }
+
+    onMounted(async () => {
+        await nextTick()
+
+        const root = containerRef.value || document
+        nodesList = Array.from(root.querySelectorAll('.soundtrack'))
+        if (!nodesList.length) return
+
+        // небольшой IntersectionObserver: пусть он просто триггерит пересчёт при входе/выходе
+        io = new IntersectionObserver((entries) => {
+            // на любую релевантную запись — пересчитываем лучшую секцию
+            // (позволяет сокращать работы, но окончательный выбор делаем через updateActiveByTop)
+            if (entries && entries.length) {
+                updateActiveByTop(nodesList)
+            }
+        }, {
+            root: null,
+            rootMargin: '-40% 0px -40% 0px',
+            threshold: [0, 0.25, 0.5, 0.75, 1]
+        })
+
+        nodesList.forEach(n => io.observe(n))
+
+        // initial calc
+        updateActiveByTop(nodesList)
+
+        // подписываемся на скролл/резайз для realtime
+        window.addEventListener('scroll', onScrollOrResize, { passive: true })
+        window.addEventListener('resize', onScrollOrResize, { passive: true })
+    })
+
+    onBeforeUnmount(() => {
+        if (io) { io.disconnect(); io = null }
+        if (rafId) cancelAnimationFrame(rafId)
+        window.removeEventListener('scroll', onScrollOrResize)
+        window.removeEventListener('resize', onScrollOrResize)
+    })
 </script>
