@@ -9,6 +9,9 @@
 
   //background-color: rgba(233, 223, 229, 0.5);
   //background-color: rgba(241, 231, 239, 0.5);
+  //background-color: rgb(241, 231, 239);
+  //background-color: var(--color-rose);
+  //background-image: linear-gradient(to right, var(--color-rose), rgb(241, 231, 239));
   //background-color: transparent;
   //transition: background-color var(--transition-duration-longer);
 
@@ -25,6 +28,7 @@
   @keyframes scrolling-header {
     to {
       background-color: var(--color-rose);
+      //background-color: rgb(241, 231, 239);
     }
   }
 
