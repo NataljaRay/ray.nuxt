@@ -29,6 +29,7 @@ export default defineNuxtConfig({
             link: [
                 { rel: 'icon', type: 'image/x-icon',      href: `${baseURL}favicon.ico` },
                 // { rel: 'icon', type: 'image/svg+xml',     href: `${baseURL}icon.svg` },              // опционально
+                { rel: 'icon', type: 'image/png',           href: `${baseURL}favicon-32x32.png` },              // опционально
                 { rel: 'apple-touch-icon', sizes: '180x180', href: `${baseURL}apple-touch-icon.png` }, // опционально
                 { rel: 'manifest',                        href: `${baseURL}site.webmanifest` },      // опционально
             ],
