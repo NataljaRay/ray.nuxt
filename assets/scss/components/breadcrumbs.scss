@@ -11,30 +11,15 @@
     justify-content: space-between;
     align-items: center;
     gap: 36px;
-
-    flex-wrap: wrap;//??
-
-    //@include mobile-s {
-    //@include tablet {
-    //  flex-direction: column;
-    //  align-items: start;
-    //  gap: 0;
-    //}
+    flex-wrap: wrap;
   }
 
   &__title {
     color: var(--color-white-true);
-    //@include fluid-text(48, 18);
-
-    //@include mobile-s {
-    //@include tablet {
-    //  order: 1;
-    //}
   }
 
   &__link {
     font-family: var(--font-family-title);
-    //font-size: 24px;
     @include fluid-text(24, 16);
     @include flex-center;
 
@@ -42,17 +27,12 @@
       color: var(--color-rose);
     }
 
-    //@include mobile-s {
-    //  order: 0;
-    //}
-
     &:before {
       content: '';
       display: block;
       @include square(20px);
       margin-right: 10px;
       background: url("@/assets/icons/arrow_left.svg") 50%/cover no-repeat;
-      //background: url("@/assets/images/hero/hero-bg.png") 50%/cover no-repeat;
     }
   }
 }

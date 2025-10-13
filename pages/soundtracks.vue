@@ -11,13 +11,10 @@
 
 
         <div class="soundtrack__media">
-<!--          <div class="soundtrack__item" v-if="isMobile || isTablet">-->
           <div class="soundtrack__item" v-if="isClient && (isMobile || isTablet)">
             <AlbumMin :album="track"/>
           </div>
-<!--          <div class="soundtrack__streamings" v-if="isMobile || isTablet">-->
-<!--            <Streamings :streamings="track.streamings" />-->
-<!--          </div>-->
+
           <div class="soundtrack__widget" v-else>
               <ClientOnly>
                 <SmartPlayer
@@ -72,9 +69,8 @@
     definePageMeta({
         seo: {
             title: 'Natalja Ray | Саундтреки',
-            description: 'Саундтреки',
-            // description: 'Саундтреки к книге «В свете софитов»',
-            image: '/og-about.jpg' // из public/
+            description: 'Саундтреки к книге "В свете софитов"',
+            image: '/NataljaRay.jpg' // из public/
             // noindex: true
         }
     });
@@ -171,7 +167,6 @@
             chapter: 'Глава 15.',
             soundtrack: 'Radio Tapok — The Pretender',
             description: '',
-        // , bgColor: 'rgb(103, 39, 35)'
             ym: { albumId: '17950261', trackId: '90655720', bgColor: 'rgb(95, 71, 67)' },
             spotify: { trackId: '72iyzWAM2158Kn8KD1ZImq' }, // The Pretender — RADIO TAPOK
             ytm: { videoId: 'SBklWPmxb_k' },           // Ролик Radio Tapok на YouTube
@@ -222,7 +217,6 @@
             spotify: { trackId: '7x8dCjCr0x6x2lXKujYD34' }, // The Pretender — Foo Fighters
             ytm: { videoId: 'SBjQ9tuuTJQ' },           // офиц. клип Foo Fighters
             yt:  { videoId: 'SBjQ9tuuTJQ' },
-            // vkVideo:  { videoId: '456239254' },
             vkVideo:  { ownerId: -1680, videoId: 456239254 },
 
             streamings: {
@@ -411,7 +405,6 @@
     }
 
     onMounted(async () => {
-        // isClient.value = true
         await nextTick()
 
         const root = containerRef.value || document
@@ -435,8 +428,6 @@
 
         // initial calc
         updateActiveByTop(nodesList)
-
-        // isClient.value = true
 
         // подписываемся на скролл/резайз для realtime
         window.addEventListener('scroll', onScrollOrResize, { passive: true })

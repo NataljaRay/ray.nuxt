@@ -7,7 +7,7 @@
         seo: {
             title: 'Natalja Ray | Новости',
             description: 'Новости',
-            image: '/og-about.jpg' // из public/
+            image: '/NataljaRay.jpg' // из public/
             // noindex: true
         }
     });

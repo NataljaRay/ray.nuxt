@@ -40,14 +40,11 @@
 
   transition-duration: var(--transition-duration);
   transform: translateY(100%);
-  //animation: showNote;
   animation: showNote var(--transition-duration) linear 1;
   animation-fill-mode: forwards;
   animation-delay: 1s;
 
   &.hidden {
-    //transform: translateY(100%);
-
     animation: hideNote var(--transition-duration) linear 1;
     animation-fill-mode: forwards;
   }
@@ -63,8 +60,6 @@
     height: 40px;
     @include flex-center;
     z-index: 9;
-    //background-color: rebeccapurple;
-
   }
 }
 

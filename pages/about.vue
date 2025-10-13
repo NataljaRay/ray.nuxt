@@ -1,11 +1,11 @@
 <template>
   <section>
     <h1>Обо мне</h1>
-    <div>
-      <p>test: {{ test }}</p>
-      <p>count: {{ count }} → double: {{ double }}</p>
-      <button @click="inc">+</button>
-    </div>
+<!--    <div>-->
+<!--      <p>test: {{ test }}</p>-->
+<!--      <p>count: {{ count }} → double: {{ double }}</p>-->
+<!--      <button @click="inc">+</button>-->
+<!--    </div>-->
   </section>
 </template>
 
@@ -14,7 +14,7 @@
         seo: {
             title: 'Natalja Ray | Обо мне',
             description: 'Музыка как голос. Книга как исповедь',
-            image: '/og-about.jpg' // из public/
+            image: '/NataljaRay.jpg' // из public/
             // noindex: true
         }
     });

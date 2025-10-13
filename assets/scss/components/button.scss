@@ -1,13 +1,10 @@
 .button {
   @include flex-center(true);
-  //padding: 6px 40px;
-  //padding: fluid-to-laptop(18,14) fluid-to-laptop(24,20);
   padding: fluid-to-laptop(11,6) fluid-to-laptop(40,20);
   font-weight: 600;
   color: var(--color-white-true);
   background-color: var(--color-red);
   border: none;
-  //border-radius: 7px;
   border-radius: 7px;
   user-select: none;
   cursor: pointer;
@@ -58,13 +55,10 @@
   &--transparent {
     background-color: transparent;
     color: var(--color-red);
-    //fill: var(--color-red);
 
     @include hover {
       background-color: transparent;
       color: var(--color-dark-red);
-      //svg {color: var(--color-dark-red);}
-      //fill: var(--color-dark-red);
     }
 
     &:has(.button__icon:only-child) {
@@ -72,18 +66,15 @@
 
       .button__icon {
         --icon-size: 32px;
-        //--icon-size: #{fluid-to-laptop(32,24)};
       }
     }
   }
 
   &--transparent-white {
     color: var(--color-white-true);
-    //fill: var(--color-white-true);
 
     @include hover {
       color: var(--color-rose);
-      //fill: var(--color-rose);
     }
   }
 
@@ -129,12 +120,9 @@
 }
 .button--tile {
   border-radius: 15px;
-  //width: 367px;
-  //height: 360px;
   @include square(360px);
   flex-direction: column;
 
-  //@include mobile-s {
   @include tablet {
     @include square(260px);
   }
@@ -194,11 +182,8 @@
 }
 
 .button--link {
-  //font-family: Inter;
-  //font-weight: 600;
   font-size: 16px;
   line-height: 20px;
-  //text-decoration: underline!important;
   color: var(--color-red);
   padding: 0;
   background-color: transparent;

@@ -1,9 +1,7 @@
 @use "@/assets/scss/helpers/index" as *;
 
-//.player-controls{margin-bottom:.6rem;display:flex;flex-wrap:wrap;gap:.5rem}
-//.btn{padding:.35rem .6rem;border:1px solid #cfcfcf;border-radius:8px;background:#fff;cursor:pointer}
+
 .btn.ok:hover{border-color:#333;cursor:pointer}
-//.btn{display: inline-block}
 .btn.off{
   display: none;
   opacity:.5;cursor:not-allowed!important;
@@ -12,13 +10,12 @@
   }
 }
 .btn.active{
-  //border-color:#333;
-
   .button--image {
     filter: none;
   }
 }
 .btn.err{border-color:#d22; color:#d22}
+
 .no-sources{
   opacity:.7;
   width: 100%;
@@ -33,7 +30,6 @@
   display: flex;
   justify-content: space-between;
   height:100%;
-  //width: 100%;
 
   @include mobile-s {
     flex-direction: column;
@@ -42,7 +38,6 @@
   &__controls {
     flex: 1;
     order: 1;
-    //@include flex-center;
     margin-left: 38px;
     display: flex;
     align-items: center;
@@ -60,7 +55,6 @@
     @include mobile-s {
       order: 0;
       flex-direction: row;
-      //align-items: start;
       justify-content: center;
       margin-left: 0;
       gap: 6vw;
@@ -81,9 +75,6 @@
       width: 100%;
       height: 100%;
     }
-    //flex-grow: 1;
-    //background-color: yellowgreen;
-    //background-color: var(--color-white-true);
   }
 }
 
@@ -94,7 +85,6 @@
   box-shadow: 0 0 1px 1px inset rgba(0, 0, 0, 0.15);
 }
 
-//background: rgb(136, 119, 97);
 
 .player-facade {
   opacity: .75;
@@ -102,13 +92,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  /*background: var(--color-black);*/
-  //background: rgb(136, 119, 97);
   cursor: pointer;
-  //background-image: url("https://avatars.yandex.net/get-music-content/5413882/48819957.a.19810900-1/400x400");
-  //background-size: contain;
-  //background-repeat: no-repeat;
-  //background-position: center;
 }
 .facade-overlay {
   position: absolute; inset: 0;
@@ -155,7 +139,6 @@
 
     @include tablet-above {
       margin-top: -56px;
-      //margin-top: 16px;
     }
 
     @include tablet {
@@ -178,8 +161,6 @@
     align-items: start;
     background-color: transparent;
     box-shadow: none;
-    //height: auto!important;
-    //min-height: 323px;
   }
 
   .embed-loader {
@@ -204,7 +185,6 @@
 
     @include tablet {
       order: 0;
-      //gap: 0;
       margin-left: 0;
       margin-bottom: 12px;
       align-items: center;
@@ -213,8 +193,6 @@
     }
 
     @include mobile-s {
-      //align-items: end;
-      //padding-inline: 32px;
       padding-inline: 16px;
     }
   }

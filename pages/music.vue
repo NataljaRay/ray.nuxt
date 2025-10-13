@@ -1,5 +1,4 @@
 <template>
-<!--  music.vue-->
   <div>
     <section class="section section--music-page section--universal">
       <div class="section__inner container">
@@ -8,11 +7,6 @@
         </p>
       </div>
     </section>
-<!--    <div>-->
-<!--      <p v-if="isMobile">мобилка ✅</p>-->
-<!--      <p v-else-if="isTablet">планшет ✅</p>-->
-<!--      <p v-else>десктоп ✅</p>-->
-<!--    </div>-->
 
     <template v-if="isMobile || isTablet">
         <section class="section section--album section--album-min">
@@ -38,8 +32,8 @@
     definePageMeta({
         seo: {
             title: 'Natalja Ray | Музыка',
-            description: 'Музыка',
-            image: '/og-about.jpg' // из public/
+            description: 'Музыка Natalja Ray',
+            image: '/NataljaRay.jpg' // из public/
             // noindex: true
         }
     });

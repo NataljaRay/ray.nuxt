@@ -18,8 +18,8 @@
     const seo = computed(() => {
         const m = (route.meta && route.meta.seo) || {}
         const title = m.title || 'Natalja Ray'
-        const description = m.description || 'Личный сайт Natalja Ray'
-        const img = m.image || '/og.jpg'
+        const description = m.description || 'Natalja Ray. Слово. Музыка. Свет. Тень.'
+        const img = m.image || '/NataljaRay.jpg'
         const absImg = img.startsWith('http')
             ? img
             : new URL(base + img.replace(/^\//, ''), siteUrl || 'http://localhost').toString()

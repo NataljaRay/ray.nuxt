@@ -5,15 +5,12 @@
   gap: 36px;
 
   @include mobile-s {
-  //  display: grid;
-  //  grid-template-columns: 1fr 1fr;
     gap: 18px;
   }
   &--mirrow {
     grid-template-columns: 1fr 1fr;
   }
   &--to-1 {
-    //@media (height > 450px) and (orientation: portrait) {
     @include tablet {
       grid-template-columns: 1fr;
     }
@@ -41,20 +38,4 @@
   @media (height <= 450px) and (orientation: landscape) {
     grid-template-columns: 1fr;
   }
-  //@media (height > 450px) and (orientation: portrait) {
-  //  grid-template-columns: 1fr;
-  //}
 }
-//.section--2 .grid-2{
-//  @media (height > 450px) and (orientation: portrait) {
-//    grid-template-columns: 1fr;
-//  }
-//}
-
-//.grid-3 {
-//  display: grid;
-//  grid-template-columns: repeat(3, 1fr);
-//  grid-template-rows: 100%;
-//  gap: 20px;
-//
-//}

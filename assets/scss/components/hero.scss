@@ -1,11 +1,8 @@
 @use "@/assets/scss/helpers/index" as *;
 
 .hero {
-  //min-height: 100vh;
-
   display: flex;
   flex-direction: column;
-
   background: url("@/assets/images/hero/hero-bg.png") 50%/cover no-repeat;
   height: 650px;
   margin-top: -93px;

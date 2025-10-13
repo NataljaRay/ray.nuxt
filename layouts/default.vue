@@ -1,20 +1,9 @@
 <template>
   <div class="app-wrapper">
-<!--    <a class="skip-link" href="#main">Пропустить к содержимому/ ЯКОРЬ?</a>-->
     <AppHeader/>
     <AppBreadcrumbs :seo="route.meta?.seo"/>
     <main id="main" class="content"><slot /></main>
     <AppFooter/>
-
-<!--    &lt;!&ndash; как обычная кнопка &ndash;&gt;-->
-<!--    <Button label="Click me" mode="transparent" color="red" class="w-full" />-->
-
-<!--    &lt;!&ndash; внутренняя ссылка (NuxtLink) &ndash;&gt;-->
-<!--    <Button href="/about" label="About us" icon-name="arrow-right" icon-position="after" />-->
-
-<!--    &lt;!&ndash; внешняя ссылка &ndash;&gt;-->
-<!--    <Button href="https://example.com" target="_blank" label="External" color="blue" />-->
-
   </div>
 </template>
 
@@ -31,8 +20,8 @@
     const seo = computed(() => {
         const m = (route.meta && route.meta.seo) || {}
         const title = m.title || 'Natalja Ray'
-        const description = m.description || 'Личный сайт Natalja Ray'
-        const img = m.image || '/og.jpg'
+        const description = m.description || 'Natalja Ray. Слово. Музыка. Свет. Тень.'
+        const img = m.image || '/NataljaRay.jpg'
         const absImg = img.startsWith('http')
             ? img
             : new URL(base + img.replace(/^\//, ''), siteUrl || 'http://localhost').toString()
@@ -59,18 +48,7 @@
         }]
     }))
 
-    // Фавиконки
-    // useHead(() => ({
-    //     link: [
-    //         { rel: 'icon', type: 'image/x-icon', href: base + 'favicon.ico' },
-    //         // опционально:
-    //         // { rel: 'icon', type: 'image/svg+xml', href: base + 'icon.svg' },
-    //         // { rel: 'apple-touch-icon', sizes: '180x180', href: base + 'apple-touch-icon.png' },
-    //         // { rel: 'manifest', href: base + 'site.webmanifest' },
-    //     ]
-    // }))
 </script>
 <style scoped>
-  /*.skip-link{position:absolute;left:-9999px;top:-9999px}*/
-  /*.skip-link:focus{left:16px;top:16px;background:#fff;padding:6px 10px;border:1px solid #000}*/
+
 </style>
