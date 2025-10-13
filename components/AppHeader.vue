@@ -4,7 +4,6 @@
       <NuxtLink class="header__logo logo" to="/" aria-label="Home" @click="closeMenu">Natalja Ray</NuxtLink>
 
       <dialog class="header__overlay-menu-dialog" :open="open">
-<!--        <AppNav :open="open" />-->
         <AppNav v-model:open="open" />
         <social-links class="header__actions"/>
 
@@ -63,43 +62,8 @@
     const route = useRoute()
     watch(() => route.fullPath, () => { open.value = false })
 
-    // const closeMenu = () => {
-    //     open.value = false
-    // }
-    //
-    // // ЕДИНСТВЕННЫЙ реактивный head-запрос.
-    // // Класс будет добавляться/убираться автоматически при изменении open.
-    // useHead(() => ({
-    //     bodyAttrs: {
-    //         class: { 'no-scroll': open.value }
-    //     }
-    // }))
 </script>
-<!--<script>-->
 
-<!--    import Button from '@/components/common/Button.vue'-->
-<!--    import AppNav from '@/components/AppNav.vue'-->
-<!--    import SocialLinks from "./blocks/SocialLinks";-->
-
-<!--    export default {-->
-<!--        name: 'AppHeader',-->
-<!--        components: {SocialLinks, AppNav, Button },-->
-<!--        data: () =>  ({-->
-<!--            open: false,-->
-<!--            titleOpenMenu: 'Open menu',-->
-<!--        }),-->
-<!--        -->
-<!--        // watch: {-->
-<!--        //     open(value) {-->
-<!--        //         useHead({-->
-<!--        //             bodyAttrs: {-->
-<!--        //                 class: value ? 'no-scroll' : 'test'-->
-<!--        //             }-->
-<!--        //         })-->
-<!--        //     }-->
-<!--        // }-->
-<!--    }-->
-<!--</script>-->
 <style>
   .no-scroll {
     overflow: hidden;
@@ -107,6 +71,4 @@
 </style>
 <style scoped>
 
-  /*.site-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 16px;border-bottom:1px solid rgba(0,0,0,.1)}*/
-  /*.logo{font-weight:700;text-decoration:none}*/
 </style>

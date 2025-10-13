@@ -3,7 +3,6 @@
   <section class="section section--album">
     <div class="section__inner grid-2 grid-2--to-1 container">
       <div class="section__col">
-<!--        album: {{album}}-->
         <div class="album">
 
           <div class="album__image-wrapper">
@@ -11,6 +10,7 @@
                  :alt="album.title"
                  :title="album.title || ''"
                  width="342" height="342" loading="lazy" decoding="async"
+                 fetchpriority="high"
             >
           </div>
 
@@ -45,7 +45,6 @@
       </div>
       <div class="section__col">
         <div class="album-widget">
-<!--          <div class="album-player">-->
             <SmartPlayer
                     :mode="'mode-music'"
                     :ym="album.ym"
@@ -58,7 +57,6 @@
                     :height="556"
                     :debug-country="true"
             />
-<!--          </div>-->
         </div>
 
       </div>
@@ -67,7 +65,6 @@
 </template>
 
 <script setup>
-    // import {ref, computed, reactive, onMounted, onBeforeUnmount} from 'vue'
     import {computed} from 'vue'
     import Streamings from '@/components/blocks/Streamings.vue'
     import Button from '@/components/common/Button.vue'
@@ -77,15 +74,12 @@
     import { withBase } from 'ufo'
 
     const imgUrl = (key) => withBase(`/images/albums/${key}`, baseURL)
-    // const iconUrl = (key) => withBase(`/icons/music/${key}.svg`, baseURL)
 
     const { public: { baseURL, siteUrl } } = useRuntimeConfig();
 
     const props = defineProps({
         album:      { type: Object, default: null },
     })
-
-
 </script>
 
 <style scoped>

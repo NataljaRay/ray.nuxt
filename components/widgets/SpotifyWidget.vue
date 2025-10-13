@@ -12,7 +12,7 @@
               loading="lazy"
               @load="onLoad"
       />
-<!--      <div v-if="!loaded" class="embed-loader"><span class="spinner" /></div>-->
+
       <EmbedLoader :show="!loaded" />
     </div>
   </ClientOnly>

@@ -1,13 +1,6 @@
 <template>
   <div class="player" :class="mode ? 'player--' + mode : ''">
 
-<!--    <div>-->
-<!--      <p v-if="isMobile">мобилка ✅</p>-->
-<!--      <p v-else-if="isTablet">планшет ✅</p>-->
-<!--      <p v-else>десктоп ✅</p>-->
-<!--    </div>-->
-
-    <!-- Кнопки плееров (YT и YT Music = одна кнопка) -->
     <template v-if="mode != 'mode-music'">
       <div class="player__controls" v-if="currentComponent">
         <div class="player__note">Активный плеер: </div>
@@ -103,7 +96,6 @@
       />
 
       <div v-if="!loaded" class="embed-loader first-loader" style="background-color: var(--color-rose)">
-<!--      <div  class="embed-loader first-loader" style="z-index:1;opacity:1!important;background-color: var(&#45;&#45;color-rose)">-->
         <span class="loader" />
       </div>
     </div>
@@ -238,24 +230,17 @@
   //loader
 
     const loaded = ref(false)
-    // const timedOut = ref(false)
     let t
     function onLoad() {
         loaded.value = true
         clearTimeout(t)
-        // emit('widget-ok', { key: props.platformKey })
     }
     onMounted(() => {
         loaded.value = false
-        // timedOut.value = false
         t = setTimeout(() => {
-            // if (!loaded.value) {
                 loaded.value = true
                 // для автозагрузки ЯМ !!!!
                 activateYM
-                // timedOut.value = true
-                // emit('widget-error', { key: props.platformKey, code: 'timeout' })
-            // }
         }, 7000)
     })
     onBeforeUnmount(() => clearTimeout(t))

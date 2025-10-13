@@ -14,10 +14,6 @@
               @load="onLoad"
       />
       <EmbedLoader :show="!loaded" :hint="timedOut ? 'Долго грузится… проверьте VPN/CSP' : ''" />
-<!--      <div v-if="!loaded" class="embed-loader">-->
-<!--        <span class="spinner" />-->
-<!--        <p v-if="timedOut" class="hint">Долго грузится… проверьте VPN/CSP</p>-->
-<!--      </div>-->
     </div>
   </ClientOnly>
 </template>

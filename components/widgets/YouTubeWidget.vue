@@ -3,10 +3,6 @@
     <div class="embed-wrap" :style="wrapStyle">
       <div :id="elId"></div>
       <EmbedLoader :show="!settled" :hint="timedOut ? 'YouTube долго грузится…' : ''" />
-<!--      <div v-if="!settled" class="embed-loader">-->
-<!--        <span class="spinner" />-->
-<!--        <p v-if="timedOut" class="hint">YouTube долго грузится…</p>-->
-<!--      </div>-->
     </div>
   </ClientOnly>
 </template>
