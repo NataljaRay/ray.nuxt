@@ -3,6 +3,7 @@
     <div class="vk-video-wrap" :style="wrapStyle">
       <iframe
               :src="embedUrl"
+              title="Плеер Вконтакте"
               width="100%"
               :height="height"
               frameborder="0"
