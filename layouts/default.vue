@@ -44,7 +44,7 @@
     useHead(() => ({
         link: [{
             rel: 'canonical',
-            href: new URL(base.replace(/\/$/, '') + route.path, siteUrl || 'http://localhost').toString()
+            href: new URL(base.replace(/\/$/, '') + route.path, siteUrl || 'https://nataljaray.art/').toString()
         }]
     }))
 
