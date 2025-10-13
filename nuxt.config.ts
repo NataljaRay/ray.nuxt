@@ -2,7 +2,7 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 const isProd = process.env.NODE_ENV === 'production'
-const baseURL = process.env.NUXT_APP_BASE_URL || '/ray.nuxt/'
+const baseURL = process.env.NUXT_APP_BASE_URL || '/'
 
 export default defineNuxtConfig({
     app: {
