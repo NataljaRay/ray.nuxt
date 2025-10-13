@@ -3,10 +3,6 @@
     <div class="embed-wrap vk-widget" :style="wrapStyle">
       <div :id="elId" class="vk-playlist-widget" />
       <EmbedLoader :show="!loaded" :hint="timedOut ? 'VK долго грузится…' : ''" />
-<!--      <div v-if="!loaded" class="embed-loader">-->
-<!--        <span class="spinner" />-->
-<!--        <p v-if="timedOut" class="hint">VK долго грузится…</p>-->
-<!--      </div>-->
     </div>
     <p v-if="showFallback" class="vk-fallback">
       Не удалось загрузить виджет VK. Откройте плейлист:

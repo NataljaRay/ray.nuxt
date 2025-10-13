@@ -6,7 +6,6 @@
         Хочешь задать вопрос, оставить отзыв или предложить сотрудничество?<br/>
         Напиши мне!
       </p>
-<!--      <SocialLinks class="footer__links" customClass="button&#45;&#45;transparent-white"/>-->
       <social-links class="footer__links" :button-custom-class="'button--transparent-white'"/>
       <Button class="footer__button"
               href="mailto:nray92v@gmail.com"

@@ -1,5 +1,4 @@
 <template>
-<!--  album-min.vue-->
         <div class="album">
           <div class="album__image-wrapper" v-if="album.cover">
             <img :src="imgUrl(album.cover)"
