@@ -120,6 +120,7 @@
             anchor: 'shame-on-me',
             chapter: 'Глава 14.',
             soundtrack: 'Catch Your Breath — Shame On Me',
+            title: 'Catch Your Breath — Shame On Me',
             description: '',
 
             ym: { albumId: '19810900', trackId: '96626688', bgColor: 'rgb(136, 119, 97)' },
@@ -166,6 +167,7 @@
             anchor: 'the-pretender-radio-tapok',
             chapter: 'Глава 15.',
             soundtrack: 'Radio Tapok — The Pretender',
+            title: 'Radio Tapok — The Pretender',
             description: '',
             ym: { albumId: '17950261', trackId: '90655720', bgColor: 'rgb(95, 71, 67)' },
             spotify: { trackId: '72iyzWAM2158Kn8KD1ZImq' }, // The Pretender — RADIO TAPOK
@@ -212,6 +214,7 @@
             anchor: 'the-pretender-foo-fighters',
             chapter: 'Глава 15.',
             soundtrack: 'Foo Fighters — The Pretender',
+            title: 'Foo Fighters — The Pretender',
             description: '',
 
             spotify: { trackId: '7x8dCjCr0x6x2lXKujYD34' }, // The Pretender — Foo Fighters
@@ -248,6 +251,7 @@
             anchor: 'how-much-natalja-ray',
             chapter: 'Глава 54.',
             soundtrack: 'Natalja Ray - How Much?',
+            title: 'Natalja Ray - How Much?',
             description: '',
 
             ym: { albumId: '37825294', trackId: '141932162', bgColor: 'rgb(103, 39, 35)' },

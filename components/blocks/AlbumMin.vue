@@ -1,12 +1,12 @@
 <template>
 <!--  album-min.vue-->
         <div class="album">
-
           <div class="album__image-wrapper" v-if="album.cover">
             <img :src="imgUrl(album.cover)"
                  :alt="album.title"
                  :title="album.title || ''"
-                 width="342" height="342" loading="lazy" decoding="async"
+                 width="342" height="342" decoding="async"
+                 fetchpriority="high"
             >
           </div>
 
