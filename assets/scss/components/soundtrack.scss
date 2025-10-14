@@ -76,3 +76,14 @@
   gap: fluid(20, 14);
   flex-wrap: wrap;
 }
+
+
+/* css (пример) */
+.desktop .soundtrack__item--mobile { display: none; }
+.desktop .soundtrack__widget--desktop { display: block; }
+
+/* медиазапросы */
+//@media (max-width: 768px) {
+  .mobile .soundtrack__item--mobile { display: block; }
+  .mobile .soundtrack__widget--desktop { display: none; }
+//}

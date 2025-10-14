@@ -1,14 +1,14 @@
 <template>
         <div class="album">
           <div class="album__image-wrapper" v-if="album.cover">
-            <ClientOnly>
-              <img :src="isMobile || isTablet ? imgUrlSm(album.cover) : imgUrl(album.cover)"
+<!--            <ClientOnly>-->
+              <img :src="(isMobile || isTablet) && props.compressed ? imgUrlSm(album.cover) : imgUrl(album.cover)"
                    :alt="album.title"
                    :title="album.title || ''"
                    width="342" height="342" decoding="async"
                    fetchpriority="high"
               >
-              </ClientOnly>
+<!--              </ClientOnly>-->
           </div>
 
           <div class="album__info-wrapper">
@@ -61,6 +61,7 @@
 
     const props = defineProps({
         album:      { type: Object, default: null },
+        compressed: { type: Boolean, default: false },
     })
 
 </script>
