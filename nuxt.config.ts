@@ -2,7 +2,7 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 const isProd = process.env.NODE_ENV === 'production'
-const baseURL = process.env.NUXT_APP_BASE_URL || '/ray.nuxt/'
+const baseURL = process.env.NUXT_APP_BASE_URL || '/'
 
 export default defineNuxtConfig({
     app: {
@@ -30,6 +30,7 @@ export default defineNuxtConfig({
             link: [
                 { rel: 'icon', type: 'image/x-icon',      href: `${baseURL}favicon.ico` },
                 // { rel: 'icon', type: 'image/svg+xml',     href: `${baseURL}icon.svg` },              // опционально
+                { rel: 'icon', type: 'image/png',           href: `${baseURL}favicon-32x32.png` },              // опционально
                 { rel: 'apple-touch-icon', sizes: '180x180', href: `${baseURL}apple-touch-icon.png` }, // опционально
                 { rel: 'manifest',                        href: `${baseURL}site.webmanifest` },      // опционально
             ],
@@ -38,7 +39,7 @@ export default defineNuxtConfig({
 
     runtimeConfig: {
         public: {
-            siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+            siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://nataljaray.art',
             baseURL,
         }
     },

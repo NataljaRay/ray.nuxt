@@ -22,7 +22,7 @@
         const img = m.image || '/NataljaRay.jpg'
         const absImg = img.startsWith('http')
             ? img
-            : new URL(base + img.replace(/^\//, ''), siteUrl || 'http://localhost').toString()
+            : new URL(base + img.replace(/^\//, ''), siteUrl || 'https://nataljaray.art/').toString()
         return { title, description, image: absImg, noindex: !!m.noindex }
     })
 
@@ -42,7 +42,7 @@
     useHead(() => ({
         link: [{
             rel: 'canonical',
-            href: new URL(base.replace(/\/$/, '') + route.path, siteUrl || 'http://localhost').toString()
+            href: new URL(base.replace(/\/$/, '') + route.path, siteUrl || 'https://nataljaray.art/').toString()
         }]
     }))
 
