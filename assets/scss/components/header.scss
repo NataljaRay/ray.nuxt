@@ -7,39 +7,30 @@
   width: 100%;
   padding-block: 16px; // от 24 к 16 (на мобиле)
 
-  //background-color: rgba(233, 223, 229, 0.5);
-  //background-color: rgba(241, 231, 239, 0.5);
-  //background-color: rgb(241, 231, 239);
-  //background-color: var(--color-rose);
-  //background-image: linear-gradient(to right, var(--color-rose), rgb(241, 231, 239));
-  //background-color: transparent;
-  //transition: background-color var(--transition-duration-longer);
+  background-color: var(--color-rose);
+  //background-image: linear-gradient(to right, rgb(233, 224, 230), rgb(241, 231, 239));
 
-  animation-name: scrolling-header;
-  animation-fill-mode: both;
-  animation-timeline: scroll();
-  animation-range: 0 100px;
-  //animation-range: 0 180px;
+
+  //animation-name: scrolling-header;
+  //animation-fill-mode: both;
+  //animation-timeline: scroll();
+  //animation-range: 0 100px;
 
   border-bottom: 1px solid transparent;
 
   height: 93px;
   
-  @keyframes scrolling-header {
-    to {
-      background-color: var(--color-rose);
-      //background-color: rgb(241, 231, 239);
-    }
-  }
+  //@keyframes scrolling-header {
+  //  to {
+  //    background-color: var(--color-rose);
+  //  }
+  //}
 
   @include tablet {
     padding-block: 10px;
     height: 66px;
+    //background-image: linear-gradient(to right, rgb(235, 226, 231), rgb(241, 231, 239));
   }
-
-  //@include mobile-s {
-  //  animation-range: 0 100px;
-  //}
 
   &__inner {
     display: flex;
