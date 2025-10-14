@@ -1,5 +1,6 @@
 <template>
-  <section class="section section--soundtracks" ref="containerRef">
+  <section class="section section--soundtracks" ref="containerRef"
+            :class="isClient && isDesktop ? 'desktop' : 'mobile'">
     <div class="section__inner container">
         <p class="section__text">
           Некоторые главы книги <strong>«В свете софитов»</strong> сопровождаются композицями, подобранными специально под её атмосферу. Здесь вы можете прослушать саундтреки, перейти к любимым главам и погрузиться глубже в эмоции героев.
@@ -12,11 +13,13 @@
 
         <div class="soundtrack__media">
 <!--          <ClientOnly>-->
-          <div class="soundtrack__item" v-if="isClient && (isMobile || isTablet)">
-            <AlbumMin :album="track"/>
+<!--          <div class="soundtrack__item" v-if="isClient && (isMobile || isTablet)">-->
+          <div class="soundtrack__item soundtrack__item--mobile" >
+            <AlbumMin :album="track" :compressed="true"/>
           </div>
 
-          <div class="soundtrack__widget" v-else>
+<!--          <div class="soundtrack__widget" v-else>-->
+          <div class="soundtrack__widget soundtrack__widget--desktop" v-if="isClient && isDesktop">
               <ClientOnly>
                 <SmartPlayer
                         :mode="'mode-soundtracks'"

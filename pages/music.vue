@@ -1,6 +1,7 @@
 <template>
   <div>
-    <section class="section section--music-page section--universal">
+    <section class="section section--music-page section--universal"
+             :class="isClient && isDesktop ? 'desktop' : 'mobile'">
       <div class="section__inner container">
         <p class="section__text">
           Моя музыка рождается из состояний, ощущений и сцен. Здесь вы найдёте как саундтреки к книгам, так и независимые композиции — истории, которые звучат изнутри.
@@ -13,7 +14,7 @@
           <div class="section__inner grid-2 grid-2--mirrow grid-2--to-1 container">
             <div class="section__col"
                  v-for="album in albums" :key="album.title">
-              <AlbumMin :album="album"/>
+              <AlbumMin :album="album" :compressed="false"/>
             </div>
           </div>
         </section>
