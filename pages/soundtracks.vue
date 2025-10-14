@@ -9,17 +9,18 @@
       <div class="soundtrack" v-for="track in soundtracks" :key="track.anchor" :id="track.anchor">
         <p class="h4">{{track.chapter}} {{track.soundtrack}}</p>
         <p class="soundtrack__description" v-if="track.description">{{track.description}}</p>
+<!--        <div class="player__note" v-if="isDesktop && track.soon">{{track.soon}}</div>-->
 
 
         <div class="soundtrack__media">
 <!--          <ClientOnly>-->
-<!--          <div class="soundtrack__item" v-if="isClient && (isMobile || isTablet)">-->
-          <div class="soundtrack__item soundtrack__item--mobile" >
+          <div class="soundtrack__item" v-if="isClient && (isMobile || isTablet)">
+<!--          <div class="soundtrack__item soundtrack__item&#45;&#45;mobile">-->
             <AlbumMin :album="track" :compressed="true"/>
           </div>
 
-<!--          <div class="soundtrack__widget" v-else>-->
-          <div class="soundtrack__widget soundtrack__widget--desktop" v-if="isClient && isDesktop">
+          <div class="soundtrack__widget" v-else>
+<!--          <div class="soundtrack__widget soundtrack__widget&#45;&#45;desktop" v-if="isClient && isDesktop">-->
               <ClientOnly>
                 <SmartPlayer
                         :mode="'mode-soundtracks'"
@@ -41,10 +42,10 @@
         </div>
       </div>
 
-      <div class="mobile-note" :class="{hidden: hideNoteWindow}" v-if="isMobile || isTablet">
-        <span class="mobile-note__close" @click="hideNote">+</span>
-        🎧 На мобильных устройствах для полного воспроизведения трека откройте ссылку в приложении Spotify / Яндекс Музыка / ВКонтакте и др.
-      </div>
+<!--      <div class="mobile-note" :class="{hidden: hideNoteWindow}" v-if="isMobile || isTablet">-->
+<!--        <span class="mobile-note__close" @click="hideNote">+</span>-->
+<!--        🎧 На мобильных устройствах для полного воспроизведения трека откройте ссылку в приложении Spotify / Яндекс Музыка / ВКонтакте и др.-->
+<!--      </div>-->
 
       <div style="margin-top: 60px; display: none">
         <p class="h4">Саундтреки по главам</p>
@@ -58,6 +59,7 @@
 <!--          <li><a href="#shame-on-me">Глава 14. Catch Your Breath — Shame On Me</a></li>-->
 <!--          <li><a href="#the-pretender-radio-tapok">Глава 15. Radio Tapok — The Pretender</a></li>-->
 <!--          <li><a href="#the-pretender-foo-fighters">Глава 15. Foo Fighters — The Pretender</a></li>-->
+
 <!--          <li>Глава 23. Evanescence — Bring Me to Life</li>-->
 <!--          <li>Глава 23. Evanescence — My Immortal (band version)</li>-->
 <!--          <li>Глава 31. Avril Lavigne — Innocence</li>-->
@@ -115,12 +117,15 @@
     // }
 
     const soundtracks = [
-        // {
-        //     anchor: 'what-is-your-plan',
-        //     chapter: 'Глава 14.',
-        //     soundtrack: 'Natalja Ray — Каков твой план?',
-        //     description: 'Первый шаг на сцену. Волнение. Свет бьёт в глаза. Всё начинается.',
-        // },
+        {
+            cover: 'Natalja_Ray-What_Is_Your_Plan.jpg',
+            anchor: 'what-is-your-plan',
+            chapter: 'Глава 14.',
+            soundtrack: 'Natalja Ray — Каков твой план?',
+            // description: 'Первый шаг на сцену. Волнение. Свет бьёт в глаза. Всё начинается.',
+            description: '',
+            soon: 'Трек появится чуть позже',
+        },
         {
             cover: 'Catch_Your_Breath-Shame_On_Me.jpg',
             anchor: 'shame-on-me',
@@ -155,11 +160,11 @@
                     fullName: 'Youtube Music',
                     link: 'https://music.youtube.com/watch?v=ihEQYiq89PU'
                 },
-                zvuk: {
-                    id: 'zvuk',
-                    fullName: 'Zvuk',
-                    link: 'https://zvuk.com/track/159958770'
-                },
+                // zvuk: {
+                //     id: 'zvuk',
+                //     fullName: 'Zvuk',
+                //     link: 'https://zvuk.com/track/159958770'
+                // },
                 vkMusic: {
                     // id: 'vk-music',
                     id: 'vk',
@@ -201,11 +206,6 @@
                     id: 'youtube-music',
                     fullName: 'Youtube Music',
                     link: 'https://music.youtube.com/watch?v=N7QwN0EAWEg'
-                },
-                zvuk: {
-                    id: 'zvuk',
-                    fullName: 'Zvuk',
-                    link: 'https://zvuk.com/track/108361695'
                 },
                 vkMusic: {
                     // id: 'vk-music',
@@ -252,54 +252,370 @@
 
             }
         },
-        {
-            cover: 'Natalja_Ray-Neurotic_Love.jpg',
-            anchor: 'how-much-natalja-ray',
-            chapter: 'Глава 54.',
-            soundtrack: 'Natalja Ray - How Much?',
-            title: 'Natalja Ray - How Much?',
-            description: '',
 
-            ym: { albumId: '37825294', trackId: '141932162', bgColor: 'rgb(103, 39, 35)' },
-            spotify: { trackId: '2G6kJ7jabSKft66Vj2mKjb' },
-            yt:  { videoId: 'zi8n1VX57kg' },
-            vk:  { ownerId: -186374269, playlistId: 25, hash: 'b862a0f446f0be0a57' },
+
+        {
+            cover: 'Evanescence-Fallen.jpg',
+            anchor: 'bring-me-to-life',
+            chapter: 'Глава 23.',
+            soundtrack: 'Evanescence — Bring Me to Life',
+            title: 'Evanescence — Bring Me to Life',
+            description: '',
+            ym: { trackId: '328683', bgColor: 'rgb(95, 71, 67)' },
+            spotify: { trackId: '0COqiPhxzoWICwFCS4eZcp' },
+            yt:  { videoId: '3YxaaGgTQYM' },
+            vk:  { ownerId: 33803753, playlistId: 82873838, hash: 'a786cdc8d49a939b8f' },
 
             streamings: {
                 ym: {
                     id: 'ym',
                     fullName: 'Yandex Music',
-                    link: 'https://music.yandex.ru/track/141932162',
+                    // link: 'https://music.yandex.ru/track/328683',
+                    link: 'https://music.yandex.ru/playlists/d9382630-7178-c4e8-a67d-06c001688b02',
                 },
                 spotify: {
                     id: 'spotify',
                     fullName: 'Spotify',
-                    link: 'https://open.spotify.com/track/2G6kJ7jabSKft66Vj2mKjb',
+                    link: 'https://open.spotify.com/track/0COqiPhxzoWICwFCS4eZcp',
                 },
                 apple: {
                     id: 'apple-music',
                     fullName: 'Apple Music / Itunes',
-                    link: 'https://music.apple.com/song/how-much/1833250577'
+                    link: 'https://music.apple.com/song/bring-me-to-life/1440666111'
                 },
                 ytMusic: {
                     id: 'youtube-music',
                     fullName: 'Youtube Music',
-                    link: 'https://music.youtube.com/watch?v=zi8n1VX57kg'
-                },
-                zvuk: {
-                    id: 'zvuk',
-                    fullName: 'Zvuk',
-                    link: 'https://zvuk.com/track/150803315'
+                    link: 'https://music.youtube.com/watch?v=-eGM0IJc70Y'
                 },
                 vkMusic: {
                     // id: 'vk-music',
                     id: 'vk',
                     fullName: 'Vk Music',
-                    link: 'https://vk.ru/audio-2001203207_142203207'
+                    link: 'https://vk.com/audio-2001344310_6344310'
                 },
             }
-
         },
+        {
+            cover: 'Evanescence-Fallen.jpg',
+            anchor: 'my_immortal',
+            chapter: 'Глава 23.',
+            soundtrack: 'Evanescence — My Immortal (band version)',
+            title: 'Evanescence — My Immortal (band version)',
+            description: '',
+            ym: { trackId: '328686', bgColor: 'rgb(95, 71, 67)' },
+            spotify: { trackId: '3PYdxIDuBIuJSDGwfptFx4' },
+            yt:  { videoId: 'Cgasz7W9DVA' },
+            vk:  { ownerId: 33803753, playlistId: 82873839, hash: 'ee2a8c6618271e2343' },
+
+            streamings: {
+                ym: {
+                    id: 'ym',
+                    fullName: 'Yandex Music',
+                    // link: 'https://music.yandex.ru/track/328686',
+                    link: 'https://music.yandex.ru/playlists/1f80b60d-f80a-fd57-bb86-2ad923768175',
+                },
+                spotify: {
+                    id: 'spotify',
+                    fullName: 'Spotify',
+                    link: 'https://open.spotify.com/track/3PYdxIDuBIuJSDGwfptFx4',
+                },
+                apple: {
+                    id: 'apple-music',
+                    fullName: 'Apple Music / Itunes',
+                    link: 'https://music.apple.com/song/my-immortal-band-version/1440666496'
+                },
+                ytMusic: {
+                    id: 'youtube-music',
+                    fullName: 'Youtube Music',
+                    link: 'https://music.youtube.com/watch?v=Cgasz7W9DVA'
+                },
+                vkMusic: {
+                    // id: 'vk-music',
+                    id: 'vk',
+                    fullName: 'Vk Music',
+                    link: 'https://vk.com/audio-2001344319_6344319'
+                },
+            }
+        },
+        {
+            cover: 'Avril_Lavigne-Innocence.jpg',
+            anchor: 'innocence',
+            chapter: 'Глава 31.',
+            soundtrack: 'Avril Lavigne — Innocence',
+            title: 'Avril Lavigne — Innocence',
+            description: '',
+            // ym: { trackId: '328686', bgColor: 'rgb(95, 71, 67)' }, //нет трека
+            spotify: { trackId: '5OuP08bgU2H7ZeDQQFQ6q8' },
+            yt:  { videoId: '8Gzkgzi0Z6U' },
+            vkVideo:  { ownerId: 88173197, videoId: 456239804 },
+            // vk:  { ownerId: 33803753, playlistId: 82873839, hash: 'ee2a8c6618271e2343' },
+
+            streamings: {
+
+                spotify: {
+                    id: 'spotify',
+                    fullName: 'Spotify',
+                    link: 'https://open.spotify.com/track/5OuP08bgU2H7ZeDQQFQ6q8',
+                },
+                apple: {
+                    id: 'apple-music',
+                    fullName: 'Apple Music / Itunes',
+                    link: 'https://music.apple.com/song/innocence/268993603'
+                },
+                ytMusic: {
+                    id: 'youtube-music',
+                    fullName: 'Youtube Music',
+                    link: 'https://music.youtube.com/watch?v=8Gzkgzi0Z6U'
+                },
+
+            }
+        },
+        {
+            cover: 'Natalja_Ray-Break_It_All.jpg',
+            anchor: 'break-it-all',
+            chapter: 'Глава 48.',
+            soundtrack: 'Natalja Ray — Break It All',
+            title: 'Natalja Ray — Break It All',
+            description: '',
+            soon: 'Трек появится чуть позже',
+            // ym: { trackId: '328686', bgColor: 'rgb(95, 71, 67)' },
+            // spotify: { trackId: '72iyzWAM2158Kn8KD1ZImq' },
+            // yt:  { videoId: 'SBklWPmxb_k' },
+            // vk:  { ownerId: 33803753, playlistId: 82873839, hash: 'ee2a8c6618271e2343' },
+
+            // streamings: {
+            //     // ym: {
+            //     //     id: 'ym',
+            //     //     fullName: 'Yandex Music',
+            //     //     // link: 'https://music.yandex.ru/track/328686',
+            //     // },
+            //     // spotify: {
+            //     //     id: 'spotify',
+            //     //     fullName: 'Spotify',
+            //     //     link: 'https://open.spotify.com/track/72iyzWAM2158Kn8KD1ZImq',
+            //     // },
+            //     // apple: {
+            //     //     id: 'apple-music',
+            //     //     fullName: 'Apple Music / Itunes',
+            //     //     link: 'https://music.apple.com/song/the-pretender/1584800066'
+            //     // },
+            //     // ytMusic: {
+            //     //     id: 'youtube-music',
+            //     //     fullName: 'Youtube Music',
+            //     //     link: 'https://music.youtube.com/watch?v=N7QwN0EAWEg'
+            //     // },
+            //     // vkMusic: {
+            //     //     // id: 'vk-music',
+            //     //     id: 'vk',
+            //     //     fullName: 'Vk Music',
+            //     //     link: 'https://vk.com/audio-2001344319_6344319'
+            //     // },
+            // }
+        },
+        {
+            cover: 'Natalja_Ray-Break_It_All.jpg',
+            anchor: 'dlya-nas',
+            chapter: 'Глава 48.',
+            soundtrack: 'Natalja Ray — Для нас',
+            title: 'Natalja Ray — Для нас',
+            description: '',
+            soon: 'Трек появится чуть позже',
+            // ym: { trackId: '328686', bgColor: 'rgb(95, 71, 67)' },
+            // spotify: { trackId: '72iyzWAM2158Kn8KD1ZImq' },
+            // yt:  { videoId: 'SBklWPmxb_k' },
+            // vk:  { ownerId: 33803753, playlistId: 82873839, hash: 'ee2a8c6618271e2343' },
+
+            // streamings: {
+            //     // ym: {
+            //     //     id: 'ym',
+            //     //     fullName: 'Yandex Music',
+            //     //     // link: 'https://music.yandex.ru/track/328686',
+            //     // },
+            //     // spotify: {
+            //     //     id: 'spotify',
+            //     //     fullName: 'Spotify',
+            //     //     link: 'https://open.spotify.com/track/72iyzWAM2158Kn8KD1ZImq',
+            //     // },
+            //     // apple: {
+            //     //     id: 'apple-music',
+            //     //     fullName: 'Apple Music / Itunes',
+            //     //     link: 'https://music.apple.com/song/the-pretender/1584800066'
+            //     // },
+            //     // ytMusic: {
+            //     //     id: 'youtube-music',
+            //     //     fullName: 'Youtube Music',
+            //     //     link: 'https://music.youtube.com/watch?v=N7QwN0EAWEg'
+            //     // },
+            //     // vkMusic: {
+            //     //     // id: 'vk-music',
+            //     //     id: 'vk',
+            //     //     fullName: 'Vk Music',
+            //     //     link: 'https://vk.com/audio-2001344319_6344319'
+            //     // },
+            // }
+        },
+        {
+            cover: 'Bullet_For_My_Valentine-Radioactive.jpg',
+            anchor: 'radioactive',
+            chapter: 'Глава 50.',
+            soundtrack: 'Bullet For My Valentine — Radioactive',
+            title: 'Bullet For My Valentine — Radioactive',
+            description: '',
+            ym: { trackId: '44299741', bgColor: 'rgb(95, 71, 67)' },
+            spotify: { trackId: '41m0IIkRmasSewpmbQs9L0' },
+            yt:  { videoId: 'BMsex49_EWk' },
+            vkVideo:  { ownerId: -8711287, videoId: 456240022 },
+
+            streamings: {
+                ym: {
+                    id: 'ym',
+                    fullName: 'Yandex Music',
+                    // link: 'https://music.yandex.ru/track/328686',
+                    link: 'https://music.yandex.ru/playlists/3a78bf98-1f4c-4985-9c67-9e887578257e',
+                },
+                spotify: {
+                    id: 'spotify',
+                    fullName: 'Spotify',
+                    link: 'https://open.spotify.com/track/41m0IIkRmasSewpmbQs9L0',
+                },
+                apple: {
+                    id: 'apple-music',
+                    fullName: 'Apple Music / Itunes',
+                    link: 'https://music.apple.com/us/song/radioactive/1660385361'
+                },
+                ytMusic: {
+                    id: 'youtube-music',
+                    fullName: 'Youtube Music',
+                    link: 'https://music.youtube.com/watch?v=BMsex49_EWk'
+                },
+            }
+        },
+        {
+            cover: 'Godsmack-Under_Your_Scars.jpg',
+            anchor: 'under-your-scars',
+            chapter: 'Глава 51.',
+            soundtrack: 'Godsmack — Under Your Scars',
+            title: 'Godsmack — Under Your Scars',
+            description: '',
+            ym: { trackId: '40736002', bgColor: 'rgb(95, 71, 67)' },
+            spotify: { trackId: '3VePARjg5ortw4ZfCKj0m3' },
+            yt:  { videoId: '5ozVP6QSoac' },
+
+            streamings: {
+                ym: {
+                    id: 'ym',
+                    fullName: 'Yandex Music',
+                    link: 'https://music.yandex.ru/playlists/fa518909-0f43-b84a-9250-f63e7ee8cb30',
+                },
+                spotify: {
+                    id: 'spotify',
+                    fullName: 'Spotify',
+                    link: 'https://open.spotify.com/track/3VePARjg5ortw4ZfCKj0m3',
+                },
+                apple: {
+                    id: 'apple-music',
+                    fullName: 'Apple Music / Itunes',
+                    link: 'https://music.apple.com/song/under-your-scars/1710147300'
+                },
+                ytMusic: {
+                    id: 'youtube-music',
+                    fullName: 'Youtube Music',
+                    link: 'https://music.youtube.com/watch?v=5ozVP6QSoac'
+                },
+            }
+        },
+
+        {
+            cover: 'Natalja_Ray_PROSTOЯ-How_much.jpg',
+            anchor: 'how-much',
+            chapter: 'Глава 54.',
+            soundtrack: 'Natalja Ray, PROSTOЯ - Как важно?',
+            title: 'Natalja Ray, PROSTOЯ - Как важно?',
+            description: '',
+            soon: 'Трек появится чуть позже',
+            // ym: { trackId: '328686', bgColor: 'rgb(95, 71, 67)' },
+            // spotify: { trackId: '72iyzWAM2158Kn8KD1ZImq' },
+            // yt:  { videoId: 'SBklWPmxb_k' },
+            // vk:  { ownerId: 33803753, playlistId: 82873839, hash: 'ee2a8c6618271e2343' },
+
+            // streamings: {
+            //     // ym: {
+            //     //     id: 'ym',
+            //     //     fullName: 'Yandex Music',
+            //     //     // link: 'https://music.yandex.ru/track/328686',
+            //     // },
+            //     // spotify: {
+            //     //     id: 'spotify',
+            //     //     fullName: 'Spotify',
+            //     //     link: 'https://open.spotify.com/track/72iyzWAM2158Kn8KD1ZImq',
+            //     // },
+            //     // apple: {
+            //     //     id: 'apple-music',
+            //     //     fullName: 'Apple Music / Itunes',
+            //     //     link: 'https://music.apple.com/song/the-pretender/1584800066'
+            //     // },
+            //     // ytMusic: {
+            //     //     id: 'youtube-music',
+            //     //     fullName: 'Youtube Music',
+            //     //     link: 'https://music.youtube.com/watch?v=N7QwN0EAWEg'
+            //     // },
+            //     // vkMusic: {
+            //     //     // id: 'vk-music',
+            //     //     id: 'vk',
+            //     //     fullName: 'Vk Music',
+            //     //     link: 'https://vk.com/audio-2001344319_6344319'
+            //     // },
+            // }
+        },
+        // {
+        //     cover: 'Natalja_Ray-Neurotic_Love.jpg',
+        //     anchor: 'how-much-natalja-ray',
+        //     chapter: 'Глава 54.',
+        //     soundtrack: 'Natalja Ray - How Much?',
+        //     title: 'Natalja Ray - How Much?',
+        //     description: '',
+        //
+        //     ym: { albumId: '37825294', trackId: '141932162', bgColor: 'rgb(103, 39, 35)' },
+        //     spotify: { trackId: '2G6kJ7jabSKft66Vj2mKjb' },
+        //     yt:  { videoId: 'zi8n1VX57kg' },
+        //     vk:  { ownerId: -186374269, playlistId: 25, hash: 'b862a0f446f0be0a57' },
+        //
+        //     streamings: {
+        //         ym: {
+        //             id: 'ym',
+        //             fullName: 'Yandex Music',
+        //             link: 'https://music.yandex.ru/track/141932162',
+        //         },
+        //         spotify: {
+        //             id: 'spotify',
+        //             fullName: 'Spotify',
+        //             link: 'https://open.spotify.com/track/2G6kJ7jabSKft66Vj2mKjb',
+        //         },
+        //         apple: {
+        //             id: 'apple-music',
+        //             fullName: 'Apple Music / Itunes',
+        //             link: 'https://music.apple.com/song/how-much/1833250577'
+        //         },
+        //         ytMusic: {
+        //             id: 'youtube-music',
+        //             fullName: 'Youtube Music',
+        //             link: 'https://music.youtube.com/watch?v=zi8n1VX57kg'
+        //         },
+        //         // zvuk: {
+        //         //     id: 'zvuk',
+        //         //     fullName: 'Zvuk',
+        //         //     link: 'https://zvuk.com/track/150803315'
+        //         // },
+        //         vkMusic: {
+        //             // id: 'vk-music',
+        //             id: 'vk',
+        //             fullName: 'Vk Music',
+        //             link: 'https://vk.ru/audio-2001203207_142203207'
+        //         },
+        //     }
+        //
+        // },
     ]
 
     // refs

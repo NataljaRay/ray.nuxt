@@ -32,6 +32,7 @@
 <!--            />-->
 
             <div class="player__note" v-if="album.streamings">Слушать на музыкальных площадках: </div>
+            <div class="player__note" v-if="album.soon">{{album.soon}}</div>
             <div class="album__streamings" v-if="album.streamings">
               <Streamings :streamings="album.streamings" />
             </div>
@@ -48,7 +49,7 @@
     import {computed} from "vue";
 
     const imgUrl = (key) => withBase(`/images/albums/${key}`, baseURL)
-    const imgUrlSm = (key) => withBase(`/images/albums/sm/${key}`, baseURL)
+    const imgUrlSm = (key) => withBase(`/images/albums/sm-compressed/${key}`, baseURL)
 
     // mobile check
     const device = useDevice()

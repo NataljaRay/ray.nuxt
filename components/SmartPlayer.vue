@@ -101,7 +101,10 @@
       </div>
     </div>
 
-    <div v-else class="no-sources">Нет доступных источников для этого трека.</div>
+<!--    <div v-else class="no-sources">Нет доступных источников для этого трека.</div>-->
+    <div v-else class="no-sources">
+      <div class="player__note">Трек появится чуть позже</div>
+    </div>
   </div>
 </template>
 

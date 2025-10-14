@@ -79,6 +79,10 @@
   margin-top: 18px;
   gap: fluid(20, 14);
   flex-wrap: wrap;
+
+  @include mobile-s {
+    justify-content: center;
+  }
 }
 
 
