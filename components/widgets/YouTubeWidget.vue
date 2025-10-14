@@ -10,10 +10,12 @@
 <script setup>
     import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
     import EmbedLoader from '@/components/common/EmbedLoader.vue'
+    // import { usePlayerManager } from '~/composables/usePlayerManager'
 
     const emit = defineEmits(['widget-ok','widget-error'])
     const props = defineProps({
         platformKey: { type: String, default: 'youtube' },
+        playerId: String,
         videoId: String,
         playlistId: String,
         useNoCookie: { type: Boolean, default: true },
@@ -117,4 +119,42 @@
         clearTimeout(timeoutId)
         try { player?.destroy?.() } catch {}
     })
+
+
+  /** stop/play **/
+  // const manager = usePlayerManager()
+  //   onMounted(() => manager.register(props.playerId, { play, stop }) )
+  //   onBeforeUnmount(()=> manager.unregister(props.playerId) )
+  //   function onPlayButton() {
+  //       manager.requestPlay(props.playerId)
+  //       // manager вызовет stop у предыдущего и затем запустит наш play()
+  //   }
+  // const manager = usePlayerManager()
+  //   let playerStopPlay = null
+  //
+  //   function play() {
+  //       // если используете YT.Player
+  //       playerStopPlay?.playVideo?.()
+  //       return Promise.resolve()
+  //   }
+  //   function stop() {
+  //       playerStopPlay?.pauseVideo?.()
+  //   }
+  //
+  //   onMounted(async () => {
+  //       // создаём YT.Player и сохраняем в player
+  //       // ...
+  //       manager.register(props.playerId, { play, stop })
+  //   })
+  //
+  //   onBeforeUnmount(() => {
+  //       manager.unregister(props.playerId)
+  //       try { playerStopPlay?.destroy?.() } catch {}
+  //   })
+  //
+  //   // Когда пользователь нажал "play" в UI:
+  //   function onUserPlayClick() {
+  //       manager.requestPlay(props.playerId)
+  //       // менеджер вызовет stop у предыдущего и затем вызовет play у текущего (наш play)
+  //   }
 </script>

@@ -15,12 +15,13 @@ export default defineNuxtConfig({
                     'http-equiv': 'Content-Security-Policy',
                     content: [
                         "default-src 'self' blob: data:",
-                        "frame-src 'self' https://music.yandex.ru https://music.yandex.net https://open.spotify.com https://www.youtube.com https://www.youtube-nocookie.com https://vk.com https://*.vk.com https://bandcamp.com https://*.bandcamp.com https://w.soundcloud.com https://soundcloud.com https://*.soundcloud.com",
-                        "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vk.com https://static.vk.com https://www.youtube.com",
+                        "frame-src 'self' https://music.yandex.ru https://music.yandex.net https://open.spotify.com https://www.youtube.com https://www.youtube-nocookie.com https://vk.com https://*.vk.com https://mc.yandex.com https://mc.yandex.ru https://music.yandex.ru https://yastatic.net https://*.ya.ru https://mc.yandex.ru",
+                        "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vk.com https://static.vk.com https://www.youtube.com https://mc.yandex.com https://mc.yandex.ru https://*.yandex.ru https://*.yandex.net https://yastatic.net https://*.ya.ru",
                         "style-src 'self' 'unsafe-inline'",
                         "img-src 'self' data: blob: https://vk.com https://*.vk.com https://avatars.yandex.net https://i.ytimg.com https://i.scdn.co https://i1.sndcdn.com https://i.sndcdn.com https://a-v2.sndcdn.com",
                         "font-src 'self' data:",
-                        "connect-src 'self' ws: https://vk.com https://api.vk.com https://bandcamp.com https://*.bandcamp.com https://w.soundcloud.com https://soundcloud.com https://*.soundcloud.com",
+                        // "connect-src 'self' ws: https://vk.com https://api.vk.com https://bandcamp.com https://*.bandcamp.com https://w.soundcloud.com https://soundcloud.com https://*.soundcloud.com",
+                        "connect-src 'self' ws: https://vk.com https://api.vk.com https://mc.yandex.com https://mc.yandex.ru",
                         isProd ? "upgrade-insecure-requests" : null,        // ← только в проде
                     ].filter(Boolean).join('; ')
                 }
@@ -77,7 +78,8 @@ export default defineNuxtConfig({
                 // ✅ варианты:
                 // 1) разрешить всем: fullscreen: ['*']
                 // 2) разрешить себе и YouTube:
-                fullscreen: ['self', '"https://www.youtube-nocookie.com"', '"https://www.youtube.com"'],
+                // fullscreen: ['self', '"https://www.youtube-nocookie.com"', '"https://www.youtube.com"'],
+                fullscreen: ['*'],
             },
         },
     }

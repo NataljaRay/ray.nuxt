@@ -48,6 +48,10 @@
       left: 14px;
     }
 
+    @include laptop {
+      width: 206px;
+    }
+
     @include mobile-s {
       width: 50vw;
     }

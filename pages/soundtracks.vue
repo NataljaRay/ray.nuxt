@@ -11,6 +11,7 @@
 
 
         <div class="soundtrack__media">
+<!--          <ClientOnly>-->
           <div class="soundtrack__item" v-if="isClient && (isMobile || isTablet)">
             <AlbumMin :album="track"/>
           </div>
@@ -19,6 +20,7 @@
               <ClientOnly>
                 <SmartPlayer
                         :mode="'mode-soundtracks'"
+                        :player-id="`soundtrack-${track.anchor}`"
                         :ym="track.ym"
                         :spotify="track.spotify"
                         :ytm="track.ytm"
@@ -32,6 +34,7 @@
                 />
               </ClientOnly>
           </div>
+<!--          </ClientOnly>-->
         </div>
       </div>
 

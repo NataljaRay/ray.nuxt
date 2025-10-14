@@ -13,11 +13,13 @@
 <script setup>
     import { computed, onMounted, watch, ref, onBeforeUnmount } from 'vue'
     import EmbedLoader from '@/components/common/EmbedLoader.vue'
+    // import { usePlayerManager } from '~/composables/usePlayerManager'
 
     const emit = defineEmits(['widget-ok','widget-error'])
     const width = 614
     const props = defineProps({
         platformKey: { type: String, default: 'vk' },
+        playerId: String,
         ownerId: { type: [Number, String], required: true },
         playlistId: { type: [Number, String], required: true },
         hash: { type: String, required: true },
@@ -111,6 +113,36 @@
     watch(() => [props.ownerId, props.playlistId, props.hash, props.width, props.height, props.vkOptions],
         () => renderPlaylist(), { deep: true })
     onBeforeUnmount(() => { clearTimeout(to); mo?.disconnect?.() })
+
+    /** stop/play iframe **/
+    // const iframeRef = ref(null)
+    // const manager = usePlayerManager()
+    // let originalSrc = props.src
+    //
+    // function play() {
+    //     // restore src if was cleared
+    //     if (iframeRef.value && (!iframeRef.value.src || iframeRef.value.src === 'about:blank')) {
+    //         iframeRef.value.src = originalSrc
+    //     }
+    //     // ничего возвращать не обязательно
+    //     return Promise.resolve()
+    // }
+    //
+    // function stop() {
+    //     // сбросим src — это остановит воспроизведение
+    //     if (iframeRef.value) {
+    //         iframeRef.value.src = 'about:blank'
+    //         // можно через setTimeout восстановить атрибут data-src, если нужно
+    //     }
+    // }
+    //
+    // onMounted(() => {
+    //     manager.register(props.playerId, { play, stop })
+    // })
+    //
+    // onBeforeUnmount(() => {
+    //     manager.unregister(props.playerId)
+    // })
 </script>
 
 

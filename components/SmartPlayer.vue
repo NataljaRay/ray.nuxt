@@ -90,6 +90,7 @@
       <component
               :is="currentComponent"
               v-bind="currentProps"
+              :player-id="playerId"
               :platform-key="currentKey"
               @widget-ok="onWidgetOk"
               @widget-error="onWidgetError"
@@ -119,6 +120,7 @@
     const { public: { baseURL, siteUrl } } = useRuntimeConfig();
 
     const props = defineProps({
+        playerId: { type: String, default: '' },
         ym:      { type: Object, default: null }, // { albumId?, trackId? }
         spotify: { type: Object, default: null }, // { trackId?|albumId?|playlistId? }
         ytm:     { type: Object, default: null }, // { videoId?|playlistId? }

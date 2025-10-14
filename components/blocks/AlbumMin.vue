@@ -1,12 +1,14 @@
 <template>
         <div class="album">
           <div class="album__image-wrapper" v-if="album.cover">
-            <img :src="imgUrl(album.cover)"
-                 :alt="album.title"
-                 :title="album.title || ''"
-                 width="342" height="342" decoding="async"
-                 fetchpriority="high"
-            >
+            <ClientOnly>
+              <img :src="isMobile || isTablet ? imgUrlSm(album.cover) : imgUrl(album.cover)"
+                   :alt="album.title"
+                   :title="album.title || ''"
+                   width="342" height="342" decoding="async"
+                   fetchpriority="high"
+              >
+              </ClientOnly>
           </div>
 
           <div class="album__info-wrapper">
@@ -43,8 +45,17 @@
     import Button from '@/components/common/Button.vue'
 
     import { withBase } from 'ufo'
+    import {computed} from "vue";
 
     const imgUrl = (key) => withBase(`/images/albums/${key}`, baseURL)
+    const imgUrlSm = (key) => withBase(`/images/albums/sm/${key}`, baseURL)
+
+    // mobile check
+    const device = useDevice()
+
+    const isMobile = computed(() => device.value.isMobile)
+    const isTablet = computed(() => device.value.isTablet)
+    const isDesktop = computed(() => device.value.isDesktop)
 
     const { public: { baseURL, siteUrl } } = useRuntimeConfig();
 

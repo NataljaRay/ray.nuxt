@@ -21,11 +21,13 @@
 <script setup>
     import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
     import EmbedLoader from '@/components/common/EmbedLoader.vue'
+    // import { usePlayerManager } from '~/composables/usePlayerManager'
 
     const emit = defineEmits(['widget-ok','widget-error'])
     const props = defineProps({
         title: { type: String, default: '' },
         platformKey: { type: String, default: 'ym' },
+        playerId: String,
         albumId: { type: String, default: '' },
         trackId:  { type: String, default: '' },
         width:    { type: [String, Number], default: '100%' },
@@ -65,4 +67,34 @@
         }, 12000)
     })
     onBeforeUnmount(() => clearTimeout(t))
+
+  // /** stop/play iframe **/
+  // const iframeRef = ref(null)
+  //   const manager = usePlayerManager()
+  //   let originalSrc = props.src
+  //
+  //   function play() {
+  //       // restore src if was cleared
+  //       if (iframeRef.value && (!iframeRef.value.src || iframeRef.value.src === 'about:blank')) {
+  //           iframeRef.value.src = originalSrc
+  //       }
+  //       // ничего возвращать не обязательно
+  //       return Promise.resolve()
+  //   }
+  //
+  //   function stop() {
+  //       // сбросим src — это остановит воспроизведение
+  //       if (iframeRef.value) {
+  //           iframeRef.value.src = 'about:blank'
+  //           // можно через setTimeout восстановить атрибут data-src, если нужно
+  //       }
+  //   }
+  //
+  //   onMounted(() => {
+  //       manager.register(props.playerId, { play, stop })
+  //   })
+  //
+  //   onBeforeUnmount(() => {
+  //       manager.unregister(props.playerId)
+  //   })
 </script>
