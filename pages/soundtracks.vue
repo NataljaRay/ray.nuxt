@@ -122,6 +122,7 @@
             anchor: 'what-is-your-plan',
             chapter: 'Глава 14.',
             soundtrack: 'Natalja Ray — Каков твой план?',
+            title: 'Natalja Ray — Каков твой план?',
             // description: 'Первый шаг на сцену. Волнение. Свет бьёт в глаза. Всё начинается.',
             description: '',
             soon: 'Трек появится чуть позже',
