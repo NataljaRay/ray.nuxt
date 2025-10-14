@@ -49,7 +49,7 @@
     import {computed} from "vue";
 
     const imgUrl = (key) => withBase(`/images/albums/${key}`, baseURL)
-    const imgUrlSm = (key) => withBase(`/images/albums/sm-compressed-206/${key}`, baseURL)
+    const imgUrlSm = (key) => withBase(`/images/albums/sm-compressed/${key}`, baseURL)
 
     // mobile check
     const device = useDevice()
