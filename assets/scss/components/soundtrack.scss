@@ -63,7 +63,8 @@
     }
 
     @include mobile-s {
-      width: 50vw;
+      //width: 50vw;
+      height: 206px;
     }
   }
 }
