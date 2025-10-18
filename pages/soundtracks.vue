@@ -299,7 +299,7 @@
         },
         {
             cover: 'Evanescence-Fallen.jpg',
-            anchor: 'my_immortal',
+            anchor: 'my-immortal',
             chapter: 'Глава 23.',
             soundtrack: 'Evanescence — My Immortal (band version)',
             title: 'Evanescence — My Immortal (band version)',
