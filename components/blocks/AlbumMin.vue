@@ -5,7 +5,7 @@
               <img :src="(isMobile || isTablet) && props.compressed ? imgUrlSm(album.cover) : imgUrl(album.cover)"
                    :alt="album.title"
                    :title="album.title || ''"
-                   width="342" height="342" decoding="async"
+                   width="309" height="309" decoding="async"
                    fetchpriority="high"
               >
 <!--              </ClientOnly>-->

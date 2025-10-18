@@ -59,12 +59,12 @@
     }
 
     @include laptop {
-      width: 206px;
+      width: 215px;
     }
 
     @include mobile-s {
       //width: 50vw;
-      height: 206px;
+      height: 215px;
     }
   }
 }
