@@ -15,16 +15,16 @@
           </div>
 
           <div class="album__info-wrapper">
-            <div class="h3 album__title">{{album.altTitle}}</div>
+            <div class="h3 album__title" v-if="album.altTitle">{{album.altTitle}}</div>
 
-            <ul class="album__info">
-              <li class="album__info-item">
+            <ul class="album__info" v-if="album.info">
+              <li class="album__info-item" v-if="album.info.releaseDate">
                 Дата релиза: <span>{{album.info.releaseDate}}</span>
               </li>
-              <li class="album__info-item">
+              <li class="album__info-item" v-if="album.info.label">
                 Лейбл: <span>{{album.info.label}}</span>
               </li>
-              <li class="album__info-item">
+              <li class="album__info-item" v-if="album.info.type">
                 Формат: <span>{{album.info.type}}</span>
               </li>
             </ul>

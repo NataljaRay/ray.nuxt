@@ -77,7 +77,8 @@
 .album__streamings {
   display: flex;
   margin-top: 18px;
-  gap: fluid(20, 14);
+  //gap: fluid(20, 14);
+  gap: fluid(20, 12);
   flex-wrap: wrap;
 
   @include mobile-s {
