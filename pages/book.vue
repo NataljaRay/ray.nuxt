@@ -62,7 +62,12 @@
     </div>
     <div class="section__inner container buy-book" id="buy-book">
       <h3 class="section__title h5">Приобрести книгу:</h3>
-      <div class="section__button-container button-image-container">
+      <div class="loader2-wrapper">
+        <p style="margin-bottom:0">Доставляется в магазины</p>
+        <span class="loader2"></span>
+      </div>
+
+      <div class="section__button-container button-image-container disabled-book">
         <Button class="section__button button--image"
                 href="/book"
         >
@@ -75,13 +80,13 @@
           <img src="@/assets/images/buy-book/ozon_logo.png"
                alt="Купить на Ozon" title="Купить на Ozon">
         </Button>
-        <Button class="section__button button--image"
-                href="#"
-                label="Скачать"
-                icon-name="download"
-                icon-position="after"
-                mode="transparent"
-        />
+<!--        <Button class="section__button button&#45;&#45;image"-->
+<!--                href="#"-->
+<!--                label="Скачать"-->
+<!--                icon-name="download"-->
+<!--                icon-position="after"-->
+<!--                mode="transparent"-->
+<!--        />-->
       </div>
     </div>
     <div class="section__inner container">
@@ -116,5 +121,13 @@
 </script>
 
 <style scoped>
+.disabled-book {
+  cursor: not-allowed;
+}
+.disabled-book > * {
+  pointer-events: none;
+  opacity: .3;
+}
+
 
 </style>
