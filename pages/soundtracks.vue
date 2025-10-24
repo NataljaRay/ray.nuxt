@@ -161,17 +161,22 @@
                     fullName: 'Youtube Music',
                     link: 'https://music.youtube.com/watch?v=ihEQYiq89PU'
                 },
-                // zvuk: {
-                //     id: 'zvuk',
-                //     fullName: 'Zvuk',
-                //     link: 'https://zvuk.com/track/159958770'
-                // },
+                yt: {
+                    id: 'youtube',
+                    fullName: 'Youtube',
+                    link: 'https://www.youtube.com/watch?v=ihEQYiq89PU'
+                },
                 vkMusic: {
                     // id: 'vk-music',
                     id: 'vk',
                     fullName: 'Vk Music',
                     link: 'https://vk.com/audio-2001295867_143295867'
                 },
+                // zvuk: {
+                //     id: 'zvuk',
+                //     fullName: 'Zvuk',
+                //     link: 'https://zvuk.com/track/159958770'
+                // },
             }
         },
         {
@@ -207,6 +212,11 @@
                     id: 'youtube-music',
                     fullName: 'Youtube Music',
                     link: 'https://music.youtube.com/watch?v=N7QwN0EAWEg'
+                },
+                yt: {
+                    id: 'youtube',
+                    fullName: 'Youtube',
+                    link: 'https://www.youtube.com/watch?v=N7QwN0EAWEg'
                 },
                 vkMusic: {
                     // id: 'vk-music',
@@ -244,6 +254,11 @@
                     id: 'youtube-music',
                     fullName: 'Youtube Music',
                     link: 'https://music.youtube.com/watch?v=BMMGwtklEeE'
+                },
+                yt: {
+                    id: 'youtube',
+                    fullName: 'Youtube',
+                    link: 'https://www.youtube.com/watch?v=BMMGwtklEeE'
                 },
                 vkVideo: {
                     id: 'vk-video',
@@ -289,6 +304,11 @@
                     fullName: 'Youtube Music',
                     link: 'https://music.youtube.com/watch?v=-eGM0IJc70Y'
                 },
+                yt: {
+                    id: 'youtube',
+                    fullName: 'Youtube',
+                    link: 'https://www.youtube.com/watch?v=-eGM0IJc70Y'
+                },
                 vkMusic: {
                     // id: 'vk-music',
                     id: 'vk',
@@ -331,6 +351,11 @@
                     fullName: 'Youtube Music',
                     link: 'https://music.youtube.com/watch?v=Cgasz7W9DVA'
                 },
+                yt: {
+                    id: 'youtube',
+                    fullName: 'Youtube',
+                    link: 'https://www.youtube.com/watch?v=Cgasz7W9DVA'
+                },
                 vkMusic: {
                     // id: 'vk-music',
                     id: 'vk',
@@ -369,7 +394,11 @@
                     fullName: 'Youtube Music',
                     link: 'https://music.youtube.com/watch?v=8Gzkgzi0Z6U'
                 },
-
+                yt: {
+                    id: 'youtube',
+                    fullName: 'Youtube',
+                    link: 'https://www.youtube.com/watch?v=8Gzkgzi0Z6U'
+                },
             }
         },
         {
@@ -490,6 +519,11 @@
                     fullName: 'Youtube Music',
                     link: 'https://music.youtube.com/watch?v=BMsex49_EWk'
                 },
+                yt: {
+                    id: 'youtube',
+                    fullName: 'Youtube',
+                    link: 'https://www.youtube.com/watch?v=BMsex49_EWk'
+                },
             }
         },
         {
@@ -524,6 +558,11 @@
                     fullName: 'Youtube Music',
                     link: 'https://music.youtube.com/watch?v=5ozVP6QSoac'
                 },
+                yt: {
+                    id: 'youtube',
+                    fullName: 'Youtube',
+                    link: 'https://www.youtube.com/watch?v=5ozVP6QSoac'
+                },
             }
         },
 
@@ -534,40 +573,50 @@
             soundtrack: 'Natalja Ray, PROSTOЯ - Как важно?',
             title: 'Natalja Ray, PROSTOЯ - Как важно?',
             description: '',
-            soon: 'Трек отгружается на площадки и появится чуть позже',
-            // ym: { trackId: '328686', bgColor: 'rgb(95, 71, 67)' },
-            // spotify: { trackId: '72iyzWAM2158Kn8KD1ZImq' },
-            // yt:  { videoId: 'SBklWPmxb_k' },
-            // vk:  { ownerId: 33803753, playlistId: 82873839, hash: 'ee2a8c6618271e2343' },
+            // soon: 'Трек отгружается на площадки и появится чуть позже',
+            ym: { trackId: '143907763', bgColor: 'rgb(95, 71, 67)' },
+            spotify: { trackId: '4sPrdmpQVxfJTdpyXLtMp9' },
+            yt:  { videoId: 'zL715kaASqI' },
+            vk:  { ownerId: -2000508322, playlistId: 25508322, hash: '08c7fd8a861772eae5' },
 
-            // streamings: {
-            //     // ym: {
-            //     //     id: 'ym',
-            //     //     fullName: 'Yandex Music',
-            //     //     // link: 'https://music.yandex.ru/track/328686',
-            //     // },
-            //     // spotify: {
-            //     //     id: 'spotify',
-            //     //     fullName: 'Spotify',
-            //     //     link: 'https://open.spotify.com/track/72iyzWAM2158Kn8KD1ZImq',
-            //     // },
-            //     // apple: {
-            //     //     id: 'apple-music',
-            //     //     fullName: 'Apple Music / Itunes',
-            //     //     link: 'https://music.apple.com/song/the-pretender/1584800066'
-            //     // },
-            //     // ytMusic: {
-            //     //     id: 'youtube-music',
-            //     //     fullName: 'Youtube Music',
-            //     //     link: 'https://music.youtube.com/watch?v=N7QwN0EAWEg'
-            //     // },
-            //     // vkMusic: {
-            //     //     // id: 'vk-music',
-            //     //     id: 'vk',
-            //     //     fullName: 'Vk Music',
-            //     //     link: 'https://vk.com/audio-2001344319_6344319'
-            //     // },
-            // }
+            streamings: {
+                ym: {
+                    id: 'ym',
+                    fullName: 'Yandex Music',
+                    link: 'https://music.yandex.ru/track/143907763',
+                },
+                spotify: {
+                    id: 'spotify',
+                    fullName: 'Spotify',
+                    link: 'https://open.spotify.com/track/4sPrdmpQVxfJTdpyXLtMp9',
+                },
+                apple: {
+                    id: 'apple-music',
+                    fullName: 'Apple Music / Itunes',
+                    link: 'https://music.apple.com/song/%D0%BA%D0%B0%D0%BA-%D0%B2%D0%B0%D0%B6%D0%BD%D0%BE/1845390642'
+                },
+                ytMusic: {
+                    id: 'youtube-music',
+                    fullName: 'Youtube Music',
+                    link: 'https://music.youtube.com/watch?v=zL715kaASqI'
+                },
+                yt: {
+                    id: 'youtube',
+                    fullName: 'Youtube',
+                    link: 'https://www.youtube.com/watch?v=zL715kaASqI'
+                },
+                vkMusic: {
+                    // id: 'vk-music',
+                    id: 'vk',
+                    fullName: 'Vk Music',
+                    link: 'https://vk.ru/audio-2001665580_143665580_7519932b98dbea0a0b'
+                },
+                zvuk: {
+                    id: 'zvuk',
+                    fullName: 'Zvuk',
+                    link: 'https://zvuk.com/track/160586273'
+                },
+            }
         },
         // {
         //     cover: 'Natalja_Ray-Neurotic_Love.jpg',
