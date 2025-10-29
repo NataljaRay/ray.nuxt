@@ -32,7 +32,7 @@
 <!--            />-->
 
             <div class="player__note" v-if="album.streamings">Слушать на музыкальных площадках: </div>
-            <div class="player__note" v-if="album.soon">{{album.soon}}</div>
+            <div class="player__note" v-if="album.soon" style="text-align: center">{{album.soon}}</div>
             <div class="album__streamings" v-if="album.streamings">
               <Streamings :streamings="album.streamings" />
             </div>
