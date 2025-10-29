@@ -103,7 +103,8 @@
 
 <!--    <div v-else class="no-sources">Нет доступных источников для этого трека.</div>-->
     <div v-else class="no-sources">
-      <div class="player__note">Трек появится чуть позже</div>
+      <div class="player__note" v-if="currentProps.title == 'Natalja Ray — Break It All' || currentProps.title == 'Natalja Ray — Для нас'">Трек отгружается на площадки и появится 14.11.2025</div>
+      <div class="player__note" v-else>Трек появится чуть позже</div>
     </div>
   </div>
 </template>
