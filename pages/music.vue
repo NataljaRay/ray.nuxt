@@ -9,20 +9,21 @@
       </div>
     </section>
 
-    <template v-if="isMobile || isTablet">
-        <section class="section section--album section--album-min">
-          <div class="section__inner grid-2 grid-2--mirrow grid-2--to-1 container">
-            <div class="section__col"
-                 v-for="album in albums" :key="album.title">
-              <AlbumMin :album="album" :compressed="false"/>
+    <div class="music-block">
+      <template v-if="isMobile || isTablet">
+          <section class="section section--album section--album-min">
+            <div class="section__inner grid-2 grid-2--mirrow grid-2--to-1 container">
+              <div class="section__col"
+                   v-for="album in albums" :key="album.title">
+                <AlbumMin :album="album" :compressed="false"/>
+              </div>
             </div>
-          </div>
-        </section>
-    </template>
-    <template v-else>
-      <Album v-for="album in albums" :key="album.title" :album="album"/>
-    </template>
-
+          </section>
+      </template>
+      <template v-else>
+        <Album v-for="album in albums" :key="album.title" :album="album"/>
+      </template>
+    </div>
     <section class="section section--socials section--universal section--rose">
       <div class="section__inner section__inner--center container">
         <p class="header__logo logo" aria-label="Home">Natalja Ray</p>
