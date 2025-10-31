@@ -429,12 +429,16 @@
 }
 
 .section--socials {
-  //padding-block: 20px;
+  .player__note {
+    justify-content: center;
+    margin-bottom: 8px;
+  }
 }
 
 .section__actions {
   display: flex;
   align-items: center;
   justify-content: center;
-  column-gap: 12px;
+  //column-gap: 12px;
+  column-gap: fluid(32, 12);
 }
