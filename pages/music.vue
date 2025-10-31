@@ -23,7 +23,32 @@
       <Album v-for="album in albums" :key="album.title" :album="album"/>
     </template>
 
-
+    <section class="section section--socials section--universal section--rose">
+      <div class="section__inner section__inner--center container">
+        <p class="header__logo logo" aria-label="Home">Natalja Ray</p>
+        <p class="section__text">
+          в соцсетях
+        </p>
+        <div class="section__actions">
+          <Button class="section__button button--social"
+                  href="https://vk.com/nataljaray"
+                  target="_blank"
+                  isLabelHidden
+                  label="Паблик вконтакте"
+                  icon-name="vk"
+                  mode="transparent"
+          />
+          <Button class="section__button button--social"
+                  href="https://t.me/nataljaray_music"
+                  target="_blank"
+                  isLabelHidden
+                  label="Телеграм канал"
+                  icon-name="tg"
+                  mode="transparent"
+          />
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -39,6 +64,7 @@
         }
     });
 
+    import Button from '@/components/common/Button.vue'
     import Album from '@/components/sections/Album.vue'
     import AlbumMin from '@/components/blocks/AlbumMin.vue'
 
