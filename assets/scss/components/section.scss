@@ -393,9 +393,15 @@
 
 .section--album-min {
 
+  &:not(:last-child) {
+    &:after {
+      content: none;
+    }
+  }
+
   .section__col {
     justify-content: start;
-
+    align-items: start;
     @include tablet {
       align-items: center;
     }
@@ -420,4 +426,19 @@
       margin-bottom: var(--paragraphMarginBottom);
     }
   }
+}
+
+.section--socials {
+  .player__note {
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+}
+
+.section__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //column-gap: 12px;
+  column-gap: fluid(32, 12);
 }

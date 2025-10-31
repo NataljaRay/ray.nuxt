@@ -23,9 +23,9 @@
         props: ['buttonCustomClass'],
         data: () =>  ({
             socialLinks: [
-                {label: 'vk', href: 'https://vk.com/nataljaray'},
-                {label: 'tg', href: 'https://t.me/nataljaray_music'},
-                {label: 'link', href: '/'},
+                {label: 'vk', href: 'https://vk.com/natalja_ray'},
+                {label: 'tg', href: 'https://t.me/NataljaRay'},
+                // {label: 'link', href: '/'},
             ]
         })
     }
