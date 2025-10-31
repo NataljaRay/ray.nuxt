@@ -69,12 +69,14 @@
 
       <div class="section__button-container button-image-container">
         <Button class="section__button button--image"
+                target="_blank"
                 href="https://www.litres.ru/book/natalya-mogilner/v-svete-sofitov-72697087/"
         >
           <img src="@/assets/images/buy-book/litres_logo.png"
                alt="Купить на Литрес" title="Купить на Литрес">
         </Button>
         <Button class="section__button button--image"
+                target="_blank"
                 href="https://books.beeline.ru/book/V_svete_sofitov_101230821"
         >
           <img src="@/assets/images/buy-book/logo_beebooks-sm.png"
@@ -103,11 +105,18 @@
                 icon-name="piano"
         />
         <Button class="section__button button--tile"
-                href="/music"
-                label="Музыкальный альбом"
-                icon-name="record"
+                href="https://t.me/natalja_ray_writer"
+                target="_blank"
+                label="Телеграм канал"
+                icon-name="tgBig"
                 color="brown"
         />
+<!--        <Button class="section__button button&#45;&#45;tile"-->
+<!--                href="/music"-->
+<!--                label="Музыкальный альбом"-->
+<!--                icon-name="record"-->
+<!--                color="brown"-->
+<!--        />-->
       </div>
     </div>
   </section>
