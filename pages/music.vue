@@ -204,7 +204,7 @@
                 ytMusic: {
                     id: 'youtube-music',
                     fullName: 'Youtube Music',
-                    link: 'https://music.youtube.com/watch?v=zi8n1VX57kg'
+                    link: 'https://music.youtube.com/watch?v=mbNmDwKsRkc'
                 },
                 yt: {
                     id: 'youtube',
@@ -214,12 +214,12 @@
                 vkMusic: {
                     id: 'vk',
                     fullName: 'Vk Music',
-                    link: 'https://vk.ru/audio-2001203207_142203207'
+                    link: 'https://vk.com/audio-2001919974_140919974_e03bd780c8a6377466'
                 },
                 zvuk: {
                     id: 'zvuk',
                     fullName: 'Zvuk',
-                    link: 'https://zvuk.com/track/150803315'
+                    link: 'https://zvuk.com/track/144650617'
                 },
 
             }

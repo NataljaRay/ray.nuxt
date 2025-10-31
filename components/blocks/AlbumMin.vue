@@ -31,8 +31,38 @@
 <!--                    label="Перейти на страницу релиза"-->
 <!--            />-->
 
+            <div class="custom-track" v-if="album.soon">
+
+              <div class="player__note" style="text-align: center">{{album.soon}}</div>
+
+              <template v-if="album.anchor == 'what-is-your-plan'">
+                <div class="custom-track__title">Демо:</div>
+                <audio controls>
+                  <source src="/audio/Natalja_Ray_Kakov_tvoi_plan_demo.mp3" type="audio/mpeg">
+                  Ваш браузер не поддерживает элемент audio.
+                </audio>
+              </template>
+
+              <template v-if="album.anchor == 'break-it-all'">
+                <div class="custom-track__title">Превью:</div>
+                <audio controls>
+                  <source src="/audio/Natalja_Ray_Break_It_All_01_01.mp3" type="audio/mpeg">
+                  Ваш браузер не поддерживает элемент audio.
+                </audio>
+              </template>
+
+              <template v-if="album.anchor == 'dlya-nas'">
+                <div class="custom-track__title">Превью:</div>
+                <audio controls>
+                  <source src="/audio/Natalja_Ray_Dlya_nas_0_56.mp3" type="audio/mpeg">
+                  Ваш браузер не поддерживает элемент audio.
+                </audio>
+              </template>
+
+            </div>
+
+<!--            <div class="player__note" v-if="album.soon" style="text-align: center">{{album.soon}}</div>-->
             <div class="player__note" v-if="album.streamings">Слушать на музыкальных площадках: </div>
-            <div class="player__note" v-if="album.soon" style="text-align: center">{{album.soon}}</div>
             <div class="album__streamings" v-if="album.streamings">
               <Streamings :streamings="album.streamings" />
             </div>

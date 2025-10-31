@@ -62,24 +62,30 @@
     </div>
     <div class="section__inner container buy-book" id="buy-book">
       <h3 class="section__title h5">Приобрести книгу:</h3>
-      <div class="loader2-wrapper">
-        <p style="margin-bottom:0">Доставляется в магазины</p>
-        <span class="loader2"></span>
-      </div>
+<!--      <div class="loader2-wrapper">-->
+<!--        <p style="margin-bottom:0">Доставляется в магазины</p>-->
+<!--        <span class="loader2"></span>-->
+<!--      </div>-->
 
-      <div class="section__button-container button-image-container disabled-book">
+      <div class="section__button-container button-image-container">
         <Button class="section__button button--image"
-                href="/book"
+                href="https://www.litres.ru/book/natalya-mogilner/v-svete-sofitov-72697087/"
         >
           <img src="@/assets/images/buy-book/litres_logo.png"
                alt="Купить на Литрес" title="Купить на Литрес">
         </Button>
         <Button class="section__button button--image"
-                href="/book"
+                href="https://books.beeline.ru/book/V_svete_sofitov_101230821"
         >
-          <img src="@/assets/images/buy-book/ozon_logo.png"
-               alt="Купить на Ozon" title="Купить на Ozon">
+          <img src="@/assets/images/buy-book/logo_beebooks-sm.png"
+               alt="Купить на Ozon" title="Купить на Книги билайн">
         </Button>
+<!--        <Button class="section__button button&#45;&#45;image"-->
+<!--                href="/book"-->
+<!--        >-->
+<!--          <img src="@/assets/images/buy-book/ozon_logo.png"-->
+<!--               alt="Купить на Ozon" title="Купить на Ozon">-->
+<!--        </Button>-->
 <!--        <Button class="section__button button&#45;&#45;image"-->
 <!--                href="#"-->
 <!--                label="Скачать"-->
