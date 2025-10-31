@@ -75,13 +75,13 @@
           <img src="@/assets/images/buy-book/litres_logo.png"
                alt="Купить на Литрес" title="Купить на Литрес">
         </Button>
-        <Button class="section__button button--image"
-                target="_blank"
-                href="https://books.beeline.ru/book/V_svete_sofitov_101230821"
-        >
-          <img src="@/assets/images/buy-book/logo_beebooks-sm.png"
-               alt="Купить на Ozon" title="Купить на Книги билайн">
-        </Button>
+<!--        <Button class="section__button button&#45;&#45;image"-->
+<!--                target="_blank"-->
+<!--                href="https://books.beeline.ru/book/V_svete_sofitov_101230821"-->
+<!--        >-->
+<!--          <img src="@/assets/images/buy-book/logo_beebooks-sm.png"-->
+<!--               alt="Купить на Книги билайн" title="Купить на Книги билайн">-->
+<!--        </Button>-->
 <!--        <Button class="section__button button&#45;&#45;image"-->
 <!--                href="/book"-->
 <!--        >-->
