@@ -116,27 +116,27 @@
         </div>
       </div>
 
-      <div class="custom-track" v-else-if="currentProps.title == 'Natalja Ray — Break It All'">
-        <div class="player__note">Трек отгружается на площадки и появится 14.11.2025</div>
-        <div>
-          <div class="custom-track__title">Превью:</div>
-          <audio controls>
-            <source src="/audio/Natalja_Ray_Break_It_All_01_01.mp3" type="audio/mpeg">
-            Ваш браузер не поддерживает элемент audio.
-          </audio>
-        </div>
-      </div>
+<!--      <div class="custom-track" v-else-if="currentProps.title == 'Natalja Ray — Break It All'">-->
+<!--        <div class="player__note">Трек отгружается на площадки и появится 14.11.2025</div>-->
+<!--        <div>-->
+<!--          <div class="custom-track__title">Превью:</div>-->
+<!--          <audio controls>-->
+<!--            <source src="/audio/Natalja_Ray_Break_It_All_01_01.mp3" type="audio/mpeg">-->
+<!--            Ваш браузер не поддерживает элемент audio.-->
+<!--          </audio>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="custom-track" v-else-if="currentProps.title == 'Natalja Ray — Для нас'">
-        <div class="player__note">Трек отгружается на площадки и появится 14.11.2025</div>
-        <div>
-          <div class="custom-track__title">Превью:</div>
-          <audio controls>
-            <source src="/audio/Natalja_Ray_Dlya_nas_0_56.mp3" type="audio/mpeg">
-            Ваш браузер не поддерживает элемент audio.
-          </audio>
-        </div>
-      </div>
+<!--      <div class="custom-track" v-else-if="currentProps.title == 'Natalja Ray — Для нас'">-->
+<!--        <div class="player__note">Трек отгружается на площадки и появится 14.11.2025</div>-->
+<!--        <div>-->
+<!--          <div class="custom-track__title">Превью:</div>-->
+<!--          <audio controls>-->
+<!--            <source src="/audio/Natalja_Ray_Dlya_nas_0_56.mp3" type="audio/mpeg">-->
+<!--            Ваш браузер не поддерживает элемент audio.-->
+<!--          </audio>-->
+<!--        </div>-->
+<!--      </div>-->
 
       <div class="player__note" v-else>Трек появится чуть позже</div>
     </div>

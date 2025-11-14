@@ -136,6 +136,61 @@
 
     const albums = [
         {
+            cover: 'Natalja_Ray-Break_It_All.jpg',
+            title: 'Natalja Ray — Для нас',
+            altTitle: 'Сингл «Для нас»',
+            info: {
+                releaseDate: '14.11.2025',
+                // label: 'VAUVISION',
+                // type: 'Digital',
+                releasePage: 'https://band.link/nataljaray_dlya_nas'
+            },
+
+            ym: {albumId: '38919132', bgColor: 'rgb(104, 54, 48);'},
+            spotify: {albumId: '65DucXTOQCT7WbZFWKie0w'},
+            yt:  { videoId: '4_fP2C5o9cQ' },
+            vk:  { ownerId: -2000684121, playlistId: 25684121, hash: '311df22919052c53ee' },
+
+            streamings: {
+                ym: {
+                    id: 'ym',
+                    fullName: 'Yandex Music',
+                    link: 'https://music.yandex.ru/album/38919132'
+                },
+                spotify: {
+                    id: 'spotify',
+                    fullName: 'Spotify',
+                    link: 'https://open.spotify.com/album/65DucXTOQCT7WbZFWKie0w'
+                },
+                apple: {
+                    id: 'apple-music',
+                    fullName: 'Apple Music / Itunes',
+                    link: 'https://music.apple.com/album/%D0%B4%D0%BB%D1%8F-%D0%BD%D0%B0%D1%81-single/1849612616'
+                },
+                ytMusic: {
+                    id: 'youtube-music',
+                    fullName: 'Youtube Music',
+                    link: 'https://music.youtube.com/playlist?list=OLAK5uy_lWfQtLv2URm1TRX56SJsE2ZCt8dVf2jl0&si=6fJyAz-7UC0Oikrb'
+                },
+                yt: {
+                    id: 'youtube',
+                    fullName: 'Youtube',
+                    link: 'https://www.youtube.com/watch?v=4_fP2C5o9cQ&list=OLAK5uy_kFkp682iOYvbOlzMzn2MC0lRzb8nbhJMQ'
+                },
+                vkMusic: {
+                    id: 'vk',
+                    fullName: 'Vk Music',
+                    link: 'https://vk.com/music/album/-2000684121_25684121_0a3d99a902432a53e1'
+                },
+                zvuk: {
+                    id: 'zvuk',
+                    fullName: 'Zvuk',
+                    link: 'https://zvuk.com/release/43544241'
+                },
+
+            }
+        },
+        {
             cover: 'Natalja_Ray_PROSTOЯ-How_much.jpg',
             title: 'Natalja Ray, PROSTOЯ - Как важно?',
             altTitle: 'Сингл «Как важно?»',
