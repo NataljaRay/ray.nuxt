@@ -408,40 +408,50 @@
             soundtrack: 'Natalja Ray — Break It All',
             title: 'Natalja Ray — Break It All',
             description: '',
-            soon: 'Трек отгружается на площадки и появится 14.11.2025',
-            // ym: { trackId: '328686', bgColor: 'rgb(95, 71, 67)' },
-            // spotify: { trackId: '72iyzWAM2158Kn8KD1ZImq' },
-            // yt:  { videoId: 'SBklWPmxb_k' },
-            // vk:  { ownerId: 33803753, playlistId: 82873839, hash: 'ee2a8c6618271e2343' },
+            // soon: 'Трек отгружается на площадки и появится 14.11.2025',
+            ym: { trackId: '144567488', bgColor: 'rgb(95, 71, 67)' },
+            spotify: { trackId: '7hBLZ56ucsHCBpAHfiPFll' },
+            yt:  { videoId: 'VDkZIYczhQE' },
+            vk:  { ownerId: -2000684121, playlistId: 25684121, hash: '311df22919052c53ee' },
 
-            // streamings: {
-            //     // ym: {
-            //     //     id: 'ym',
-            //     //     fullName: 'Yandex Music',
-            //     //     // link: 'https://music.yandex.ru/track/328686',
-            //     // },
-            //     // spotify: {
-            //     //     id: 'spotify',
-            //     //     fullName: 'Spotify',
-            //     //     link: 'https://open.spotify.com/track/72iyzWAM2158Kn8KD1ZImq',
-            //     // },
-            //     // apple: {
-            //     //     id: 'apple-music',
-            //     //     fullName: 'Apple Music / Itunes',
-            //     //     link: 'https://music.apple.com/song/the-pretender/1584800066'
-            //     // },
-            //     // ytMusic: {
-            //     //     id: 'youtube-music',
-            //     //     fullName: 'Youtube Music',
-            //     //     link: 'https://music.youtube.com/watch?v=N7QwN0EAWEg'
-            //     // },
-            //     // vkMusic: {
-            //     //     // id: 'vk-music',
-            //     //     id: 'vk',
-            //     //     fullName: 'Vk Music',
-            //     //     link: 'https://vk.com/audio-2001344319_6344319'
-            //     // },
-            // }
+            streamings: {
+                ym: {
+                    id: 'ym',
+                    fullName: 'Yandex Music',
+                    link: 'https://music.yandex.ru/track/144567488',
+                },
+                spotify: {
+                    id: 'spotify',
+                    fullName: 'Spotify',
+                    link: 'https://open.spotify.com/track/7hBLZ56ucsHCBpAHfiPFll',
+                },
+                apple: {
+                    id: 'apple-music',
+                    fullName: 'Apple Music / Itunes',
+                    link: 'https://music.apple.com/song/break-it-all/1849612618'
+                },
+                ytMusic: {
+                    id: 'youtube-music',
+                    fullName: 'Youtube Music',
+                    link: 'https://music.youtube.com/watch?v=VDkZIYczhQE'
+                },
+                yt: {
+                    id: 'youtube',
+                    fullName: 'Youtube',
+                    link: 'https://www.youtube.com/watch?v=VDkZIYczhQE'
+                },
+                vkMusic: {
+                    // id: 'vk-music',
+                    id: 'vk',
+                    fullName: 'Vk Music',
+                    link: 'https://vk.com/audio-2001166416_144166416'
+                },
+                zvuk: {
+                    id: 'zvuk',
+                    fullName: 'Zvuk',
+                    link: 'https://zvuk.com/track/164406758'
+                },
+            }
         },
         {
             cover: 'Natalja_Ray-Break_It_All.jpg',
@@ -450,40 +460,50 @@
             soundtrack: 'Natalja Ray — Для нас',
             title: 'Natalja Ray — Для нас',
             description: '',
-            soon: 'Трек отгружается на площадки и появится 14.11.2025',
-            // ym: { trackId: '328686', bgColor: 'rgb(95, 71, 67)' },
-            // spotify: { trackId: '72iyzWAM2158Kn8KD1ZImq' },
-            // yt:  { videoId: 'SBklWPmxb_k' },
-            // vk:  { ownerId: 33803753, playlistId: 82873839, hash: 'ee2a8c6618271e2343' },
+            // soon: 'Трек отгружается на площадки и появится 14.11.2025',
+            ym: { trackId: '144567486', bgColor: 'rgb(95, 71, 67)' },
+            spotify: { trackId: '7uY3YOzeDQTzoucOJr62Vs' },
+            yt:  { videoId: '4_fP2C5o9cQ' },
+            vk:  { ownerId: -2000684121, playlistId: 25684121, hash: '311df22919052c53ee' },
 
-            // streamings: {
-            //     // ym: {
-            //     //     id: 'ym',
-            //     //     fullName: 'Yandex Music',
-            //     //     // link: 'https://music.yandex.ru/track/328686',
-            //     // },
-            //     // spotify: {
-            //     //     id: 'spotify',
-            //     //     fullName: 'Spotify',
-            //     //     link: 'https://open.spotify.com/track/72iyzWAM2158Kn8KD1ZImq',
-            //     // },
-            //     // apple: {
-            //     //     id: 'apple-music',
-            //     //     fullName: 'Apple Music / Itunes',
-            //     //     link: 'https://music.apple.com/song/the-pretender/1584800066'
-            //     // },
-            //     // ytMusic: {
-            //     //     id: 'youtube-music',
-            //     //     fullName: 'Youtube Music',
-            //     //     link: 'https://music.youtube.com/watch?v=N7QwN0EAWEg'
-            //     // },
-            //     // vkMusic: {
-            //     //     // id: 'vk-music',
-            //     //     id: 'vk',
-            //     //     fullName: 'Vk Music',
-            //     //     link: 'https://vk.com/audio-2001344319_6344319'
-            //     // },
-            // }
+            streamings: {
+                ym: {
+                    id: 'ym',
+                    fullName: 'Yandex Music',
+                    link: 'https://music.yandex.ru/track/144567486',
+                },
+                spotify: {
+                    id: 'spotify',
+                    fullName: 'Spotify',
+                    link: 'https://open.spotify.com/track/7uY3YOzeDQTzoucOJr62Vs',
+                },
+                apple: {
+                    id: 'apple-music',
+                    fullName: 'Apple Music / Itunes',
+                    link: 'https://music.apple.com/song/%D0%B4%D0%BB%D1%8F-%D0%BD%D0%B0%D1%81/1849612617'
+                },
+                ytMusic: {
+                    id: 'youtube-music',
+                    fullName: 'Youtube Music',
+                    link: 'https://music.youtube.com/watch?v=4_fP2C5o9cQ'
+                },
+                yt: {
+                    id: 'youtube',
+                    fullName: 'Youtube',
+                    link: 'https://www.youtube.com/watch?v=4_fP2C5o9cQ'
+                },
+                vkMusic: {
+                    // id: 'vk-music',
+                    id: 'vk',
+                    fullName: 'Vk Music',
+                    link: 'https://vk.com/audio-2001166417_144166417'
+                },
+                zvuk: {
+                    id: 'zvuk',
+                    fullName: 'Zvuk',
+                    link: 'https://zvuk.com/track/164406757'
+                },
+            }
         },
         {
             cover: 'Bullet_For_My_Valentine-Radioactive.jpg',

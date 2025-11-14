@@ -43,21 +43,21 @@
                 </audio>
               </template>
 
-              <template v-if="album.anchor == 'break-it-all'">
-                <div class="custom-track__title">Превью:</div>
-                <audio controls>
-                  <source src="/audio/Natalja_Ray_Break_It_All_01_01.mp3" type="audio/mpeg">
-                  Ваш браузер не поддерживает элемент audio.
-                </audio>
-              </template>
+<!--              <template v-if="album.anchor == 'break-it-all'">-->
+<!--                <div class="custom-track__title">Превью:</div>-->
+<!--                <audio controls>-->
+<!--                  <source src="/audio/Natalja_Ray_Break_It_All_01_01.mp3" type="audio/mpeg">-->
+<!--                  Ваш браузер не поддерживает элемент audio.-->
+<!--                </audio>-->
+<!--              </template>-->
 
-              <template v-if="album.anchor == 'dlya-nas'">
-                <div class="custom-track__title">Превью:</div>
-                <audio controls>
-                  <source src="/audio/Natalja_Ray_Dlya_nas_0_56.mp3" type="audio/mpeg">
-                  Ваш браузер не поддерживает элемент audio.
-                </audio>
-              </template>
+<!--              <template v-if="album.anchor == 'dlya-nas'">-->
+<!--                <div class="custom-track__title">Превью:</div>-->
+<!--                <audio controls>-->
+<!--                  <source src="/audio/Natalja_Ray_Dlya_nas_0_56.mp3" type="audio/mpeg">-->
+<!--                  Ваш браузер не поддерживает элемент audio.-->
+<!--                </audio>-->
+<!--              </template>-->
 
             </div>
 
