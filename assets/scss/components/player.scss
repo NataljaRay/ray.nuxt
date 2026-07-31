@@ -84,6 +84,7 @@
   align-items: center;
   background-color: var(--color-white-true);
   box-shadow: 0 0 1px 1px inset rgba(0, 0, 0, 0.15);
+  flex-direction: column;
 }
 
 
@@ -210,12 +211,28 @@
   display: flex;
   align-items: center;
   gap: 32px;
-  margin-bottom: 56px;
+  margin-bottom: 26px;
   @include tablet {
     margin-bottom: 0;
   }
   @include mobile-s {
     gap: 16px;
+  }
+}
+
+.player__vk-link {
+  display: inline-flex;
+  align-items: center;
+  max-width: 220px;
+  font-family: var(--font-family-title);
+  font-size: 15px;
+  line-height: 1.25;
+  color: var(--color-red);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  &:hover {
+    text-decoration-thickness: 2px;
   }
 }
 

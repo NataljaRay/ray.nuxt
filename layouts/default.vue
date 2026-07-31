@@ -20,7 +20,7 @@
     const seo = computed(() => {
         const m = (route.meta && route.meta.seo) || {}
         const title = m.title || 'Natalja Ray'
-        const description = m.description || 'Natalja Ray. Слово. Музыка. Свет. Тень.'
+        const description = m.description || 'Natalja Ray. Слово. Музыка. Свет. Тень. Наталья Рэй'
         const img = m.image || '/NataljaRay.jpg'
         const absImg = img.startsWith('http')
             ? img

@@ -6,7 +6,7 @@
     </div>
     <p v-if="showFallback" class="vk-fallback">
       Не удалось загрузить виджет VK. Откройте плейлист:
-      <a :href="fallbackHref" target="_blank" rel="noopener">{{ fallbackHref }}</a>
+      <a :href="playlistHref" target="_blank" rel="noopener">{{ playlistHref }}</a>
     </p>
   </ClientOnly>
 </template>
@@ -42,8 +42,16 @@
     }))
 
     const showFallback = ref(false)
-    const fallbackHref = computed(() => `https://m.vk.com/music/playlist/${props.ownerId}_${props.playlistId}`)
+    // const fallbackHref = computed(() => `https://m.vk.com/music/playlist/${props.ownerId}_${props.playlistId}`)
     const elId = computed(() => props.elementId || `vk_playlist_${props.ownerId}_${props.playlistId}`)
+
+    const playlistHref = computed(() =>
+        `https://vk.com/music/playlist/${props.ownerId}_${props.playlistId}`
+    )
+
+    // const mobilePlaylistHref = computed(() =>
+    //     `https://m.vk.com/music/playlist/${props.ownerId}_${props.playlistId}`
+    // )
 
     let vkScriptPromise
     function loadVkOpenApi () {
