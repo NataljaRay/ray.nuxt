@@ -1,0 +1,1 @@
+import{r as t,f as a,g as n,c as s,a as r,o as u}from"./BlS0D0J7.js";const m={__name:"about",setup(c){t(!0);const o=t(0);return a(()=>o.value*2),n(()=>{}),(l,e)=>(u(),s("section",null,e[0]||(e[0]=[r("h1",null,"Обо мне",-1)])))}};export{m as default};
