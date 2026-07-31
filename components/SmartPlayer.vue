@@ -27,6 +27,15 @@
           </Button>
         </div>
         </div>
+        <a
+          v-if="showVkPlaylistLink"
+          :href="vkPlaylistHref"
+          target="_blank"
+          rel="noopener"
+          class="player__vk-link"
+        >
+          Послушать полную версию во ВКонтакте >
+        </a>
       </div>
     </template>
     <template v-else>
@@ -59,34 +68,6 @@
 
     <!-- Текущий виджет -->
     <div class="player__widget" v-if="currentComponent">
-      <!-- Яндекс Музыка: фасад до клика -->
-<!--      <div-->
-<!--              v-if="currentKey === 'ym' && !ymActivated"-->
-<!--              class="player-facade"-->
-<!--              @click="activateYM"-->
-<!--              :style="currentProps.bgColor ? `background-color: ${currentProps.bgColor}` : ''"-->
-<!--      >-->
-<!--        <div class="facade-overlay">-->
-<!--&lt;!&ndash;          <span class="facade-text facade-text&#45;&#45;small" aria-hidden="true">&ndash;&gt;-->
-<!--&lt;!&ndash;            Для максимально корректной загрузки виджета мы были вынуждены поставить эту заглушку...&ndash;&gt;-->
-<!--&lt;!&ndash;            <br/>&ndash;&gt;-->
-<!--&lt;!&ndash;            Благодарим за терпение <3&ndash;&gt;-->
-<!--&lt;!&ndash;          </span>&ndash;&gt;-->
-<!--          <span class="play-icon" aria-hidden="true">▶</span>-->
-<!--          <span class="facade-text">Открыть плеер</span>-->
-<!--        </div>-->
-<!--      </div>-->
-
-      <!-- Остальные платформы или ЯМ после клика -->
-<!--      <component-->
-<!--              v-else-->
-<!--              :is="currentComponent"-->
-<!--              v-bind="currentProps"-->
-<!--              :platform-key="currentKey"-->
-<!--              @widget-ok="onWidgetOk"-->
-<!--              @widget-error="onWidgetError"-->
-<!--      />-->
-
       <component
               :is="currentComponent"
               v-bind="currentProps"
@@ -266,6 +247,15 @@
             default: return base
         }
     })
+
+    const vkPlaylistHref = computed(() => {
+        if (props.vk?.href) return props.vk.href
+        if (props.vk?.ownerId == null || props.vk?.playlistId == null) return ''
+        return `https://vk.com/music/playlist/${props.vk.ownerId}_${props.vk.playlistId}`
+    })
+    const showVkPlaylistLink = computed(() =>
+        props.mode === 'mode-soundtracks' && currentKey.value === 'vk' && !!vkPlaylistHref.value
+    )
 
   //loader
 

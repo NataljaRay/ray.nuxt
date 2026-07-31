@@ -136,6 +136,61 @@
 
     const albums = [
         {
+            cover: 'Natalja_Ray-What_Is_Your_Plan.jpg',
+            title: 'Natalja Ray — Каков твой план?',
+            altTitle: 'Сингл «Каков твой план?»',
+            info: {
+                releaseDate: '31.07.2026',
+                // label: 'VAUVISION',
+                // type: 'Digital',
+                releasePage: 'https://band.link/kakov_tvoi_plan'
+            },
+
+            ym: { albumId: '42960548', bgColor: 'rgb(136, 119, 97)' },
+            spotify: { trackId: '6igbv58fPeFhKk8iAOAw9H' },
+            yt:  { videoId: 'GD6uTlQuRP4' },
+            vk:  { ownerId: -2000396088, playlistId: 28396088, hash: '311df22919052c53ee' },
+
+            streamings: {
+                ym: {
+                    id: 'ym',
+                    fullName: 'Yandex Music',
+                    link: 'https://music.yandex.ru/track/153405405',
+                },
+                spotify: {
+                    id: 'spotify',
+                    fullName: 'Spotify',
+                    link: 'https://open.spotify.com/track/6igbv58fPeFhKk8iAOAw9H',
+                },
+                apple: {
+                    id: 'apple-music',
+                    fullName: 'Apple Music / Itunes',
+                    link: 'https://music.apple.com/song/%D0%BA%D0%B0%D0%BA%D0%BE%D0%B2-%D1%82%D0%B2%D0%BE%D0%B9-%D0%BF%D0%BB%D0%B0%D0%BD/6787963666'
+                },
+                ytMusic: {
+                    id: 'youtube-music',
+                    fullName: 'Youtube Music',
+                    link: 'https://music.youtube.com/watch?v=GD6uTlQuRP4'
+                },
+                yt: {
+                    id: 'youtube',
+                    fullName: 'Youtube',
+                    link: 'https://www.youtube.com/watch?v=GD6uTlQuRP4'
+                },
+                vkMusic: {
+                    // id: 'vk-music',
+                    id: 'vk',
+                    fullName: 'Vk Music',
+                    link: 'https://vk.com/audio-2001721691_151721691_e9be71773abfd7d22c'
+                },
+                zvuk: {
+                    id: 'zvuk',
+                    fullName: 'Zvuk',
+                    link: 'https://zvuk.com/release/51573740'
+                },
+            }
+        },
+        {
             cover: 'Natalja_Ray-Break_It_All.jpg',
             title: 'Natalja Ray — Для нас',
             altTitle: 'Сингл «Для нас»',

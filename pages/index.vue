@@ -110,7 +110,7 @@
     definePageMeta({
         seo: {
             title: 'Natalja Ray',
-            description: 'Natalja Ray. Слово. Музыка. Свет. Тень.',
+            description: 'Natalja Ray. Слово. Музыка. Свет. Тень. Наталья Рэй',
             image: '/NataljaRay.jpg' // из public/
             // noindex: true
         }

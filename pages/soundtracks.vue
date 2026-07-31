@@ -42,10 +42,10 @@
         </div>
       </div>
 
-<!--      <div class="mobile-note" :class="{hidden: hideNoteWindow}" v-if="isMobile || isTablet">-->
-<!--        <span class="mobile-note__close" @click="hideNote">+</span>-->
-<!--        🎧 На мобильных устройствах для полного воспроизведения трека откройте ссылку в приложении Spotify / Яндекс Музыка / ВКонтакте и др.-->
-<!--      </div>-->
+      <div class="mobile-note" :class="{hidden: hideNoteWindow}" v-if="isMobile || isTablet">
+        <span class="mobile-note__close" @click="hideNote">+</span>
+        🎧 На мобильных устройствах для полного воспроизведения трека откройте ссылку в приложении Spotify / Яндекс Музыка / ВКонтакте и др.
+      </div>
 
       <div style="margin-top: 60px; display: none">
         <p class="h4">Саундтреки по главам</p>
@@ -125,7 +125,52 @@
             title: 'Natalja Ray — Каков твой план?',
             // description: 'Первый шаг на сцену. Волнение. Свет бьёт в глаза. Всё начинается.',
             description: '',
-            soon: 'Трек появится чуть позже',
+            // soon: 'Трек появится чуть позже',
+
+            ym: { albumId: '42960548', trackId: '153405405', bgColor: 'rgb(136, 119, 97)' },
+            spotify: { trackId: '6igbv58fPeFhKk8iAOAw9H' }, // Shame on Me — Catch Your Breath
+            // ytm: { videoId: 'GD6uTlQuRP4' },           // офиц. клип BVTV
+            yt:  { videoId: 'GD6uTlQuRP4' },           // тот же id
+            vk:  { ownerId: -2000396088, playlistId: 28396088, hash: '311df22919052c53ee' },
+
+            streamings: {
+                ym: {
+                    id: 'ym',
+                    fullName: 'Yandex Music',
+                    link: 'https://music.yandex.ru/track/153405405',
+                },
+                spotify: {
+                    id: 'spotify',
+                    fullName: 'Spotify',
+                    link: 'https://open.spotify.com/track/6igbv58fPeFhKk8iAOAw9H',
+                },
+                apple: {
+                    id: 'apple-music',
+                    fullName: 'Apple Music / Itunes',
+                    link: 'https://music.apple.com/song/%D0%BA%D0%B0%D0%BA%D0%BE%D0%B2-%D1%82%D0%B2%D0%BE%D0%B9-%D0%BF%D0%BB%D0%B0%D0%BD/6787963666'
+                },
+                ytMusic: {
+                    id: 'youtube-music',
+                    fullName: 'Youtube Music',
+                    link: 'https://music.youtube.com/watch?v=GD6uTlQuRP4'
+                },
+                yt: {
+                    id: 'youtube',
+                    fullName: 'Youtube',
+                    link: 'https://www.youtube.com/watch?v=GD6uTlQuRP4'
+                },
+                vkMusic: {
+                    // id: 'vk-music',
+                    id: 'vk',
+                    fullName: 'Vk Music',
+                    link: 'https://vk.com/audio-2001721691_151721691_e9be71773abfd7d22c'
+                },
+                // zvuk: {
+                //     id: 'zvuk',
+                //     fullName: 'Zvuk',
+                //     link: 'https://zvuk.com/track/159958770'
+                // },
+            }
         },
         {
             cover: 'Catch_Your_Breath-Shame_On_Me.jpg',
